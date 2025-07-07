@@ -2,7 +2,7 @@
 
 :root {
   /* Original Acciobyte Color Scheme - 100% Match */
-  --color-default: #BFF747; /* Main accent color - lime green */
+  --color-default: #EF4444; /* Main accent color - now red */
   --color-secondary: #86c232; /* Secondary accent */
   --color-black: #000000; /* Pure black */
   --color-white: #ffffff; /* Pure white */
@@ -53,7 +53,7 @@
 }
 
 .text-default {
-  color: var(--color-default) !important;
+  color: #EF4444 !important;
 }
 
 .bg-blackfade2 {
@@ -134,7 +134,7 @@
 }
 
 .hover\:text-default:hover {
-  color: var(--color-default) !important;
+  color: #EF4444 !important;
 }
 
 .hover\:text-white:hover {
@@ -151,7 +151,7 @@
 }
 
 .group:hover .group-hover\:text-default {
-  color: var(--color-default) !important;
+  color: #EF4444 !important;
 }
 
 .group:hover .group-hover\:text-white {
@@ -848,7 +848,7 @@ body {
   }
   
   .hover\:text-default:hover {
-    color: var(--color-default) !important;
+    color: #EF4444 !important;
   }
   
   .hover\:text-white:hover {
@@ -870,7 +870,7 @@ body {
   }
   
   .hover\:text-default:hover {
-    color: var(--color-default) !important;
+    color: #EF4444 !important;
   }
   
   .hover\:text-white:hover {
@@ -889,7 +889,7 @@ body {
   }
   
   .group:hover .group-hover\:text-default {
-    color: var(--color-default) !important;
+    color: #EF4444 !important;
   }
   
   .group:hover .group-hover\:text-white {
@@ -907,7 +907,7 @@ body {
   }
   
   .group:hover .group-hover\:text-default {
-    color: var(--color-default) !important;
+    color: #EF4444 !important;
   }
   
   .group:hover .group-hover\:text-white {
@@ -1293,4 +1293,8 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #86c232;
   }
+}
+
+.filter-red {
+  filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7492%) hue-rotate(357deg) brightness(97%) contrast(119%);
 }

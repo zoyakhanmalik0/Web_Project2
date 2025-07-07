@@ -12,25 +12,25 @@ export default function Footer() {
           <div className="space-y-4 lg:space-y-6">
             <div className="flex items-center gap-3">
               <Image src="/media/logo.21e0c5de.png" alt="Acciobyte Logo" width={48} height={48} className="w-10 h-10 sm:w-12 sm:h-12" />
-              <h3 className="text-xl sm:text-2xl font-bold text-default">Acciobyte</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-red-500">Acciobyte</h3>
             </div>
             <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
               We are a creative digital agency specializing in web development, mobile apps, graphic design, and digital marketing solutions.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://www.facebook.com/share/1B7PYddHGv/?mibextid=qi2Omg" className="w-8 h-8 sm:w-10 sm:h-10 bg-default rounded-full flex items-center justify-center hover:bg-default/90 transition-colors">
+              <Link href="https://www.facebook.com/share/1B7PYddHGv/?mibextid=qi2Omg" className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black sm:w-5 sm:h-5">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </Link>
-              <Link href="https://www.linkedin.com/company/astrivix/" className="w-8 h-8 sm:w-10 sm:h-10 bg-default rounded-full flex items-center justify-center hover:bg-default/90 transition-colors">
+              <Link href="https://www.linkedin.com/company/astrivix/" className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black sm:w-5 sm:h-5">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect width="4" height="12" x="2" y="9"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </Link>
-              <Link href="https://www.instagram.com/acciobyte?igsh=MnA0eWo0NzkzbHE5" className="w-8 h-8 sm:w-10 sm:h-10 bg-default rounded-full flex items-center justify-center hover:bg-default/90 transition-colors">
+              <Link href="https://www.instagram.com/acciobyte?igsh=MnA0eWo0NzkzbHE5" className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black sm:w-5 sm:h-5">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -42,36 +42,36 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4 lg:space-y-6">
-            <h4 className="text-lg sm:text-xl font-semibold text-default">Services</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-red-500">Services</h4>
             <ul className="space-y-2 lg:space-y-3">
-              <li><Link href="/services/website-development" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Website Development</Link></li>
-              <li><Link href="/services/app-development" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">App Development</Link></li>
-              <li><Link href="/services/digital-marketing" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Digital Marketing</Link></li>
-              <li><Link href="/services/graphic-designing" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Graphic Design</Link></li>
-              <li><Link href="/services/content-writing" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Content Writing</Link></li>
-              <li><Link href="/services/cyber-security" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Cyber Security</Link></li>
+              <li><Link href="/services/website-development" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Website Development</Link></li>
+              <li><Link href="/services/app-development" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">App Development</Link></li>
+              <li><Link href="/services/digital-marketing" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Digital Marketing</Link></li>
+              <li><Link href="/services/graphic-designing" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Graphic Design</Link></li>
+              <li><Link href="/services/content-writing" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Content Writing</Link></li>
+              <li><Link href="/services/cyber-security" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Cyber Security</Link></li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4 lg:space-y-6">
-            <h4 className="text-lg sm:text-xl font-semibold text-default">Quick Links</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-red-500">Quick Links</h4>
             <ul className="space-y-2 lg:space-y-3">
-              <li><Link href="/about" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">About Us</Link></li>
-              <li><Link href="/projects" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Projects</Link></li>
-              <li><Link href="/blogs" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Blog</Link></li>
-              <li><Link href="/pricing-plan" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Pricing</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Contact</Link></li>
-              <li><Link href="/terms-and-condition" className="text-gray-400 hover:text-default transition-colors text-sm sm:text-base">Terms & Conditions</Link></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">About Us</Link></li>
+              <li><Link href="/projects" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Projects</Link></li>
+              <li><Link href="/blogs" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Blog</Link></li>
+              <li><Link href="/pricing-plan" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Pricing</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Contact</Link></li>
+              <li><Link href="/terms-and-condition" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Terms & Conditions</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4 lg:space-y-6">
-            <h4 className="text-lg sm:text-xl font-semibold text-default">Contact Info</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-red-500">Contact Info</h4>
             <div className="space-y-3 lg:space-y-4">
               <div className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-default mt-1 flex-shrink-0 sm:w-5 sm:h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-500 mt-1 flex-shrink-0 sm:w-5 sm:h-5">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
                 <div>
@@ -80,7 +80,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-default mt-1 flex-shrink-0 sm:w-5 sm:h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-500 mt-1 flex-shrink-0 sm:w-5 sm:h-5">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
@@ -90,7 +90,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-default mt-1 flex-shrink-0 sm:w-5 sm:h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-500 mt-1 flex-shrink-0 sm:w-5 sm:h-5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
@@ -110,10 +110,10 @@ export default function Footer() {
               © 2024 Acciobyte. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
-              <Link href="/privacy-and-policy" className="text-gray-400 hover:text-default text-xs sm:text-sm transition-colors text-center sm:text-left">
+              <Link href="/privacy-and-policy" className="text-gray-400 hover:text-red-500 text-xs sm:text-sm transition-colors text-center sm:text-left">
                 Privacy Policy
               </Link>
-              <Link href="/terms-and-condition" className="text-gray-400 hover:text-default text-xs sm:text-sm transition-colors text-center sm:text-left">
+              <Link href="/terms-and-condition" className="text-gray-400 hover:text-red-500 text-xs sm:text-sm transition-colors text-center sm:text-left">
                 Terms & Conditions
               </Link>
             </div>

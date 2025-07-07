@@ -46,7 +46,7 @@ export default function Navigation() {
         <div className="w-full wrapper flex justify-between items-center mx-auto px-4 lg:px-6">
           <div className="logo">
             <Link href="/">
-              <Image src="/media/logo.21e0c5de.png" alt="logo" width={64} height={64} className="w-12 h-12 sm:w-16 sm:h-16 xl:w-28 xl:h-24" />
+              <Image src="/globe.svg" alt="logo" width={64} height={64} className="w-12 h-12 sm:w-16 sm:h-16 xl:w-28 xl:h-24 filter-red" />
             </Link>
           </div>
           
@@ -178,43 +178,43 @@ export default function Navigation() {
                 </button>
                 {showMobileServices && (
                   <div id="mobile-services-list" className="pl-4 space-y-2">
-                    <Link href="/services/website-development" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/website-development" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Website Development
                   </Link>
-                    <Link href="/services/app-development" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/app-development" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Android & iOS Development
                   </Link>
-                    <Link href="/services/digital-marketing" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/digital-marketing" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Digital Marketing
                   </Link>
-                    <Link href="/services/graphic-designing" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/graphic-designing" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Graphic Designing
                   </Link>
-                    <Link href="/services/social-media-marketing" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/social-media-marketing" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Social Media Marketing
                   </Link>
-                    <Link href="/services/content-writing" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/content-writing" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Content Writing
                   </Link>
-                    <Link href="/services/search-engine-optimization" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/search-engine-optimization" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Search Engine Optimization
                   </Link>
-                    <Link href="/services/software-development" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/software-development" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Software Development
                   </Link>
-                    <Link href="/services/cyber-security" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/cyber-security" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Cyber Security
                   </Link>
-                    <Link href="/services/e-commerce" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/e-commerce" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     E-Commerce
                   </Link>
-                    <Link href="/services/illustrations" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/illustrations" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Illustrations
                   </Link>
-                    <Link href="/services/video-animation" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/video-animation" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Video Animation
                   </Link>
-                    <Link href="/services/point-of-sale" className="block transition-colors py-1 rounded-md" style={{background:'#BFF747', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#d4ff4d'} onMouseOut={e => e.currentTarget.style.background='#BFF747'} onClick={() => setShowMobileMenu(false)}>
+                    <Link href="/services/point-of-sale" className="block transition-colors py-1 rounded-md" style={{background:'#EF4444', color:'#222'}} onMouseOver={e => e.currentTarget.style.background='#f87171'} onMouseOut={e => e.currentTarget.style.background='#EF4444'} onClick={() => setShowMobileMenu(false)}>
                     Point of Sale (POS)
                   </Link>
                 </div>

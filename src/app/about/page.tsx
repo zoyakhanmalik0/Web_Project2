@@ -9,17 +9,17 @@ export default function About() {
       {/* Hero Section */}
       <div className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
         <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
-          <span className="text-5xl xl:text-7xl">About <span className="text-default">us</span></span>
+          <span className="text-5xl xl:text-7xl">About <span className="text-red-500">us</span></span>
           <nav aria-label="breadcrumb">
             <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
               <li><Link className="hover:underline" href="/">Home</Link></li>
-              <li className="flex items-center"><span className="mx-2">*</span><span className="text-default">About</span></li>
+              <li className="flex items-center"><span className="mx-2">*</span><span className="text-red-500">About</span></li>
             </ul>
           </nav>
         </div>
       </div>
       {/* Skills Marquee Section */}
-      <div className="relative w-full overflow-hidden py-3 bg-default">
+      <div className="relative w-full overflow-hidden py-3 bg-red-500">
         <div className="flex items-center space-x-8 w-max">
           {[
             'IOS/Android App Development',
@@ -42,7 +42,7 @@ export default function About() {
             <div key={idx} className="flex items-center justify-center gap-6">
               <span className="whitespace-nowrap text-xl font-bold text-black">{skill}</span>
               <span className="flex justify-center items-center">
-                <Image src="/media/asteric.3e45eb6d.png" alt="Asteric" width={16} height={16} className="w-4 h-4" />
+                <Image src="/media/asteric.3e45eb6d.png" alt="Asteric" width={16} height={16} className="w-4 h-4 filter-red" />
               </span>
             </div>
           ))}
@@ -53,15 +53,15 @@ export default function About() {
         <div className="container relative mx-auto !z-20">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="lg:sticky lg:top-24 h-fit self-start text-center lg:text-start">
-              <div className="w-full text-default text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-                <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5" />
+              <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
+                <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5 filter-red" />
                 <h4>ABOUT AGENCY</h4>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Crafting <span className="text-default font-bold">unique digital</span></h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Crafting <span className="text-red-500 font-bold">unique digital</span></h2>
               <p className="md:text-5xl lg:text-6xl text-white mb-8">experiences that elevate your brand</p>
               <Link className="mt-4 flex justify-center lg:justify-start gap-4 group" href="/contact">
                 <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">Contact Us</button>
-                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </span>
               </Link>
@@ -95,8 +95,8 @@ export default function About() {
                     <Image src="/media/dot.5c102e3c.svg" alt="Dot" width={32} height={32} />
                   </div>
                   <div className="flex flex-col gap-5">
-                    <Image src={item.icon} alt={item.title} width={80} height={80} className="w-20 h-20 bg-default rounded-lg p-3" />
-                    <h3 className="text-white text-xl lg:text-3xl font-bold mb-2 group-hover:text-default transition-colors">{item.title}</h3>
+                    <Image src={item.icon} alt={item.title} width={80} height={80} className="w-20 h-20 bg-red-500 rounded-lg p-3" />
+                    <h3 className="text-white text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">{item.title}</h3>
                     <p className="text-white text-justify leading-relaxed lg:text-lg">{item.desc}</p>
                   </div>
                 </div>
@@ -114,11 +114,11 @@ export default function About() {
           <div className="relative mx-auto !z-20">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-default text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-                  <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5" />
+                <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
+                  <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5 filter-red" />
                   <h4>FEATURES</h4>
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Innovative <span className="text-default font-bold">features</span></h2>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Innovative <span className="text-red-500 font-bold">features</span></h2>
                 <p className="md:text-5xl lg:text-6xl text-white mb-8">for your digital success</p>
               </div>
               <div className="relative">
@@ -128,7 +128,7 @@ export default function About() {
                   </div>
                   <Link className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="/about">
                     <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">Learn More</button>
-                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </span>
                   </Link>
@@ -165,7 +165,7 @@ export default function About() {
             <div className="flex justify-between items-start mb-20">
               <div className="max-w-2xl">
                 <h2 className="text-3xl lg:text-4xl text-white font-semibold mb-4">Content Creation And Strategy</h2>
-                <p className="text-gray-400 text-lg">High-quality, engaging content across blogs<span className="inline-block w-2 h-2 bg-default rounded-full mx-2 mb-0.5"></span>videos, and graphics designed to captivate and retain audiences.</p>
+                <p className="text-gray-400 text-lg">High-quality, engaging content across blogs<span className="inline-block w-2 h-2 bg-red-500 rounded-full mx-2 mb-0.5"></span>videos, and graphics designed to captivate and retain audiences.</p>
               </div>
               <div className="hidden lg:block relative" style={{ width: 150, height: 150 }}>
                 {/* Rotating SVG and arrow */}
@@ -179,7 +179,7 @@ export default function About() {
                     </text>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-6 h-6 text-default"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-6 h-6 text-red-500"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
                   </div>
                 </div>
               </div>
@@ -213,11 +213,11 @@ export default function About() {
       <div className="container relative mx-auto px-4 !z-20">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="h-fit self-start text-center lg:text-start">
-            <div className="w-full text-default text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-              <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5" />
+            <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
+              <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5 filter-red" />
               <h4>OUR TEAM</h4>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Dynamic <span className="text-default font-bold">team</span></h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Dynamic <span className="text-red-500 font-bold">team</span></h2>
             <p className="md:text-5xl lg:text-6xl text-white mb-8">of digital experts</p>
           </div>
           <div className="relative">
@@ -227,7 +227,7 @@ export default function About() {
               </div>
               <a className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="#">
                 <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">More About</button>
-                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </span>
               </a>
@@ -278,10 +278,10 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-7">
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} />
+                <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5 filter-red" />
                 <span className="text-white uppercase tracking-wider font-semibold">WHY CHOOSE</span>
               </div>
-              <h2 className="text-4xl lg:text-5xl !leading-normal text-white font-light">Expertise for <span className="text-default font-semibold">your digital</span><br />growth journey</h2>
+              <h2 className="text-4xl lg:text-5xl !leading-normal text-white font-light">Expertise for <span className="text-red-500 font-semibold">your digital</span><br />growth journey</h2>
             </div>
             <p className="text-gray-400 text-lg leading-relaxed max-w-xl">Our dedicated team is committed to understanding your unique needs, ensuring that we provide innovative strategies that drive results. With a focus on quality and integrity.</p>
           </div>
@@ -328,11 +328,11 @@ export default function About() {
           <div className="relative mx-auto !z-20">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-default text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-                  <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5" />
+                <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
+                  <Image src="/media/asterisk_default.4355d764.png" alt="Asteric" width={20} height={20} className="w-5 h-5 filter-red" />
                   <h4>TESTIMONIALS</h4>
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Read what they have to say about <span className="text-default font-bold">working with us</span></h2>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">Read what they have to say about <span className="text-red-500 font-bold">working with us</span></h2>
               </div>
               <div className="relative">
                 <div className="relative flex flex-col gap-6 lg:py-24 group cursor-pointer">
@@ -341,7 +341,7 @@ export default function About() {
                   </div>
                   <a className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="#">
                     <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">All Testimonials</button>
-                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </span>
                   </a>
@@ -355,7 +355,7 @@ export default function About() {
                   <div className="flex justify-center mb-2">
                     <div className="flex">
                       {[1,2,3,4,5].map((_,i) => (
-                        <svg key={i} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star w-6 h-6 fill-lime-400 text-lime-400"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg key={i} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star w-6 h-6 fill-red-500 text-red-500"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
                       ))}
                     </div>
                   </div>
@@ -377,7 +377,7 @@ export default function About() {
                       <Image src="/media/logo1.38d8183e.png" alt="Logoipsum" width={80} height={80} className="mb-4 w-20 h-20" />
                       <div className="flex">
                         {[1,2,3,4,5].map((_,i) => (
-                          <svg key={i} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star w-6 h-6 fill-lime-400 text-lime-400"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                          <svg key={i} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star w-6 h-6 fill-red-500 text-red-500"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
                         ))}
                       </div>
                     </div>
@@ -414,7 +414,7 @@ export default function About() {
             <div className="relative inline-flex flex-col items-center">
               <h2 className="text-42 lg:text-[180px] font-bold text-white leading-loose tracking-tight">LET&apos;S WORK</h2>
               <div className="absolute -top-14 lg:top-52 my-6 md:my-8 z-10 group">
-                <Link className="flex items-center justify-center w-20 h-20 lg:w-32 lg:h-32 md:w-40 md:h-40 bg-default rounded-full hover:bg-default transition-all duration-300 group shadow-[0_0_45px_rgba(212,255,77,1)] hover:shadow-[0_0_35px_rgba(212,255,77,1)]" href="/contact">
+                <Link className="flex items-center justify-center w-20 h-20 lg:w-32 lg:h-32 md:w-40 md:h-40 bg-red-500 rounded-full hover:bg-red-500 transition-all duration-300 group shadow-[0_0_45px_rgba(239,68,68,1)] hover:shadow-[0_0_35px_rgba(239,68,68,1)]" href="/contact">
                   <div className="flex flex-col items-center text-11 lg:text-18 font-semibold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right ml-1 w-6 h-6 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
                     Get In Touch

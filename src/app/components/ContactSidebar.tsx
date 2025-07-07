@@ -82,7 +82,7 @@ export default function ContactSidebar({ open, onClose }: ContactSidebarProps) {
   };
 
   const infoStyle = {
-    color: '#BFF747',
+    color: '#EF4444',
     fontSize: '16px',
     fontWeight: '600',
     textAlign: 'center' as const,
@@ -100,7 +100,7 @@ export default function ContactSidebar({ open, onClose }: ContactSidebarProps) {
   const socialButtonStyle = {
     width: '40px',
     height: '40px',
-    backgroundColor: '#BFF747',
+    backgroundColor: '#EF4444',
     borderRadius: '50%',
     display: 'flex',
     alignItems: 'center',
@@ -115,13 +115,13 @@ export default function ContactSidebar({ open, onClose }: ContactSidebarProps) {
     borderRadius: '9999px',
     fontWeight: 700,
     fontSize: '16px',
-    backgroundColor: showServices ? '#BFF747' : '#222',
+    backgroundColor: showServices ? '#EF4444' : '#222',
     color: showServices ? '#222' : '#fff',
-    border: showServices ? '2px solid #BFF747' : '2px solid #333',
+    border: showServices ? '2px solid #EF4444' : '2px solid #333',
     cursor: 'pointer',
     transition: 'background 0.2s, color 0.2s, border 0.2s',
     outline: 'none',
-    boxShadow: showServices ? '0 0 0 2px #BFF74755' : 'none',
+    boxShadow: showServices ? '0 0 0 2px #EF444455' : 'none',
   };
 
   return (
