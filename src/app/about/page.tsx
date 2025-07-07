@@ -223,76 +223,17 @@ export default function About() {
                     href="/about"
                   >
                     <button
-                      className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold  border-0 w-24 h-28
-"
+                      className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold  border-0 w-24 h-28"
                     >
                       Learn More
                     </button>
-                    <section>
-  <div className="grid md:grid-cols-5 gap-6 mt-10 lg:mt-0">
-    <div className="bg-transparent backdrop-blur-lg p-10 rounded-[32px] overflow-hidden group hover:bg-white/10 transition-colors duration-300 col-span-5 lg:col-span-3">
-      <div className="relative overflow-hidden rounded-[32px]">
-        <Image
-          src="/33.png"
-          alt="Custom Branding Solutions"
-          width={1000}
-          height={320}
-          className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-      <div className="p-8">
-        <Image src="/33.png" alt="" width={64} height={64} />
-        <h3 className="text-white text-2xl font-semibold mb-3">
-          Custom Branding Solutions
-        </h3>
-        <p className="text-gray-400">
-          Unique brand identity development, including logos, color palettes.
-        </p>
-      </div>
-    </div>
-
-    <div className="bg-transparent backdrop-blur-lg p-10 rounded-[32px] overflow-hidden group hover:bg-white/10 transition-colors duration-300 col-span-5 lg:col-span-2">
-      <div className="relative overflow-hidden rounded-[32px]">
-        <Image
-          src="/33.png"
-          alt="Data-Driven Digital Marketing"
-          width={1000}
-          height={320}
-          className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-      <div className="p-8">
-        <h3 className="text-white text-2xl font-semibold mb-3">
-          Data-Driven Digital Marketing
-        </h3>
-        <p className="text-gray-400">
-          Strategies combining SEO, PPC, content marketing
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/* Button/Arrow Block */}
-  <span className="w-14 h-14 rounded-full flex items-center justify-center transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
-    <Image src="33.png" alt="" width={24} height={24} />
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="lucide lucide-arrow-right text-22 !text-black rounded-full"
-    >
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
-    </svg>
-  </span>
-</section>
-
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Content Creation Section */}
       <section className="py-20">
         <div className="container mx-auto">
