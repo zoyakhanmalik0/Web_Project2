@@ -46,7 +46,7 @@ export default function Navigation() {
         <div className="w-full wrapper flex justify-between items-center mx-auto px-4 lg:px-6">
           <div className="logo">
             <Link href="/">
-              <Image src="/globe.svg" alt="logo" width={64} height={64} className="w-12 h-12 sm:w-16 sm:h-16 xl:w-28 xl:h-24 filter-red" />
+              <Image src="/media/log.jpg" alt="Techouar Logo" width={220} height={80} className="w-56 h-20 sm:w-72 sm:h-24 xl:w-96 xl:h-32 object-contain drop-shadow-lg" />
             </Link>
           </div>
           

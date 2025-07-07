@@ -7,13 +7,14 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import ExpertiseCard from "./components/ExpertiseCard";
 import HowItWorksSection from "./components/HowItWorksSection";
+import Projects from './projects/page';
 
 const SERVICES = [
   {
     name: 'Website Development',
     description: "We build responsive, fast, and secure websites tailored to your brand's needs. Whether it's an eCommerce store, a corporate website, or a custom web application, we deliver top-notch solutions.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-activity w-8 h-8 sm:w-10 sm:h-10 text-red-500 stroke-[1.5] filter-red"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>
+      <svg xmlns="log.jpg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-activity w-8 h-8 sm:w-10 sm:h-10 text-red-500 stroke-[1.5] filter-red"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>
     ),
   },
   {
@@ -185,7 +186,8 @@ export default function Home() {
       {/* ABOUT/AGENCY SECTION */}
       <section className="relative min-h-screen py-12 sm:py-16 lg:py-20 xl:py-40 overflow-visible bg-black">
         <div className="container relative mx-auto z-20 px-4 lg:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+          <img src="/media/sphere.4b56a70e.png" alt="Acciobyte Sphere Image" className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 animate-spin-slow filter-red z-0" style={{ pointerEvents: 'none' }} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start relative z-10">
             <div className="lg:sticky lg:top-24 h-fit self-start text-center lg:text-start">
               <div className="w-full text-red-500 text-base sm:text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-6 sm:my-9">
                 <img src="/media/asterisk_default.4355d764.png" alt="Acciobyte Asteric Image" className="w-4 h-4 sm:w-5 sm:h-5 filter-red" />
@@ -208,7 +210,9 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/mission.25c4c757.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default rounded-lg p-3 filter-red" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red">
+                    <img src="/media/mission.25c4c757.svg" alt="Acciobyte Service Icon" className="w-full h-full" />
+                  </div>
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Your Success, Our Mission</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">We measure our success through the achievements of our clients. With a results-driven approach and a commitment to quality, we deliver digital solutions that create meaningful impact.</p>
                 </div>
@@ -218,7 +222,7 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/creators.da5dacdb.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default rounded-lg p-3 filter-red" />
+                  <img src="/media/creators.da5dacdb.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red" />
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Creators Of Digital Excellence</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">Driven by innovation and excellence, we reimagine digital possibilities. Our team builds solutions that not only fulfill your vision but also elevate your brand to the next level.</p>
                 </div>
@@ -228,7 +232,7 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/innovation.257d9eb9.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default rounded-lg p-3 filter-red" />
+                  <img src="/media/innovation.257d9eb9.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red" />
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Innovating the digital landscape</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">At the core of our agency is a commitment to excellence and creativity. We specialize in crafting digital solutions that not only meet your needs but also exceed your brand.</p>
                 </div>
@@ -238,15 +242,12 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/brands.6176527f.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default rounded-lg p-3 filter-red" />
+                  <img src="/media/brands.6176527f.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red" />
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Helping Brands Thrive Online</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">Our goal is simple: empower brands to grow and succeed in the digital world. Through strong client partnerships and custom strategies, we deliver results that matter.</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="absolute bottom-20 -left-32 z-0 hidden lg:block">
-            <img src="/media/sphere.4b56a70e.png" alt="Acciobyte Sphere Image" className="w-96 h-96 animate-spin-slow filter-red" />
           </div>
         </div>
       </section>
@@ -341,8 +342,8 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:sticky lg:top-20 space-y-8">
-              <div className="image-container group relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden">
-                <img src="/media/whyus.fe999c9a.png" alt="Business meeting" className="w-full h-full object-cover filter-red" />
+              <div className="relative w-full h-full flex items-center justify-center bg-red-500 rounded-2xl sm:rounded-3xl overflow-hidden" style={{ minHeight: '400px', minWidth: '400px' }}>
+                <img src="1.png" alt="Business Meeting" className="object-cover w-full h-full" />
               </div>
             </div>
           </div>
@@ -381,8 +382,8 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0">
               <div className="bg-blackfade2/40 backdrop-blur-lg p-6 sm:p-10 rounded-[24px] sm:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-1 lg:col-span-3">
-                <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px]">
-                  <img src="/media/cbs.e73564e5.jpg" alt="Custom Branding Solutions" width={10000} height={10000} className="w-full h-60 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105 filter-red" />
+                <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-red-500 flex items-center justify-center" style={{ minHeight: '220px', minWidth: '220px' }}>
+                  <img src="2.png" alt="Custom Branding Solutions" className="object-cover w-full h-full" />
                 </div>
                 <div className="p-6 sm:p-8">
                   <h3 className="text-white text-xl sm:text-2xl font-semibold mb-3">Custom Branding Solutions</h3>
@@ -390,8 +391,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-blackfade2/40 backdrop-blur-lg p-6 sm:p-10 rounded-[24px] sm:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-1 lg:col-span-2">
-                <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px]">
-                  <img src="/media/dddm.b39136e5.jpg" alt="Data-Driven Digital Marketing" width={10000} height={10000} className="w-full h-60 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105 filter-red" />
+                <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-red-500 flex items-center justify-center" style={{ minHeight: '220px', minWidth: '220px' }}>
+                  <img src="dd.png" alt="Data-Driven Digital Marketing" className="object-cover w-full h-full" />
                 </div>
                 <div className="p-6 sm:p-8">
                   <h3 className="text-white text-xl sm:text-2xl font-semibold mb-3">Data-Driven Digital Marketing</h3>
@@ -402,7 +403,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <Projects />
       <Footer />
     </>
   );

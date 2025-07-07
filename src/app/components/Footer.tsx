@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4 lg:space-y-6">
             <div className="flex items-center gap-3">
-              <Image src="/media/logo.21e0c5de.png" alt="Acciobyte Logo" width={48} height={48} className="w-10 h-10 sm:w-12 sm:h-12" />
+              <Image src="/media/log.jpg" alt="Techouar Logo" width={120} height={40} className="w-40 h-auto sm:w-48 xl:w-60 object-contain drop-shadow-lg" />
               <h3 className="text-xl sm:text-2xl font-bold text-red-500">Acciobyte</h3>
             </div>
             <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
