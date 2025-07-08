@@ -7,17 +7,16 @@ export default function Footer() {
   return (
     <footer className="bg-blackfade2 text-white py-12 lg:py-20">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center lg:text-left">
           {/* Company Info */}
-          <div className="space-y-4 lg:space-y-6">
-            <div className="flex items-center gap-3">
+          <div className="space-y-4 lg:space-y-6 flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center lg:flex-row lg:items-center gap-3">
               <Image src="/media/log.jpg" alt="Techouar Logo" width={120} height={40} className="w-40 h-auto sm:w-48 xl:w-60 object-contain drop-shadow-lg" />
-              <h3 className="text-xl sm:text-2xl font-bold text-red-500">Acciobyte</h3>
             </div>
-            <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+            <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-xs lg:max-w-none mx-auto lg:mx-0">
               We are a creative digital agency specializing in web development, mobile apps, graphic design, and digital marketing solutions.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center lg:justify-start space-x-4">
               <Link href="https://www.facebook.com/share/1B7PYddHGv/?mibextid=qi2Omg" className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black sm:w-5 sm:h-5">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -42,7 +41,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4 lg:space-y-6">
-            <h4 className="text-lg sm:text-xl font-semibold text-red-500">Services</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-red-500 mb-2">Services</h4>
             <ul className="space-y-2 lg:space-y-3">
               <li><Link href="/services/website-development" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Website Development</Link></li>
               <li><Link href="/services/app-development" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">App Development</Link></li>
@@ -55,7 +54,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4 lg:space-y-6">
-            <h4 className="text-lg sm:text-xl font-semibold text-red-500">Quick Links</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-red-500 mb-2">Quick Links</h4>
             <ul className="space-y-2 lg:space-y-3">
               <li><Link href="/about" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">About Us</Link></li>
               <li><Link href="/projects" className="text-gray-400 hover:text-red-500 transition-colors text-sm sm:text-base">Projects</Link></li>
@@ -68,7 +67,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4 lg:space-y-6">
-            <h4 className="text-lg sm:text-xl font-semibold text-red-500">Contact Info</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-red-500 mb-2">Contact Info</h4>
             <div className="space-y-3 lg:space-y-4">
               <div className="flex items-start gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-500 mt-1 flex-shrink-0 sm:w-5 sm:h-5">
@@ -105,15 +104,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 lg:mt-12 pt-6 lg:pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
-              © 2024 Acciobyte. All rights reserved.
-            </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-center">
+            <p className="text-gray-400 text-xs sm:text-sm">© 2024 TECHGUAR. All rights reserved.</p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
-              <Link href="/privacy-and-policy" className="text-gray-400 hover:text-red-500 text-xs sm:text-sm transition-colors text-center sm:text-left">
+              <Link href="/privacy-and-policy" className="text-gray-400 hover:text-red-500 text-xs sm:text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms-and-condition" className="text-gray-400 hover:text-red-500 text-xs sm:text-sm transition-colors text-center sm:text-left">
+              <Link href="/terms-and-condition" className="text-gray-400 hover:text-red-500 text-xs sm:text-sm transition-colors">
                 Terms & Conditions
               </Link>
             </div>

@@ -1298,3 +1298,12 @@ body {
 .filter-red {
   filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7492%) hue-rotate(357deg) brightness(97%) contrast(119%);
 }
+
+::selection {
+  background: #ef4444 !important;
+  color: #fff !important;
+}
+::-moz-selection {
+  background: #ef4444 !important;
+  color: #fff !important;
+}

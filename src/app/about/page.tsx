@@ -2,8 +2,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import React, { useEffect, useState } from "react";
 
 export default function About() {
+  // Animated rating state
+  const [rating, setRating] = useState(0);
+  useEffect(() => {
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 0.05;
+      if (current >= 5) {
+        current = 5;
+        clearInterval(interval);
+      }
+      setRating(Number(current.toFixed(1)));
+    }, 30); // Adjust speed as needed
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
       className="!w-full bg-cover bg-center bg-black text-white"
@@ -222,9 +238,7 @@ export default function About() {
                     className="mt-4 flex !justify-center lg:!justify-start gap-4 group"
                     href="/about"
                   >
-                    <button
-                      className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold  border-0 w-24 h-28"
-                    >
+                    <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
                       Learn More
                     </button>
                   </Link>
@@ -391,8 +405,8 @@ export default function About() {
         </div>
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="w-full h-96 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {[1, 2, 3, 4].map((idx) => (
+            <div className="w-full h-96 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20">
+              {[].map((idx) => (
                 <div
                   key={idx}
                   className="relative group rounded-[32px] overflow-hidden cursor-pointer"
@@ -403,7 +417,8 @@ export default function About() {
                       alt="Team Member"
                       width={400}
                       height={400}
-                      className="object-cover"
+                      className="object-cover sm:object-cover md:object-cover lg:object-cover xl:object-cover 2xl:object-cover w-full h-40 sm:h-60 md:h-80 lg:h-96 rounded-[32px]"
+                      style={{ objectFit: 'contain' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80"></div>
                     <div className="absolute bottom-10 left-0 right-0 p-6 transform translate-y-16 opacity-0 transition-all duration-[1200ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
@@ -666,38 +681,36 @@ export default function About() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="md:col-span-4 bg-black/60 backdrop-blur-sm rounded-3xl p-8 flex flex-col items-center justify-between">
-                <div className="text-center">
-                  <div className="text-7xl font-bold mb-2">
-                    <div>0.0</div>
-                  </div>
-                  <div className="flex justify-center mb-2">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((_, i) => (
-                        <svg
-                          key={i}
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="lucide lucide-star w-6 h-6 fill-red-500 text-red-500"
-                        >
-                          <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-gray-400 mb-8">(40+ Reviews)</p>
-                  <h3 className="text-2xl font-semibold text-center">
-                    Customer experiences that speak for themselves
-                  </h3>
+              <div className="md:col-span-4 bg-black/60 backdrop-blur-sm rounded-3xl p-8 flex flex-col items-center justify-between text-center">
+                <div className="text-7xl font-bold mb-2">
+                  <div>{rating.toFixed(1)}</div>
                 </div>
-                <div className="flex -space-x-2 mt-8">
+                <div className="flex justify-center mb-2">
+                  <div className="flex gap-1"> {/* Add gap between stars */}
+                    {[1, 2, 3, 4, 5].map((_, i) => (
+                      <svg
+                        key={i}
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-star w-6 h-6 fill-red-500 text-red-500"
+                      >
+                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-400 mb-8">(40+ Reviews)</p>
+                <h3 className="text-2xl font-semibold text-center mb-6">
+                  Customer experiences that speak for themselves
+                </h3>
+                <div className="flex justify-center gap-2 mt-8 flex-wrap"> {/* Add gap and wrap for avatars */}
                   {[1, 2, 3, 4, 5].map((_, i) => (
                     <div
                       key={i}
@@ -714,18 +727,16 @@ export default function About() {
                   ))}
                 </div>
               </div>
+              
               <div className="md:col-span-8 relative">
                 <div className="h-full flex flex-col justify-between">
                   <div className="mb-8">
+                  <div>
+                        <img src="plo.png" width={300} alt="" />
+                        </div>
                     <div className="mb-6">
-                      <Image
-                        src="/media/logo1.38d8183e.png"
-                        alt="Logoipsum"
-                        width={80}
-                        height={80}
-                        className="mb-4 w-20 h-20"
-                      />
                       <div className="flex">
+                        
                         {[1, 2, 3, 4, 5].map((_, i) => (
                           <svg
                             key={i}
@@ -742,10 +753,12 @@ export default function About() {
                           >
                             <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
                           </svg>
+                          
                         ))}
                       </div>
                     </div>
                     <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+                      
                       Super impressed with their mobile app development service.
                       The team listened carefully to our needs and delivered an
                       app that exceeded expectations. A little delay in testing

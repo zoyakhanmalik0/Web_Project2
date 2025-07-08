@@ -122,7 +122,12 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-lg cursor-pointer bg-default text-black hover:bg-default/90 transition-colors"
+            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-lg cursor-pointer bg-[#ef4444] text-black transition-colors"
+            style={{ background: '#ef4444' }}
+            onMouseOver={e => e.currentTarget.style.background = '#ef4444'}
+            onFocus={e => e.currentTarget.style.background = '#ef4444'}
+            onMouseDown={e => e.currentTarget.style.background = '#ef4444'}
+            onMouseOut={e => e.currentTarget.style.background = '#ef4444'}
             aria-label="Toggle mobile menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 mx-auto my-auto">

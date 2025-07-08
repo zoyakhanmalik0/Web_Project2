@@ -372,7 +372,9 @@ export default function Home() {
                     <p className="text-white text-center lg:text-justify leading-relaxed text-base sm:text-lg">Our digital services empower brands with innovative strategies and solutions for sustainable growth and engagement.</p>
                   </div>
                   <Link className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="/about">
-                    <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-4 sm:p-7 rounded-full text-base sm:text-lg lg:!text-18 font-bold">Learn More</button>
+                    <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
+                      Learn More
+                    </button>
                     <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-lg sm:text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </span>
@@ -404,7 +406,6 @@ export default function Home() {
         </div>
       </section>
       <Projects />
-      <Footer />
     </>
   );
 }
