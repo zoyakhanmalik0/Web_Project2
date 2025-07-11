@@ -2,16 +2,14 @@ import React from 'react';
 
 const ExpertiseCard = () => {
   return (
-    <div
-      className="relative rounded-2xl p-1 w-full max-w-4xl mx-auto shadow-lg border-4"
-      style={{
-        background: 'linear-gradient(135deg, #101510 0%, #181818 100%)',
-        borderColor: '#EF4444',
-        borderStyle: 'solid',
-        boxShadow: '0 0 40px 8px #EF444433',
-      }}
-    >
-      <div className="bg-[#111] rounded-2xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-start md:items-center" style={{ minHeight: '420px' }}>
+    <div className="w-full max-w-4xl mx-auto p-2 sm:p-4 rounded-2xl" style={{ background: '#ef4444', boxShadow: '0 0 40px 8px #EF444433' }}>
+      <div
+        className="relative rounded-2xl w-full h-full shadow-lg"
+        style={{
+          background: 'linear-gradient(135deg, #101510 0%, #181818 100%)',
+        }}
+      >
+        <div className="bg-[#111] rounded-2xl p-10 md:p-16 flex flex-col md:flex-row justify-between items-start md:items-center" style={{ minHeight: '420px' }}>
         {/* Left Side */}
         <div className="flex-1 mb-10 md:mb-0 md:mr-12">
           <h2 className="text-4xl md:text-5xl font-light text-white leading-tight mb-8">
@@ -49,6 +47,7 @@ const ExpertiseCard = () => {
               Our e-commerce solutions are designed to create seamless online shopping experiences. From user-friendly website design to secure payment processing and inventory management.
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

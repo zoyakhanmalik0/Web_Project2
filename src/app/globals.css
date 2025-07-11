@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  /* Original Acciobyte Color Scheme - 100% Match */
-  --color-default: #EF4444; /* Main accent color - now red */
-  --color-secondary: #86c232; /* Secondary accent */
+  /* Red Theme for Acciobyte */
+  --color-default: #EF4444; /* Main accent color - red */
+  --color-secondary: #EF4444; /* Secondary accent - red */
   --color-black: #000000; /* Pure black */
   --color-white: #ffffff; /* Pure white */
   --color-blackfade2: #212121; /* Dark gray for backgrounds */
@@ -19,24 +19,24 @@
   --color-gray-800: #1f2937; /* Darkest gray */
   --color-gray-900: #111827; /* Almost black */
   --color-muted: #6b7280; /* Muted text */
-  --color-border: #374151; /* Border color */
-  --color-ring: #BFF747; /* Focus ring color */
-  --color-background: #000000; /* Main background */
+  --color-border: #EF4444; /* Border color - red */
+  --color-ring: #EF4444; /* Focus ring color - red */
+  --color-background: #1a0000; /* Main background - deep red */
   --color-foreground: #ffffff; /* Main text */
-  --color-primary: #BFF747; /* Primary accent */
-  --color-primary-foreground: #000000; /* Text on primary */
+  --color-primary: #EF4444; /* Primary accent - red */
+  --color-primary-foreground: #ffffff; /* Text on primary */
   --color-destructive: #ef4444; /* Error color */
   --color-destructive-foreground: #ffffff; /* Text on destructive */
-  --color-accent: #BFF747; /* Accent color */
-  --color-accent-foreground: #000000; /* Text on accent */
+  --color-accent: #EF4444; /* Accent color - red */
+  --color-accent-foreground: #ffffff; /* Text on accent */
   --color-card: #111111; /* Card background */
   --color-card-foreground: #ffffff; /* Card text */
   --color-popover: #111111; /* Popover background */
   --color-popover-foreground: #ffffff; /* Popover text */
   --color-muted-foreground: #9ca3af; /* Muted text */
-  --color-input: #374151; /* Input background */
+  --color-input: #EF4444; /* Input background - red */
   --color-input-foreground: #ffffff; /* Input text */
-  --color-secondary-foreground: #000000; /* Text on secondary */
+  --color-secondary-foreground: #ffffff; /* Text on secondary */
   --color-radius: 0.5rem; /* Border radius */
 }
 
@@ -279,6 +279,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  font-size: 18px; /* Increased base font size for modern look */
 }
 
 * {
@@ -328,52 +329,52 @@ body {
   }
   
   .text-22 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+  
+  .text-18 {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
   
-  .text-18 {
+  .text-13 {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-  
-  .text-13 {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
   .text-22 {
-    font-size: 1.375rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
   }
   
   .text-18 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
   
   .text-13 {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
 @media (min-width: 1025px) {
   .text-22 {
-    font-size: 1.375rem;
-    line-height: 2rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
   
   .text-18 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
   }
   
   .text-13 {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -580,10 +581,6 @@ body {
 @media (max-width: 1023px) {
   .lg\:block {
     display: none;
-  }
-  
-  .lg\:hidden {
-    display: block;
   }
 }
 
@@ -1306,4 +1303,36 @@ body {
 ::-moz-selection {
   background: #ef4444 !important;
   color: #fff !important;
+}
+
+@media (min-width: 1024px) {
+  .lg\:hidden {
+    display: none !important;
+  }
+}
+
+.rotating-sphere-bg {
+  position: relative;
+  overflow: hidden;
+  background: black;
+  border-radius: 1rem; /* match Tailwind rounded-2xl */
+}
+@media (min-width: 640px) {
+  .rotating-sphere-bg {
+    border-radius: 1.5rem; /* match Tailwind sm:rounded-3xl */
+  }
+}
+.rotating-sphere-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -50;
+  width: 12.5%;
+  height: 50%;
+  background: url('/media/sphere.4b56a70e.png') center center/contain no-repeat;
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+  animation: spin-grow 20s linear infinite;
+  border-radius: inherit;
 }

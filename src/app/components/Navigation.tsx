@@ -42,6 +42,44 @@ export default function Navigation() {
   
   return (
     <>
+      {/* Fixed Toggle Button for Contact Sidebar */}
+      <button
+        onClick={() => setShowContact((prev) => !prev)}
+        aria-label="Open Contact Sidebar"
+        className="fixed z-[10001] bg-transparent border-none p-0 cursor-pointer"
+        style={{
+          top: 16,
+          right: 32,
+          // left and transform will be overridden on small screens
+        }}
+      >
+        {/* Professional red circle with 9 black dots (centered, even spacing) */}
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="26" fill="#EF4444" />
+          {/* 9 dots, centered in a 20x20 grid, 4px radius, 6px gap */}
+          {Array.from({ length: 3 }).map((_, row) => (
+            Array.from({ length: 3 }).map((_, col) => (
+              <circle
+                key={`dot-${row}-${col}`}
+                cx={18 + col * 10}
+                cy={18 + row * 10}
+                r="3.2"
+                fill="#111"
+              />
+            ))
+          ))}
+        </svg>
+        <style jsx>{`
+          @media (max-width: 1023px) {
+            button[aria-label='Open Contact Sidebar'] {
+              right: auto !important;
+              left: 50% !important;
+              transform: translateX(-50%) !important;
+              top: 16px !important;
+            }
+          }
+        `}</style>
+      </button>
       <nav className="w-full max-w-full h-20 xl:h-28 text-white mx-auto flex justify-between items-center fixed top-0 z-50 transition-colors duration-500 transition-timing-function-ease-in-out bg-blackfade2 bg-opacity-40 backdrop-blur-md">
         <div className="w-full wrapper flex justify-between items-center mx-auto px-4 lg:px-6">
           <div className="logo">
@@ -122,12 +160,8 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-lg cursor-pointer bg-[#ef4444] text-black transition-colors"
+            className="flex lg:hidden w-12 h-12 items-center justify-center rounded-lg cursor-pointer bg-[#ef4444] text-black transition-colors"
             style={{ background: '#ef4444' }}
-            onMouseOver={e => e.currentTarget.style.background = '#ef4444'}
-            onFocus={e => e.currentTarget.style.background = '#ef4444'}
-            onMouseDown={e => e.currentTarget.style.background = '#ef4444'}
-            onMouseOut={e => e.currentTarget.style.background = '#ef4444'}
             aria-label="Toggle mobile menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 mx-auto my-auto">
@@ -229,7 +263,7 @@ export default function Navigation() {
           </div>
         )}
       </nav>
-      <ContactSidebar open={showContact} onClose={handleCloseContact} />
+      <ContactSidebar open={showContact} onClose={() => setShowContact(false)} />
     </>
   );
 } 

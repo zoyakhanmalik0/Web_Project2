@@ -377,22 +377,18 @@ export default function ContactPage() {
                     <input
                       className="flex w-full rounded-md border-input px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-[#0a0a0a] border-0 text-white h-12 placeholder:text-gray-500"
                       placeholder="First Name"
-                      id=":Rj9nrpb:-form-item"
-                      aria-describedby=":Rj9nrpb:-form-item-description"
-                      aria-invalid="false"
+                      id="contact-firstname"
                       name="firstname"
-                      value=""
+                      aria-invalid="false"
                     />
                   </div>
                   <div className="space-y-2">
                     <input
                       className="flex w-full rounded-md border-input px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-[#0a0a0a] border-0 text-white h-12 placeholder:text-gray-500"
                       placeholder="Last Name"
-                      id=":R139nrpb:-form-item"
-                      aria-describedby=":R139nrpb:-form-item-description"
-                      aria-invalid="false"
+                      id="contact-lastname"
                       name="lastname"
-                      value=""
+                      aria-invalid="false"
                     />
                   </div>
                 </div>
@@ -400,11 +396,9 @@ export default function ContactPage() {
                   <input
                     className="flex w-full rounded-md border-input px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-[#0a0a0a] border-0 text-white h-12 placeholder:text-gray-500"
                     placeholder="Phone No"
-                    id=":R59nrpb:-form-item"
-                    aria-describedby=":R59nrpb:-form-item-description"
-                    aria-invalid="false"
+                    id="contact-phone"
                     name="phone"
-                    value=""
+                    aria-invalid="false"
                   />
                 </div>
                 <div className="space-y-2">
@@ -412,11 +406,9 @@ export default function ContactPage() {
                     type="email"
                     className="flex w-full rounded-md border-input px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-[#0a0a0a] border-0 text-white h-12 placeholder:text-gray-500"
                     placeholder="E-mail"
-                    id=":R79nrpb:-form-item"
-                    aria-describedby=":R79nrpb:-form-item-description"
-                    aria-invalid="false"
+                    id="contact-email"
                     name="email"
-                    value=""
+                    aria-invalid="false"
                   />
                 </div>
                 <div className="space-y-2">
@@ -424,8 +416,7 @@ export default function ContactPage() {
                     className="flex w-full rounded-md border-input px-3 py-2 text-base shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-[#0a0a0a] border-0 text-white min-h-[120px] placeholder:text-gray-500 resize-none"
                     placeholder="Message"
                     name="message"
-                    id=":R99nrpb:-form-item"
-                    aria-describedby=":R99nrpb:-form-item-description"
+                    id="contact-message"
                     aria-invalid="false"
                   ></textarea>
                 </div>
@@ -455,7 +446,7 @@ export default function ContactPage() {
         ></iframe>
       </div>
 
-      {/* CTA Section */}
+      CTA Section
       <section className="relative w-full overflow-hidden py-24 md:py-32">
         <div className="relative max-w-[90rem] mx-auto sm:px-6 lg:px-8 z-10">
           <div className="flex flex-col items-center text-center">

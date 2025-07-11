@@ -126,20 +126,6 @@ export default function ContactSidebar({ open, onClose }: ContactSidebarProps) {
 
   return (
     <div style={sidebarStyle}>
-      {/* Debug info */}
-      <div style={{
-        position: 'absolute',
-        top: '10px',
-        left: '10px',
-        backgroundColor: 'white',
-        color: 'black',
-        padding: '8px',
-        fontSize: '12px',
-        zIndex: 10000,
-      }}>
-        Sidebar Open: {open ? 'YES' : 'NO'}
-      </div>
-      
       {/* Close Button */}
       <button
         onClick={onClose}

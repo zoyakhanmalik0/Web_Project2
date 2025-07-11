@@ -48,7 +48,7 @@ const HowItWorksSection = () => {
             Our proven process combines research, strategy, and creativity to deliver tailored solutions that drive measurable results.
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-flow-col auto-cols-[minmax(320px,1fr)] gap-8 overflow-x-auto">
           {steps.map((step, idx) => (
             <div key={step.title} className="bg-[#232323] rounded-2xl p-8 flex flex-col justify-between min-h-[340px] shadow-lg relative">
               <div>

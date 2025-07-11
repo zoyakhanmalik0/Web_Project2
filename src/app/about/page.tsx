@@ -829,7 +829,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      {/* Let's Collaborate Section */}
+       {/* CTA Section */}
       <section className="relative w-full overflow-hidden py-24 md:py-32">
         <div className="relative max-w-[90rem] mx-auto sm:px-6 lg:px-8 z-10">
           <div className="flex flex-col items-center text-center">
@@ -842,7 +842,7 @@ export default function About() {
               </h2>
               <div className="absolute -top-14 lg:top-52 my-6 md:my-8 z-10 group">
                 <Link
-                  className="flex items-center justify-center w-20 h-20 lg:w-32 lg:h-32 md:w-40 md:h-40 bg-red-500 rounded-full hover:bg-red-500 transition-all duration-300 group shadow-[0_0_45px_rgba(239,68,68,1)] hover:shadow-[0_0_35px_rgba(239,68,68,1)]"
+                  className="flex items-center justify-center w-20 h-20 lg:w-32 lg:h-32 md:w-40 md:h-40 bg-default rounded-full hover:bg-default transition-all duration-300 group shadow-[0_0_45px_rgba(212,255,77,1)] hover:shadow-[0_0_35px_rgba(212,255,77,1)]"
                   href="/contact"
                 >
                   <div className="flex flex-col items-center text-11 lg:text-18 font-semibold">
@@ -874,14 +874,13 @@ export default function About() {
         <div className="absolute bottom-80 -left-32 z-0">
           <Image
             src="/media/CTA.61aa7579.png"
-            alt="CTA"
+            alt="Astrivix Sphere Image"
             width={320}
             height={320}
             className="w-80 h-80 animate-spin-grow"
           />
         </div>
       </section>
-      <Footer />
     </div>
   );
 }
