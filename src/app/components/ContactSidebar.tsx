@@ -36,6 +36,7 @@ export default function ContactSidebar({ open, onClose }: ContactSidebarProps) {
     display: 'flex',
     flexDirection: 'column' as const,
     padding: '20px',
+    overflowY: 'auto', // <-- Make sidebar scrollable
   };
 
   const closeButtonStyle = {
