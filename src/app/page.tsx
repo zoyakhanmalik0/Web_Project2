@@ -9,6 +9,7 @@ import ExpertiseCard from "./components/ExpertiseCard";
 import HowItWorksSection from "./components/HowItWorksSection";
 import Projects from './projects/page';
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 const SERVICES = [
   {
@@ -98,6 +99,14 @@ const SERVICES = [
 ];
 
 export default function Home() {
+  const addressRef = useRef(null);
+  const [isBlack, setIsBlack] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsBlack(true);
+    addressRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Head>

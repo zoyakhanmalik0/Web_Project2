@@ -46,7 +46,7 @@ export default function Navigation() {
       <button
         onClick={() => setShowContact((prev) => !prev)}
         aria-label="Open Contact Sidebar"
-        className="fixed z-[10001] bg-transparent border-none p-0 cursor-pointer"
+        className="hidden lg:block fixed z-[10001] bg-transparent border-none p-0 cursor-pointer"
         style={{
           top: 16,
           right: 32,
