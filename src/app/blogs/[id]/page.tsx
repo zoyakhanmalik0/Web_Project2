@@ -31,8 +31,9 @@ const blogContents = [
   `Bug bounty programs incentivize ethical hackers to find and report vulnerabilities, helping organizations strengthen their security. While they offer benefits, proper management and clear guidelines are essential for success.`,
 ];
 
-export default function BlogDetail({ params }) {
-  const id = parseInt(params.id, 10) - 1;
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const id = parseInt(resolvedParams.id, 10) - 1;
   const blog = blogs[id];
   const content = blogContents[id];
 
@@ -59,6 +60,6 @@ export default function BlogDetail({ params }) {
   );
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams(): Array<{ id: string }> {
   return blogs.map((_, idx) => ({ id: String(idx + 1) }));
-} 
+}

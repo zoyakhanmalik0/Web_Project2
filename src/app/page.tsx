@@ -99,7 +99,7 @@ const SERVICES = [
 ];
 
 export default function Home() {
-  const addressRef = useRef(null);
+  const addressRef = useRef<HTMLDivElement>(null);
   const [isBlack, setIsBlack] = useState(false);
 
   const handleButtonClick = () => {
