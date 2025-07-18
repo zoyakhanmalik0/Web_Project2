@@ -47,13 +47,24 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   }
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-4 flex flex-col items-center">
+    <div className="min-h-screen bg-black text-white py-8 px-2 sm:py-16 sm:px-4 flex flex-col items-center">
       <div className="max-w-2xl w-full">
         <Link href="/blogs" className="text-red-500 underline mb-8 inline-block">&larr; Back to Blogs</Link>
-        <div className="mb-8">
-          <Image src={blog.img} alt={blog.title} width={800} height={400} className="rounded-3xl w-full h-auto object-cover mb-6" />
-          <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-          <p className="text-lg text-gray-200">{content}</p>
+        <div className="bg-[#18181b] rounded-3xl shadow-lg overflow-hidden mb-8 w-full max-w-xs sm:max-w-xl mx-auto">
+          {/* Thin red top border */}
+          <div className="h-2 bg-red-500 w-full" />
+          <div className="p-4 flex flex-col items-center">
+            <Image
+              src={blog.img}
+              alt={blog.title}
+              width={800}
+              height={400}
+              className="rounded-xl w-full h-auto object-cover mb-4"
+              priority
+            />
+            <h1 className="text-lg sm:text-2xl font-bold mb-2 text-white text-left w-full">{blog.title}</h1>
+            <p className="text-sm sm:text-base text-gray-300 text-left w-full">{content}</p>
+          </div>
         </div>
       </div>
     </div>

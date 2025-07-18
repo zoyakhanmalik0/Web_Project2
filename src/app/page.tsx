@@ -139,12 +139,12 @@ export default function Home() {
       <Navigation />
 
       {/* HERO SECTION */}
-      <div className="bg-contain bg-center bg-black min-h-screen flex items-center" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+      <div className="bg-contain bg-center bg-black min-h-screen flex items-center overflow-x-hidden" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
         <div className="w-full h-full wrapper py-20 sm:py-32 lg:py-40 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/hero_bg3.061ff69e.jpg)' }}>
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 container mx-auto px-4 lg:px-6">
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-[5.5rem] text-center">
-              <h2 className="text-white mb-4" style={{ fontSize: '7rem', lineHeight: '1.1' }}>Innovative solutions for&nbsp;</h2>
+              <h2 className="text-white mb-4" style={{ fontSize: '3rem', lineHeight: '1.1' }}>Innovative solutions for&nbsp;</h2>
               <div className="flex flex-wrap justify-center text-center break-words whitespace-normal w-full">
                 <RotatingText
                   texts={[
@@ -195,7 +195,7 @@ export default function Home() {
       </div>
 
       {/* ABOUT/AGENCY SECTION */}
-      <section className="relative min-h-screen flex items-center bg-black py-0">
+      <section className="relative min-h-screen flex items-center bg-black py-0 overflow-x-hidden">
         <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-24 lg:gap-[8vw] px-4 lg:px-0 min-h-screen">
           {/* Left: About Agency / Hero Section */}
           <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left relative z-10 max-w-[520px] min-h-[520px]">
@@ -275,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* OUR SERVICES SECTION - MOVED HERE */}
-      <section className="relative min-h-screen py-12 sm:py-16 lg:py-20 overflow-visible bg-black">
+      <section className="relative min-h-screen py-12 sm:py-16 lg:py-20 overflow-visible bg-black overflow-x-hidden">
         <div className="container relative mx-auto z-20 px-4 lg:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <div className="h-fit self-start text-center lg:text-start">
@@ -323,7 +323,7 @@ export default function Home() {
       <ExpertiseCard />
 
       {/* WHY CHOOSE US/BENEFITS SECTION */}
-      <section className="relative min-h-screen overflow-hidden py-12 sm:py-16 lg:py-20 bg-black">
+      <section className="relative min-h-screen overflow-hidden py-12 sm:py-16 lg:py-20 bg-black overflow-x-hidden">
         <div className="container relative mx-auto z-20 px-4 lg:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-7 gap-8 lg:gap-0">
             <div className="space-y-4 sm:space-y-6">
@@ -386,7 +386,7 @@ export default function Home() {
       </section>
 
       <HowItWorksSection />
-      <section className="py-12 sm:py-16 lg:py-20 bg-black">
+      <section className="py-12 sm:py-16 lg:py-20 bg-black overflow-x-hidden">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="relative mx-auto z-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -396,7 +396,7 @@ export default function Home() {
                   <h4>FEATURES</h4>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">Innovative <span className="text-red-500 font-bold">features</span></h2>
-                <p className="text-2xl sm:text-3xl md:text-4xl md:text-5xl lg:text-6xl text-white mb-6 sm:mb-8">for your digital success</p>
+                <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 sm:mb-8">for your digital success</p>
               </div>
               <div className="relative">
                 <div className="relative flex flex-col gap-4 sm:gap-6 lg:py-24 group cursor-pointer">
@@ -415,9 +415,9 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0">
-              <div className="bg-blackfade2/40 backdrop-blur-lg p-6 sm:p-10 rounded-[24px] sm:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-1 lg:col-span-3">
-                <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-red-500 flex items-center justify-center" style={{ minHeight: '220px', minWidth: '220px' }}>
-                  <img src="2.png" alt="Custom Branding Solutions" className="object-cover w-full h-full" />
+              <div className="bg-blackfade2/40 backdrop-blur-lg rounded-[24px] sm:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-1 lg:col-span-3 p-0">
+                <div className="relative w-full h-64 sm:h-[220px] rounded-[24px] sm:rounded-[32px] bg-red-500 flex items-center justify-center">
+                  <img src="2.png" alt="Custom Branding Solutions" className="object-cover w-full h-full block" />
                 </div>
                 <div className="p-6 sm:p-8">
                   <h3 className="text-white text-xl sm:text-2xl font-semibold mb-3">Custom Branding Solutions</h3>
@@ -440,7 +440,7 @@ export default function Home() {
       <Projects />
 
       {/* TESTIMONIALS SECTION (copied from About page) */}
-      <section className="relative text-white py-8 lg:py-16 md:px-8 lg:px-16 overflow-hidden">
+      <section className="relative text-white py-8 lg:py-16 md:px-8 lg:px-16 overflow-hidden overflow-x-hidden">
         <div className="absolute inset-0 opacity-90"></div>
         <div className="container relative z-10 mx-auto">
           <div className="relative mx-auto !z-20">
@@ -685,13 +685,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-80 -left-32 z-0">
+        <div className="absolute bottom-4 left-0 sm:bottom-80 sm:-left-32 z-0 block">
           <Image
             src="/media/CTA.61aa7579.png"
             alt="Astrivix Sphere Image"
             width={320}
             height={320}
-            className="w-80 h-80 animate-spin-grow"
+            className="w-40 h-40 sm:w-80 sm:h-80 animate-spin-grow"
           />
         </div>
       </section>

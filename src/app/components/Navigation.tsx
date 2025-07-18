@@ -183,7 +183,7 @@ export default function Navigation() {
         
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-blackfade2 bg-opacity-95 backdrop-blur-md border-t border-gray-700">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-blackfade2 bg-opacity-95 backdrop-blur-md border-t border-gray-700 overflow-y-auto max-h-screen">
             <div className="px-4 py-6 space-y-4">
               <Link href="/" className="block text-white hover:text-default transition-colors py-2" onClick={() => setShowMobileMenu(false)}>
                 HOME
