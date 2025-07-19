@@ -173,6 +173,47 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Hero Marquee Bar with Play Button and Circular Marquee */}
+      <div className="w-full relative z-20" style={{ minHeight: 140 }}>
+        <div className="absolute left-8 top-[-210%] transform -translate-y-[20%] flex items-center gap-4" style={{ minHeight: 90 }}>
+          {/* Left: Large Red Play Button */}
+          <button className="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center" style={{ background: '#ef4444' }} aria-label="Play">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="8,5 19,12 8,19 8,5" fill="none" />
+            </svg>
+          </button>
+          {/* Right: Circular Marquee with Arrow Up */}
+          <div className="relative flex items-center justify-center" style={{ width: 120, height: 120 }}>
+            <svg width="120" height="120" viewBox="0 0 120 120" className="absolute left-0 top-0 animate-spin-slow" style={{ zIndex: 1 }}>
+              <defs>
+                <path id="circlePathLearn" d="M60,10 a50,50 0 1,1 -0.1,0" />
+              </defs>
+              <text fill="#fff" fontSize="14" fontWeight="bold" letterSpacing="2">
+                <textPath href="#circlePathLearn" startOffset="0%">
+                  LEARN MORE • LEARN MORE • LEARN MORE •
+                </textPath>
+              </text>
+            </svg>
+            {/* Center Arrow Up Icon */}
+            <span className="absolute left-1/2 top-1/2" style={{ transform: 'translate(-50%, -50%)' }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 19V5" />
+                <path d="M5 12l7-7 7 7" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
+        .animate-spin-slow {
+          animation: spin 6s linear infinite;
+          transform-origin: 50% 50%;
+        }
+        @keyframes spin {
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
+
       {/* Scrolling Services Bar */}
       <div className="w-full overflow-hidden py-4 bg-default mt-4">
         <div className="whitespace-nowrap animate-marquee flex items-center gap-12 text-black font-bold text-4xl md:text-5xl" style={{animation: 'marquee 30s linear infinite'}}>
@@ -233,8 +274,8 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red">
-                    <img src="/media/mission.25c4c757.svg" alt="Acciobyte Service Icon" className="w-full h-full" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-500 rounded-lg p-3 flex items-center justify-center">
+                    <img src="/media/mission.25c4c757.svg" alt="Acciobyte Service Icon" className="w-full h-full filter-black" />
                   </div>
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Your Success, Our Mission</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">We measure our success through the achievements of our clients. With a results-driven approach and a commitment to quality, we deliver digital solutions that create meaningful impact.</p>
@@ -245,7 +286,9 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/creators.da5dacdb.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-500 rounded-lg p-3 flex items-center justify-center">
+                    <img src="/media/creators.da5dacdb.svg" alt="Acciobyte Service Icon" className="w-full h-full filter-black" />
+                  </div>
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Creators Of Digital Excellence</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">Driven by innovation and excellence, we reimagine digital possibilities. Our team builds solutions that not only fulfill your vision but also elevate your brand to the next level.</p>
                 </div>
@@ -255,7 +298,9 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/innovation.257d9eb9.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-500 rounded-lg p-3 flex items-center justify-center">
+                    <img src="/media/innovation.257d9eb9.svg" alt="Acciobyte Service Icon" className="w-full h-full filter-black" />
+                  </div>
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Innovating the digital landscape</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">At the core of our agency is a commitment to excellence and creativity. We specialize in crafting digital solutions that not only meet your needs but also exceed your brand.</p>
                 </div>
@@ -265,7 +310,9 @@ export default function Home() {
                   <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-5">
-                  <img src="/media/brands.6176527f.svg" alt="Acciobyte Service Icon" className="w-16 h-16 sm:w-20 sm:h-20 bg-default-red rounded-lg p-3 filter-red" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-500 rounded-lg p-3 flex items-center justify-center">
+                    <img src="/media/brands.6176527f.svg" alt="Acciobyte Service Icon" className="w-full h-full filter-black" />
+                  </div>
                   <h3 className="text-white text-lg sm:text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">Helping Brands Thrive Online</h3>
                   <p className="text-white text-justify leading-relaxed text-sm sm:text-base lg:text-lg">Our goal is simple: empower brands to grow and succeed in the digital world. Through strong client partnerships and custom strategies, we deliver results that matter.</p>
               </div>

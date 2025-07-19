@@ -280,6 +280,12 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
   font-size: 18px; /* Increased base font size for modern look */
+  background-image: url('/circle-bg.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 300px 300px;
+  /* Optionally, add a subtle overlay or adjust opacity if needed */
 }
 
 * {
@@ -1264,12 +1270,12 @@ body {
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #BFF747;
+    background: #232323;
     border-radius: 3px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #86c232;
+    background: #232323;
   }
 }
 
