@@ -2,7 +2,50 @@
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import AboutAgency from "../components/AboutAgencySection";
+import Ratings from "../components/Rating";
+import Services from "../components/MovingServices";
+import FAQS from "../components/FAQ";
 import React, { useEffect, useState } from "react";
+import { Feather } from "lucide-react";
+
+/* ✅ Cursor Following Dot Component */
+function CursorDot() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fixed w-4 h-4 bg-red-500 rounded-full pointer-events-none z-[9999] transition-opacity duration-200 transform-gpu ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      style={{
+        left: position.x - 8,
+        top: position.y - 8,
+        transition: "left 0.15s ease-out, top 0.15s ease-out", // ✅ smooth slow follow effect
+      }}
+    />
+  );
+}
 
 export default function About() {
   // Animated rating state
@@ -25,6 +68,8 @@ export default function About() {
       className="!w-full bg-cover bg-center bg-black text-white"
       style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
     >
+      <CursorDot />
+      
       {/* Hero Section */}
       <div
         className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat"
@@ -49,205 +94,100 @@ export default function About() {
           </nav>
         </div>
       </div>
-      {/* Skills Marquee Section */}
-      <div className="relative w-full overflow-hidden py-3 bg-red-500">
-        <div className="flex items-center space-x-8 w-max">
-          {[
-            "IOS/Android App Development",
-            "Website Development",
-            "Digital Marketing",
-            "Graphic Designing",
-            "Content Writing",
-            "Search Engine Optimization (SEO)",
-            "Point of Sale (POS)",
-            "Cyber Security",
-            "IOS/Android App Development",
-            "Website Development",
-            "Digital Marketing",
-            "Graphic Designing",
-            "Content Writing",
-            "Search Engine Optimization (SEO)",
-            "Point of Sale (POS)",
-            "Cyber Security",
-          ].map((skill, idx) => (
-            <div key={idx} className="flex items-center justify-center gap-6">
-              <span className="whitespace-nowrap text-xl font-bold text-black">
-                {skill}
-              </span>
-              <span className="flex justify-center items-center">
-                <Image
-                  src="/media/asteric.3e45eb6d.png"
-                  alt="Asteric"
-                  width={16}
-                  height={16}
-                  className="w-4 h-4 filter-red"
+      <Services/>
+
+      <AboutAgency/>
+
+      {/* Features Section */}
+<section className="py-12 lg:py-20 bg-gray-900 text-white">
+  <div className="container mx-auto px-4">
+    {/* Top Part: Title and Description */}
+    <div className="grid lg:grid-cols-2 gap-10 items-center mb-16">
+      <div className="text-center lg:text-start">
+        <h2 className="text-4xl md:text-5xl font-light mb-4">
+          Innovative <span className="text-lime-400 font-bold">features</span>
+          <br />
+          for your digital success
+        </h2>
+      </div>
+      <div className="text-center lg:text-start">
+        <p className="text-gray-300 leading-relaxed lg:text-lg mb-6">
+          Our digital services empower brands with innovative strategies and
+          solutions for sustainable growth and engagement.
+        </p>
+        <div className="flex items-center justify-center lg:justify-start gap-4">
+          <Link href="/about">
+            <button className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-gray-800 hover:bg-gray-700 text-white font-semibold whitespace-nowrap transition-colors">
+              Learn More
+            </button>
+          </Link>
+          <Link href="/about">
+            <button className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-lime-400 text-black hover:bg-lime-300 transition-colors">
+              {/* Arrow Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
-              </span>
-            </div>
-          ))}
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
-      {/* About Agency Section */}
-      <section className="relative min-h-screen py-20 lg:py-40 overflow-visible">
-        <div className="container relative mx-auto !z-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="lg:sticky lg:top-24 h-fit self-start text-center lg:text-start">
-              <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-                <Image
-                  src="/media/asterisk_default.4355d764.png"
-                  alt="Asteric"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5 filter-red"
-                />
-                <h4>ABOUT AGENCY</h4>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-                Crafting{" "}
-                <span className="text-red-500 font-bold">unique digital</span>
-              </h2>
-              <p className="md:text-5xl lg:text-6xl text-white mb-8">
-                experiences that elevate your brand
-              </p>
-              <Link
-                className="mt-4 flex justify-center lg:justify-start gap-4 group"
-                href="/contact"
-              >
-                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">
-                  Contact Us
-                </button>
-                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-arrow-right text-22 !text-black rounded-full"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </span>
-              </Link>
-            </div>
-            <div className="relative z-10 space-y-8">
-              {/* Agency Features */}
-              {[
-                {
-                  icon: "/media/mission.25c4c757.svg",
-                  title: "Your Success, Our Mission",
-                  desc: "We measure our success through the achievements of our clients. With a results-driven approach and a commitment to quality, we deliver digital solutions that create meaningful impact.",
-                },
-                {
-                  icon: "/media/creators.da5dacdb.svg",
-                  title: "Creators Of Digital Excellence",
-                  desc: "Driven by innovation and excellence, we reimagine digital possibilities. Our team builds solutions that not only fulfill your vision but also elevate your brand to the next level.",
-                },
-                {
-                  icon: "/media/innovation.257d9eb9.svg",
-                  title: "Innovating the digital landscape",
-                  desc: "At the core of our agency is a commitment to excellence and creativity. We specialize in crafting digital solutions that not only meet your needs but also exceed your brand.",
-                },
-                {
-                  icon: "/media/brands.6176527f.svg",
-                  title: "Helping Brands Thrive Online",
-                  desc: "Our goal is simple: empower brands to grow and succeed in the digital world. Through strong client partnerships and custom strategies, we deliver results that matter.",
-                },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative flex gap-6 group cursor-pointer"
-                >
-                  <div className="hidden lg:block absolute -left-[40px] top-1/2 w-8 h-8 rounded-full -translate-y-1/2">
-                    <Image
-                      src="/media/dot.5c102e3c.svg"
-                      alt="Dot"
-                      width={32}
-                      height={32}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      width={80}
-                      height={80}
-                      className="w-20 h-20 bg-red-500 rounded-lg p-3"
-                    />
-                    <h3 className="text-white text-xl lg:text-3xl font-bold mb-2 group-hover:text-red-500 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-white text-justify leading-relaxed lg:text-lg">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-20 -left-32 z-0">
+    </div>
+
+    {/* Bottom Part: Feature Cards */}
+    <div className="grid md:grid-cols-2 gap-8">
+      {/* Card 1 */}
+      <div className="bg-gray-800 p-6 rounded-2xl border border-white/10 flex flex-col h-full">
+        <div className="mb-4 overflow-hidden rounded-xl">
           <Image
-            src="/media/sphere.4b56a70e.png"
-            alt="Sphere"
-            width={384}
-            height={384}
-            className="w-96 h-96 animate-spin-slow"
+            src="https://img.freepik.com/free-photo/close-up-young-colleagues-having-meeting_23-2149060227.jpg?semt=ais_items_boosted&w=360"
+            alt="Team discussing branding solutions"
+            width={360}
+            height={240}
+            className="rounded-xl object-cover w-full h-auto transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </div>
-      </section>
-      {/* Features Section */}
-      <section className="lg:py-20">
-        <div className="container mx-auto">
-          <div className="relative mx-auto !z-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-                  <Image
-                    src="/media/asterisk_default.4355d764.png"
-                    alt="Asteric"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 filter-red"
-                  />
-                  <h4>FEATURES</h4>
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-                  Innovative{" "}
-                  <span className="text-red-500 font-bold">features</span>
-                </h2>
-                <p className="md:text-5xl lg:text-6xl text-white mb-8">
-                  for your digital success
-                </p>
-              </div>
-              <div className="relative">
-                <div className="relative flex flex-col gap-6 lg:py-24 group cursor-pointer">
-                  <div className="flex flex-col gap-5">
-                    <p className="text-white text-center lg:text-justify leading-relaxed lg:text-lg">
-                      Our digital services empower brands with innovative
-                      strategies and solutions for sustainable growth and
-                      engagement.
-                    </p>
-                  </div>
-                  <Link
-                    className="mt-4 flex !justify-center lg:!justify-start gap-4 group"
-                    href="/about"
-                  >
-                    <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
-                      Learn More
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h3 className="text-xl font-bold text-white mb-2">
+          Custom Branding Solutions
+        </h3>
+        <p className="text-gray-400">
+          Unique brand identity development, including logos, color palettes.
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="bg-gray-800 p-6 rounded-2xl border border-white/10 flex flex-col h-full">
+        <div className="mb-4 overflow-hidden rounded-xl">
+          <Image
+            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQImrt-KSe_RdvKRlHp16ivR50hXOonkzEpQkaSusrm5Vk55oUM"
+            alt="Data-Driven Digital Marketing"
+            width={360}
+            height={240}
+            className="rounded-xl object-cover w-full h-auto transition-transform duration-500 ease-in-out hover:scale-105"
+          />
         </div>
-      </section>
+        <h3 className="text-xl font-bold text-white mb-2">
+          Data-Driven Digital Marketing
+        </h3>
+        <p className="text-gray-400">
+          Strategies combining SEO, PPC, content marketing.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* Content Creation Section */}
       <section className="py-20">
         <div className="container mx-auto">
@@ -532,303 +472,99 @@ export default function About() {
         </section>
       </div>
       {/* Why Choose Us Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        <div className="container relative mx-auto !z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-7">
-            <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/media/asterisk_default.4355d764.png"
-                  alt="Asteric"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5 filter-red"
-                />
-                <span className="text-white uppercase tracking-wider font-semibold">
-                  WHY CHOOSE
-                </span>
-              </div>
-              <h2 className="text-4xl lg:text-5xl !leading-normal text-white font-light">
-                Expertise for{" "}
-                <span className="text-red-500 font-semibold">your digital</span>
-                <br />
-                growth journey
-              </h2>
-            </div>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
-              Our dedicated team is committed to understanding your unique
-              needs, ensuring that we provide innovative strategies that drive
-              results. With a focus on quality and integrity.
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-12">
-              {[
-                {
-                  title: "Data-Driven Approach",
-                  desc: "We leverage data and insights to make informed decisions that lead to more effective and efficient solutions.",
-                },
-                {
-                  title: "Competitive Pricing",
-                  desc: "We offer our top-quality services at competitive prices, providing you with great value for your investment.",
-                },
-                {
-                  title: "Ethical Business Practices",
-                  desc: "We maintain the highest level of professionalism and ethical standards professionalism in all our business dealings.",
-                },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative p-8 rounded-3xl bg-transparent border border-gray-800 overflow-hidden cursor-pointer group"
-                >
-                  <div
-                    className="absolute inset-0 transition-transform duration-700 ease-in-out bg-[length:130%_100%] bg-no-repeat"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, #1a1a1a 0%, #1a1a1a 40%, rgba(26,26,26,0.9) 55%, rgba(26,26,26,0.7) 60%, rgba(26,26,26,0.5) 65%, rgba(26,26,26,0.3) 70%, rgba(26,26,26,0.1) 75%, transparent 90%)",
-                    }}
-                  ></div>
-                  <div className="relative z-10">
-                    <h3 className="text-white text-xl lg:text-2xl font-semibold mb-4">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="lg:sticky lg:top-20 space-y-8">
-              <div className="image-container group relative w-full h-full rounded-3xl overflow-hidden">
-                <Image
-                  src="/media/whyus.fe999c9a.png"
-                  alt="Business meeting"
-                  width={320}
-                  height={320}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-20 -right-32 z-0">
+      {/* Why Choose Us Section */}
+<section className="relative min-h-screen overflow-hidden">
+  <div className="container relative mx-auto !z-20 py-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-5 gap-6">
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
           <Image
-            src="/media/hex.eced7c60.png"
-            alt="Hex"
-            width={320}
-            height={320}
-            className="w-80 h-80 animate-spin-grow"
+            src="/media/asterisk_default.4355d764.png"
+            alt="Asteric"
+            width={16}
+            height={16}
+            className="w-4 h-4 filter-red"
+          />
+          <span className="text-white uppercase tracking-wider text-sm font-semibold">
+            WHY CHOOSE
+          </span>
+        </div>
+        <h2 className="text-3xl lg:text-4xl !leading-normal text-white font-light">
+          Expertise for{" "}
+          <span className="text-red-500 font-semibold">your digital</span>
+          <br />
+          growth journey
+        </h2>
+      </div>
+      <p className="text-gray-400 text-base leading-relaxed max-w-lg">
+        Our dedicated team is committed to understanding your unique
+        needs, ensuring that we provide innovative strategies that drive
+        results. With a focus on quality and integrity.
+      </p>
+    </div>
+    <div className="grid lg:grid-cols-2 gap-10 items-center">
+      <div className="space-y-8">
+        {[
+          {
+            title: "Data-Driven Approach",
+            desc: "We leverage data and insights to make informed decisions that lead to more effective and efficient solutions.",
+          },
+          {
+            title: "Competitive Pricing",
+            desc: "We offer our top-quality services at competitive prices, providing you with great value for your investment.",
+          },
+          {
+            title: "Ethical Business Practices",
+            desc: "We maintain the highest level of professionalism and ethical standards professionalism in all our business dealings.",
+          },
+        ].map((item, idx) => (
+          <div
+            key={idx}
+            className="relative p-6 rounded-2xl bg-transparent border border-gray-800 overflow-hidden cursor-pointer group"
+          >
+            <div
+              className="absolute inset-0 transition-transform duration-700 ease-in-out bg-[length:130%_100%] bg-no-repeat"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, #1a1a1a 0%, #1a1a1a 40%, rgba(26,26,26,0.9) 55%, rgba(26,26,26,0.7) 60%, rgba(26,26,26,0.5) 65%, rgba(26,26,26,0.3) 70%, rgba(26,26,26,0.1) 75%, transparent 90%)",
+              }}
+            ></div>
+            <div className="relative z-10">
+              <h3 className="text-white text-lg lg:text-xl font-semibold mb-3">
+                {item.title}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="lg:sticky lg:top-20 space-y-6">
+        <div className="image-container group relative w-full h-full rounded-2xl overflow-hidden">
+          <Image
+            src="/media/whyus.fe999c9a.png"
+            alt="Business meeting"
+            width={280}
+            height={280}
+            className="w-full h-full object-cover"
           />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+  <div className="absolute bottom-20 -right-32 z-0">
+    <Image
+      src="/media/hex.eced7c60.png"
+      alt="Hex"
+      width={240}
+      height={240}
+      className="w-60 h-60 animate-spin-grow"
+    />
+  </div>
+</section>
       {/* Testimonials Section */}
-      <section className="relative text-white py-8 lg:py-16 md:px-8 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-90"></div>
-        <div className="container relative z-10 mx-auto">
-          <div className="relative mx-auto !z-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
-                  <Image
-                    src="/media/asterisk_default.4355d764.png"
-                    alt="Asteric"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 filter-red"
-                  />
-                  <h4>TESTIMONIALS</h4>
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-                  Read what they have to say about{" "}
-                  <span className="text-red-500 font-bold">
-                    working with us
-                  </span>
-                </h2>
-              </div>
-              <div className="relative">
-                <div className="relative flex flex-col gap-6 lg:py-24 group cursor-pointer">
-                  <div className="flex flex-col gap-5">
-                    <p className="text-white text-center lg:text-justify leading-relaxed lg:text-lg">
-                      Discover how our clients have achieved success through our
-                      innovative solutions and dedicated support.
-                    </p>
-                  </div>
-                  <a
-                    className="mt-4 flex !justify-center lg:!justify-start gap-4 group"
-                    href="#"
-                  >
-                    <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">
-                      All Testimonials
-                    </button>
-                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-arrow-right text-22 !text-black rounded-full"
-                      >
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                      </svg>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="md:col-span-4 bg-black/60 backdrop-blur-sm rounded-3xl p-8 flex flex-col items-center justify-between text-center">
-                <div className="text-7xl font-bold mb-2">
-                  <div>{rating.toFixed(1)}</div>
-                </div>
-                <div className="flex justify-center mb-2">
-                  <div className="flex gap-1"> {/* Add gap between stars */}
-                    {[1, 2, 3, 4, 5].map((_, i) => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-star w-6 h-6 fill-red-500 text-red-500"
-                      >
-                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-400 mb-8">(40+ Reviews)</p>
-                <h3 className="text-2xl font-semibold text-center mb-6">
-                  Customer experiences that speak for themselves
-                </h3>
-                <div className="flex justify-center gap-2 mt-8 flex-wrap"> {/* Add gap and wrap for avatars */}
-                  {[1, 2, 3, 4, 5].map((_, i) => (
-                    <div
-                      key={i}
-                      className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-black"
-                    >
-                      <Image
-                        src="dd.png"
-                        alt={`Customer ${i + 1}`}
-                        width={40}
-                        height={40}
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="md:col-span-8 relative">
-                <div className="h-full flex flex-col justify-between">
-                  <div className="mb-8">
-                  <div>
-                        <img src="plo.png" width={300} alt="" />
-                        </div>
-                    <div className="mb-6">
-                      <div className="flex">
-                        
-                        {[1, 2, 3, 4, 5].map((_, i) => (
-                          <svg
-                            key={i}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="lucide lucide-star w-6 h-6 fill-red-500 text-red-500"
-                          >
-                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                          </svg>
-                          
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-                      
-                      Super impressed with their mobile app development service.
-                      The team listened carefully to our needs and delivered an
-                      app that exceeded expectations. A little delay in testing
-                      phase but they managed it professionally. Highly
-                      recommended!
-                    </p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
-                      <Image
-                        src="dd.png"
-                        alt="Olivia Reed"
-                        width={64}
-                        height={64}
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold">Olivia Reed</h4>
-                      <p className="text-gray-400">Marketing Manager</p>
-                    </div>
-                    <div className="ml-auto flex space-x-2">
-                      <button
-                        className="w-12 h-12 rounded-full bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors"
-                        aria-label="Previous testimonial"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="lucide lucide-arrow-left w-5 h-5"
-                        >
-                          <path d="m12 19-7-7 7-7"></path>
-                          <path d="M19 12H5"></path>
-                        </svg>
-                      </button>
-                      <button
-                        className="w-12 h-12 rounded-full bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors"
-                        aria-label="Next testimonial"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="lucide lucide-arrow-right w-5 h-5"
-                        >
-                          <path d="M5 12h14"></path>
-                          <path d="m12 5 7 7-7 7"></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <Ratings/>
+      <FAQS/>
        {/* CTA Section */}
       <section className="relative w-full overflow-hidden py-24 md:py-32">
         <div className="relative max-w-[90rem] mx-auto sm:px-6 lg:px-8 z-10">
@@ -881,6 +617,7 @@ export default function About() {
           />
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

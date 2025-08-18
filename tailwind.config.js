@@ -24,7 +24,7 @@ module.exports = {
           '50%': { transform: 'rotate(180deg) scale(1.2)' },
           '100%': { transform: 'rotate(360deg) scale(1)' },
         },
-        'fadeInUp': {
+        fadeInUp: {
           '0%': {
             opacity: '0',
             transform: 'translateY(30px)',
@@ -38,28 +38,4 @@ module.exports = {
     },
   },
   plugins: [],
-  safelist: [
-    'translate-x-0',
-    'translate-x-full',
-    'translate-y-0',
-    'translate-y-full',
-    'scale-0',
-    'scale-100',
-    'opacity-0',
-    'opacity-100',
-    'hidden',
-    'block',
-    'flex',
-    'lg:hidden',
-    'lg:block',
-    'lg:flex',
-    'grid',
-    'bg-red-500',
-    'bg-black',
-    'text-white',
-    'text-black',
-    'z-[9999]',
-    'z-50',
-    'z-10',
-  ],
-} 
+};

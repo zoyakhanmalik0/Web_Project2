@@ -3,7 +3,7 @@
 :root {
   /* Red Theme for Acciobyte */
   --color-default: #EF4444; /* Main accent color - red */
-  --color-secondary: #EF4444; /* Secondary accent - red */
+  --color-secondary: #D93737; /* A slightly darker red for hover states */
   --color-black: #000000; /* Pure black */
   --color-white: #ffffff; /* Pure white */
   --color-blackfade2: #212121; /* Dark gray for backgrounds */
@@ -53,7 +53,7 @@
 }
 
 .text-default {
-  color: #EF4444 !important;
+  color: var(--color-default) !important;
 }
 
 .bg-blackfade2 {
@@ -84,12 +84,14 @@
   background-color: #333333 !important;
 }
 
+/* This class was targeting a green color, now it uses the red theme */
 .text-\[\#86c232\] {
-  color: var(--color-secondary) !important;
+  color: var(--color-default) !important;
 }
 
+/* This class was targeting a green color, now it uses the red theme */
 .bg-\[\#86c232\] {
-  background-color: var(--color-secondary) !important;
+  background-color: var(--color-default) !important;
 }
 
 /* Contact page specific styles */
@@ -126,7 +128,7 @@
 }
 
 .hover\:bg-default\/90:hover {
-  background-color: rgba(191, 247, 71, 0.9) !important;
+  background-color: rgba(239, 68, 68, 0.9) !important;
 }
 
 .hover\:bg-blackfade2:hover {
@@ -134,7 +136,7 @@
 }
 
 .hover\:text-default:hover {
-  color: #EF4444 !important;
+  color: var(--color-default) !important;
 }
 
 .hover\:text-white:hover {
@@ -151,7 +153,7 @@
 }
 
 .group:hover .group-hover\:text-default {
-  color: #EF4444 !important;
+  color: var(--color-default) !important;
 }
 
 .group:hover .group-hover\:text-white {
@@ -202,13 +204,13 @@
   background-color: #1a1a1a !important;
 }
 
-/* Shadow effects */
+/* Shadow effects - Updated to red glow */
 .shadow-\[0_0_45px_rgba\(212\,255\,77\,1\)\] {
-  box-shadow: 0 0 45px rgba(212, 255, 77, 1) !important;
+  box-shadow: 0 0 45px rgba(239, 68, 68, 0.7) !important;
 }
 
 .hover\:shadow-\[0_0_35px_rgba\(212\,255\,77\,1\)\]:hover {
-  box-shadow: 0 0 35px rgba(212, 255, 77, 1) !important;
+  box-shadow: 0 0 35px rgba(239, 68, 68, 0.8) !important;
 }
 
 /* Animation classes */
@@ -285,7 +287,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: 300px 300px;
-  /* Optionally, add a subtle overlay or adjust opacity if needed */
 }
 
 * {
@@ -309,7 +310,7 @@ body {
   backdrop-filter: blur(64px);
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling - Updated to red theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -836,429 +837,6 @@ body {
   }
 }
 
-/* Mobile hover improvements */
-@media (max-width: 640px) {
-  .hover\:bg-default:hover {
-    background-color: var(--color-default) !important;
-  }
-  
-  .hover\:bg-default\/90:hover {
-    background-color: rgba(191, 247, 71, 0.9) !important;
-  }
-  
-  .hover\:bg-blackfade2:hover {
-    background-color: var(--color-blackfade2) !important;
-  }
-  
-  .hover\:text-default:hover {
-    color: #EF4444 !important;
-  }
-  
-  .hover\:text-white:hover {
-    color: var(--color-white) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .hover\:bg-default:hover {
-    background-color: var(--color-default) !important;
-  }
-  
-  .hover\:bg-default\/90:hover {
-    background-color: rgba(191, 247, 71, 0.9) !important;
-  }
-  
-  .hover\:bg-blackfade2:hover {
-    background-color: var(--color-blackfade2) !important;
-  }
-  
-  .hover\:text-default:hover {
-    color: #EF4444 !important;
-  }
-  
-  .hover\:text-white:hover {
-    color: var(--color-white) !important;
-  }
-}
-
-/* Mobile group hover improvements */
-@media (max-width: 640px) {
-  .group:hover .group-hover\:bg-default {
-    background-color: var(--color-default) !important;
-  }
-  
-  .group:hover .group-hover\:bg-white {
-    background-color: var(--color-white) !important;
-  }
-  
-  .group:hover .group-hover\:text-default {
-    color: #EF4444 !important;
-  }
-  
-  .group:hover .group-hover\:text-white {
-    color: var(--color-white) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .group:hover .group-hover\:bg-default {
-    background-color: var(--color-default) !important;
-  }
-  
-  .group:hover .group-hover\:bg-white {
-    background-color: var(--color-white) !important;
-  }
-  
-  .group:hover .group-hover\:text-default {
-    color: #EF4444 !important;
-  }
-  
-  .group:hover .group-hover\:text-white {
-    color: var(--color-white) !important;
-  }
-}
-
-/* Mobile data state improvements */
-@media (max-width: 640px) {
-  .data-\[state\=active\]\:bg-default[data-state=active] {
-    background-color: var(--color-default) !important;
-  }
-  
-  .data-\[state\=open\]\:bg-\[\#151515\][data-state=open] {
-    background-color: var(--color-dark-151) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .data-\[state\=active\]\:bg-default[data-state=active] {
-    background-color: var(--color-default) !important;
-  }
-  
-  .data-\[state\=open\]\:bg-\[\#151515\][data-state=open] {
-    background-color: var(--color-dark-151) !important;
-  }
-}
-
-/* Mobile border improvements */
-@media (max-width: 640px) {
-  .border-default {
-    border-color: var(--color-default) !important;
-  }
-  
-  .border-gray-800 {
-    border-color: var(--color-gray-800) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .border-default {
-    border-color: var(--color-default) !important;
-  }
-  
-  .border-gray-800 {
-    border-color: var(--color-gray-800) !important;
-  }
-}
-
-/* Mobile text color improvements */
-@media (max-width: 640px) {
-  .text-gray-400 {
-    color: var(--color-gray-400) !important;
-  }
-  
-  .text-gray-500 {
-    color: var(--color-gray-500) !important;
-  }
-  
-  .text-gray-600 {
-    color: var(--color-gray-600) !important;
-  }
-  
-  .text-muted-foreground {
-    color: var(--color-muted-foreground) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .text-gray-400 {
-    color: var(--color-gray-400) !important;
-  }
-  
-  .text-gray-500 {
-    color: var(--color-gray-500) !important;
-  }
-  
-  .text-gray-600 {
-    color: var(--color-gray-600) !important;
-  }
-  
-  .text-muted-foreground {
-    color: var(--color-muted-foreground) !important;
-  }
-}
-
-/* Mobile background color improvements */
-@media (max-width: 640px) {
-  .bg-gray-600 {
-    background-color: var(--color-gray-600) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .bg-gray-600 {
-    background-color: var(--color-gray-600) !important;
-  }
-}
-
-/* Mobile shadow improvements */
-@media (max-width: 640px) {
-  .shadow-\[0_0_45px_rgba\(212\,255\,77\,1\)\] {
-    box-shadow: 0 0 45px rgba(212, 255, 77, 1) !important;
-  }
-  
-  .hover\:shadow-\[0_0_35px_rgba\(212\,255\,77\,1\)\]:hover {
-    box-shadow: 0 0 35px rgba(212, 255, 77, 1) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .shadow-\[0_0_45px_rgba\(212\,255\,77\,1\)\] {
-    box-shadow: 0 0 45px rgba(212, 255, 77, 1) !important;
-  }
-  
-  .hover\:shadow-\[0_0_35px_rgba\(212\,255\,77\,1\)\]:hover {
-    box-shadow: 0 0 35px rgba(212, 255, 77, 1) !important;
-  }
-}
-
-/* Mobile animation improvements */
-@media (max-width: 640px) {
-  .animate-spin-grow {
-    animation: spin-grow 3s linear infinite;
-  }
-  
-  .animate-spin-slow {
-    animation: spin 20s linear infinite;
-  }
-}
-
-@media (min-width: 641px) {
-  .animate-spin-grow {
-    animation: spin-grow 3s linear infinite;
-  }
-  
-  .animate-spin-slow {
-    animation: spin 20s linear infinite;
-  }
-}
-
-/* Mobile fade in up improvements */
-@media (max-width: 640px) {
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-}
-
-@media (min-width: 641px) {
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-}
-
-/* Mobile form animate improvements */
-@media (max-width: 640px) {
-  .form-animate {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  .contact-card-animate {
-    animation: fadeInUp 1s ease-out forwards;
-  }
-  
-  .address-card-animate {
-    animation: fadeInUp 1.2s ease-out forwards;
-  }
-  
-  .form-container-animate {
-    animation: fadeInUp 1.4s ease-out forwards;
-  }
-}
-
-@media (min-width: 641px) {
-  .form-animate {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  .contact-card-animate {
-    animation: fadeInUp 1s ease-out forwards;
-  }
-  
-  .address-card-animate {
-    animation: fadeInUp 1.2s ease-out forwards;
-  }
-  
-  .form-container-animate {
-    animation: fadeInUp 1.4s ease-out forwards;
-  }
-}
-
-/* Mobile spin grow improvements */
-@media (max-width: 640px) {
-  @keyframes spin-grow {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(180deg) scale(1.1);
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
-    }
-  }
-}
-
-@media (min-width: 641px) {
-  @keyframes spin-grow {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(180deg) scale(1.1);
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
-    }
-  }
-}
-
-/* Mobile spin improvements */
-@media (max-width: 640px) {
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-@media (min-width: 641px) {
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-/* Mobile fade in up improvements */
-@media (max-width: 640px) {
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-@media (min-width: 641px) {
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-/* Mobile body improvements */
-@media (max-width: 640px) {
-  body {
-    font-family: var(--font-geist-sans), system-ui, sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    line-height: 1.6;
-  }
-}
-
-@media (min-width: 641px) {
-  body {
-    font-family: var(--font-geist-sans), system-ui, sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    line-height: 1.6;
-  }
-}
-
-/* Mobile universal improvements */
-@media (max-width: 640px) {
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-@media (min-width: 641px) {
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-/* Mobile background opacity improvements */
-@media (max-width: 640px) {
-  .bg-white\/10 {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-  
-  .bg-white\/40 {
-    background-color: rgba(255, 255, 255, 0.4) !important;
-  }
-}
-
-@media (min-width: 641px) {
-  .bg-white\/10 {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-  
-  .bg-white\/40 {
-    background-color: rgba(255, 255, 255, 0.4) !important;
-  }
-}
-
-/* Mobile backdrop blur improvements */
-@media (max-width: 640px) {
-  .backdrop-blur-lg {
-    backdrop-filter: blur(16px);
-  }
-  
-  .backdrop-blur-3xl {
-    backdrop-filter: blur(64px);
-  }
-}
-
-@media (min-width: 641px) {
-  .backdrop-blur-lg {
-    backdrop-filter: blur(16px);
-  }
-  
-  .backdrop-blur-3xl {
-    backdrop-filter: blur(64px);
-  }
-}
-
 /* Mobile scrollbar improvements */
 @media (max-width: 640px) {
   ::-webkit-scrollbar {
@@ -1270,45 +848,28 @@ body {
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #232323;
+    background: var(--color-default);
     border-radius: 3px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #232323;
+    background: var(--color-secondary);
   }
 }
 
-@media (min-width: 641px) {
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #1a1a1a;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #BFF747;
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #86c232;
-  }
-}
-
+/* This is a utility to force an element to have a red color via filter */
 .filter-red {
-  filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7492%) hue-rotate(357deg) brightness(97%) contrast(119%);
+  filter: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(1500%) hue-rotate(340deg) brightness(95%) contrast(90%);
 }
 
+/* Selection color */
 ::selection {
-  background: #ef4444 !important;
-  color: #fff !important;
+  background: var(--color-default) !important;
+  color: var(--color-white) !important;
 }
 ::-moz-selection {
-  background: #ef4444 !important;
-  color: #fff !important;
+  background: var(--color-default) !important;
+  color: var(--color-white) !important;
 }
 
 @media (min-width: 1024px) {

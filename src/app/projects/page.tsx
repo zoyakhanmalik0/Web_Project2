@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Footer from "../components/Footer";
 
 const categories = [
@@ -51,38 +50,51 @@ const projects = [
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
-  const filteredProjects = activeCategory === 'All'
-    ? projects
-    : projects.filter((p) => p.label === activeCategory);
+
+  const filteredProjects =
+    activeCategory === 'All'
+      ? projects
+      : projects.filter((p) => p.label === activeCategory);
 
   return (
     <div style={{ background: '#000', minHeight: '100vh' }}>
       {/* Hero Section */}
-      <div className="!w-full bg-cover bg-center bg-black" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
-        <div className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
-          <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
-            <span className="text-5xl xl:text-7xl">Our <span className="text-default">Projects</span></span>
-            <nav aria-label="breadcrumb">
-              <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
-                <li><Link className="hover:underline" href="/">Home</Link></li>
-                <li className="flex items-center"><span className="mx-2">*</span><span className="text-default">Projects</span></li>
-              </ul>
-            </nav>
+      <div
+        className="!w-full bg-cover bg-center bg-black"
+        style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}
+      >
+        <div
+          className="w-full h-full flex items-center justify-center py-32 relative bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}
+        >
+          <div className="flex flex-col justify-center items-center gap-6 font-semibold text-white">
+            <span className="text-5xl xl:text-7xl">
+              Our <span className="text-default">Projects</span>
+            </span>
           </div>
         </div>
       </div>
+
       {/* Projects Grid Section */}
       <section>
         <div className="container mx-auto">
-          {/* Tabs (functional) */}
+          {/* Tabs */}
           <div className="py-12">
-            <div role="tablist" aria-orientation="horizontal" className="h-9 items-center justify-center rounded-lg text-muted-foreground bg-transparent border-0 p-0 my-10 gap-4 flex flex-wrap">
+            <div
+              role="tablist"
+              aria-orientation="horizontal"
+              className="h-9 items-center justify-center rounded-lg text-muted-foreground bg-transparent border-0 p-0 my-6 gap-4 flex flex-wrap"
+            >
               {categories.map((cat) => (
                 <button
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`inline-flex items-center justify-center whitespace-nowrap text-lg font-semibold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 px-8 py-3 rounded-full border-0 transition-colors duration-200 ${activeCategory === cat ? 'bg-[#C6FF3D] text-black' : 'bg-[#222] text-white hover:bg-[#C6FF3D] hover:text-black'}`}
+                  className={`inline-flex items-center justify-center whitespace-nowrap text-lg font-semibold px-8 py-3 rounded-full border-0 transition-colors duration-300 ${
+                    activeCategory === cat
+                      ? 'bg-red-600 text-white'
+                      : 'bg-[#222] text-white hover:bg-red-600 hover:text-white'
+                  }`}
                   style={{ minWidth: 120 }}
                 >
                   {cat}
@@ -90,23 +102,44 @@ export default function Projects() {
               ))}
             </div>
           </div>
+
           {/* Projects Grid */}
           <div className="relative overflow-hidden min-h-[55rem] w-full flex">
             <div className="h-full w-full rounded-[inherit] overflow-x-hidden overflow-y-hidden">
               <div style={{ minWidth: '100%', display: 'table' }}>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-40 lg:mt-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                   {filteredProjects.map((project, idx) => (
                     <div key={idx} className="group cursor-pointer">
                       <div className="relative rounded-3xl overflow-hidden mb-6 bg-white">
-                        <Image src={project.src} alt="Project image" width={600} height={400} className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <Image
+                          src={project.src}
+                          alt="Project image"
+                          width={600}
+                          height={400}
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                         <div className="absolute top-6 right-6 ">
-                          <span className="px-4 py-2 bg-white/40 backdrop-blur-3xl rounded-full text-white text-sm">{project.label}</span>
+                          <span className="px-4 py-2 bg-white/40 backdrop-blur-3xl rounded-full text-white text-sm">
+                            {project.label}
+                          </span>
                         </div>
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-20 h-20 border border-white hover:bg-default rounded-full flex items-center justify-center opacity-100 transition-opacity duration-300 group/hover-circle">
-                            <div className="group-hover/hover-circle:rotate-45  transition-transform duration-300">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right w-8 h-8 text-white group-hover/hover-circle:!text-black"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-                            </div>
+                          <div className="w-20 h-20 border border-white hover:bg-default rounded-full flex items-center justify-center transition-transform duration-300">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-arrow-up-right w-8 h-8 text-white group-hover:text-black"
+                            >
+                              <path d="M7 7h10v10"></path>
+                              <path d="M7 17 17 7"></path>
+                            </svg>
                           </div>
                         </div>
                       </div>
@@ -123,6 +156,8 @@ export default function Projects() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
-} 
+}
