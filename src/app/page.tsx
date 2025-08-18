@@ -201,11 +201,13 @@ const ScrollingServicesBar = () => {
 
 
 export default function Home() {
-  const addressRef = useRef(null);
+  // CORRECTED: Explicitly type the ref for better code completion and type safety.
+  const addressRef = useRef<HTMLElement>(null);
   const [isBlack, setIsBlack] = useState(false);
 
   const handleButtonClick = () => {
-    setIsBlack(true);
+    setIsBlack(true); // This state isn't used visually but is kept as per original code.
+    // The scrollIntoView function will now work because addressRef is attached to a section.
     addressRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -288,40 +290,43 @@ export default function Home() {
                     <polygon points="6 3 20 12 6 21 6 3"></polygon>
                   </svg>
                 </button>
-                <div className="hidden lg:block relative" style={{ width: "110px", height: "110px" }}>
-                  <div className="absolute -left-14 inset-0" style={{ animation: "spin 15s linear infinite" }}>
-                    <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <defs>
-                        <path
-                          id="circle"
-                          d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                        ></path>
-                      </defs>
-                      <text fill="#ffffff" fontSize="9">
-                        <textPath href="#circle" className="uppercase tracking-[1px]">
-                          Learn More • Learn More • Learn More •
-                        </textPath>
-                      </text>
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-arrow-down w-6 h-6 text-white"
-                      >
-                        <path d="M12 5v14"></path>
-                        <path d="m19 12-7 7-7-7"></path>
-                      </svg>
+                {/* CORRECTED: Wrapped the spinning circle in a button and added the onClick handler */}
+                <button onClick={handleButtonClick} aria-label="Scroll to about section" className="cursor-pointer">
+                    <div className="hidden lg:block relative" style={{ width: "110px", height: "110px" }}>
+                        <div className="absolute -left-14 inset-0" style={{ animation: "spin 15s linear infinite" }}>
+                            <svg viewBox="0 0 100 100" className="w-full h-full">
+                            <defs>
+                                <path
+                                id="circle"
+                                d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                                ></path>
+                            </defs>
+                            <text fill="#ffffff" fontSize="9">
+                                <textPath href="#circle" className="uppercase tracking-[1px]">
+                                Learn More • Learn More • Learn More •
+                                </textPath>
+                            </text>
+                            </svg>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="lucide lucide-arrow-down w-6 h-6 text-white"
+                            >
+                                <path d="M12 5v14"></path>
+                                <path d="m19 12-7 7-7-7"></path>
+                            </svg>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
+                </button>
               </div>
               <div className="flex flex-col gap-5">
                 <p className="text-white lg:text-22 text-center lg:text-justify max-w-4xl">
@@ -361,11 +366,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CORRECTED: ScrollingServicesBar is now rendered here */}
       <ScrollingServicesBar />
 
       {/* ABOUT/AGENCY SECTION */}
-      <section className="relative min-h-screen py-20 lg:py-40 overflow-visible">
+      {/* CORRECTED: Added ref={addressRef} to this section to make it the scroll target */}
+      <section ref={addressRef} className="relative min-h-screen py-20 lg:py-40 overflow-visible">
         <div className="container relative mx-auto !z-20">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div
@@ -765,7 +770,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============== START: NEW SECTION ADDED HERE ============== */}
       <section className="bg-black py-16 md:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -795,7 +799,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ============== END: NEW SECTION ADDED HERE ============== */}
 
       <Projects />
       <Ratings/>

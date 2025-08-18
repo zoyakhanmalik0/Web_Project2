@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Footer from "../components/Footer";
 
 const categories = [
   'All',
@@ -156,8 +155,6 @@ export default function Projects() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
