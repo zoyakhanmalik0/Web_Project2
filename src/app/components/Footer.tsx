@@ -95,6 +95,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                style={{ backgroundColor: 'red' }}
                 className="bg-red-600 hover:bg-red-700 text-white py-3 rounded-md font-bold shadow-lg transition-colors duration-300 text-base cursor-pointer w-full transform hover:scale-105 transition-transform"
               >
                 Subscribe

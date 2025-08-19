@@ -136,7 +136,7 @@ export default function AboutAgencySection() {
         <img
           src="/media/sphere.4b56a70e.png"
           alt="Acciobyte Sphere Image"
-          className="w-96 h-96 animate-spin-slow filter-red"
+          className="w-96 h-96 animate-spin-slow filter-gray"
         />
       </div>
     </section>
