@@ -55,7 +55,7 @@ function CursorDot() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
     };
@@ -108,7 +108,7 @@ export default function Projects() {
           </h1>
           {/* Breadcrumb Navigation */}
           <nav aria-label="breadcrumb">
-            <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
+            <ul className="container flex items-center space-x-2 text-lg font-semibold text-white py-1.5 px-2">
               <li><Link className="hover:underline" href="/">Home</Link></li>
               <li className="flex items-center"><span className="mx-2">*</span><span className="text-red-500">Our Projects</span></li>
             </ul>

@@ -92,15 +92,15 @@ export default function About() {
       
       {/* Hero Section */}
       <div
-        className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat"
+        className="w-full h-full flex items-center justify-center py-24 md:py-48 relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
       >
-        <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
-          <span className="text-5xl xl:text-7xl">
+        <div className="flex flex-col justify-center items-center gap-4 md:gap-8 font-semibold text-white px-4">
+          <span className="text-4xl md:text-5xl xl:text-7xl text-center">
             About <span className="text-red-500">us</span>
           </span>
           <nav aria-label="breadcrumb">
-            <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
+            <ul className="flex items-center space-x-2 text-base md:text-18 font-semibold text-white py-1.5 px-2">
               <li>
                 <Link className="hover:underline" href="/">
                   Home
@@ -118,45 +118,45 @@ export default function About() {
       <Services/>
       
       {/* ABOUT/AGENCY SECTION */}
-      <section ref={addressRef} className="relative min-h-screen py-20 lg:py-40 overflow-visible">
-        <div className="container relative mx-auto !z-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <section ref={addressRef} className="relative py-12 md:py-20 lg:py-40 overflow-visible">
+        <div className="container relative mx-auto !z-20 px-4">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
             <div
               className="lg:sticky lg:top-24 h-fit self-start text-center lg:text-start"
               style={{ opacity: 1, transform: "none" }}
             >
-              <div data-aos="fade-right" className="w-full text-default text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
+              <div data-aos="fade-right" className="w-full text-default text-base md:text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-6 md:my-9">
                 <img
                   src="/media/asterisk_default.4355d764.png"
                   alt="Acciobyte Asteric Image"
-                  className="text-red-500 w-5 h-5 filter-red"
+                  className="text-red-500 w-4 h-4 md:w-5 md:h-5 filter-red"
                 />
                 <h4>ABOUT AGENCY</h4>
               </div>
-              <h2 data-aos="fade-right" className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+              <h2 data-aos="fade-right" className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
                 Crafting <span className="text-default font-bold">unique digital</span>
               </h2>
-              <p data-aos="fade-right" className="md:text-5xl lg:text-6xl text-white mb-8">
+              <p data-aos="fade-right" className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-6 md:mb-8">
                 experiences that elevate your brand
               </p>
               <div data-aos="fade-right" className="mt-4 flex justify-center lg:justify-start gap-4 group">
                 <Link href="/contact">
-                  <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-red-600 p-7 rounded-full lg:!text-18 font-bold text-white shadow-lg hover:bg-red-700 transition-all min-w-[140px]">
+                  <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-red-600 px-5 py-2 md:p-7 rounded-full text-base md:lg:!text-18 font-bold text-white shadow-lg hover:bg-red-700 transition-all min-w-[140px]">
                     Contact Us
                   </button>
                 </Link>
-                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                <span className="w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="lucide lucide-arrow-right text-22 !text-black rounded-full"
+                    className="lucide lucide-arrow-right text-lg md:text-22 !text-black rounded-full"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
@@ -164,7 +164,7 @@ export default function About() {
                 </span>
               </div>
             </div>
-            <div className="relative z-10 space-y-8" style={{ opacity: 1 }}>
+            <div className="relative z-10 space-y-6 md:space-y-8" style={{ opacity: 1 }}>
               <div className="hidden lg:block absolute -left-[30px] top-0 w-[2px] h-full bg-white/20"></div>
 
               {/* About Items */}
@@ -190,20 +190,20 @@ export default function About() {
                   description: "Our goal is simple: empower brands to grow and succeed in the digital world. Through strong client partnerships and custom strategies, we deliver results that matter."
                 }
               ].map((item, index) => (
-                <div key={index} className="relative flex gap-6 group cursor-pointer" style={{ opacity: 1, transform: "none" }}>
-                  <div className="hidden lg:block absolute -left-[40px] top-1/2 w-8 h-8 rounded-full -translate-y-1/2">
+                <div key={index} className="relative flex gap-4 md:gap-6 group cursor-pointer" style={{ opacity: 1, transform: "none" }}>
+                  <div className="hidden lg:block absolute -left-[40px] top-1/2 w-6 h-6 md:w-8 md:h-8 rounded-full -translate-y-1/2">
                     <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                   </div>
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-4 md:gap-5">
                     <img
                       src={item.icon}
                       alt="Acciobyte Service Icon"
-                      className="w-20 h-20 bg-default rounded-lg p-3"
+                      className="w-14 h-14 md:w-20 md:h-20 bg-default rounded-lg p-2 md:p-3"
                     />
-                    <h3 className="text-white text-xl lg:text-3xl font-bold mb-2 group-hover:text-default transition-colors">
+                    <h3 className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 group-hover:text-default transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-white text-justify leading-relaxed lg:text-lg">
+                    <p className="text-white text-justify leading-relaxed text-sm md:text-base lg:text-lg">
                       {item.description}
                     </p>
                   </div>
@@ -212,11 +212,11 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-20 -left-32 z-0">
+        <div className="absolute bottom-10 md:bottom-20 -left-20 md:-left-32 z-0">
           <img
             src="/media/sphere.4b56a70e.png"
             alt="Acciobyte Sphere Image"
-            className="w-96 h-96 animate-spin-slow filter-gray"
+            className="w-48 h-48 md:w-96 md:h-96 animate-spin-slow filter-gray"
           />
         </div>
       </section>
@@ -225,26 +225,26 @@ export default function About() {
       <section className="py-12 sm:py-16 lg:py-20 bg-black overflow-x-hidden">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="relative mx-auto z-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-start">
               <div data-aos="fade-right" className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-red-500 text-base sm:text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-6 sm:my-9">
+                <div className="w-full text-red-500 text-sm md:text-base sm:text-18 font-bold flex items-center justify-center lg:justify-start gap-2 md:gap-4 my-4 md:my-6 sm:my-9">
                   <img src="/media/asterisk_default.4355d764.png" alt="Astrivix Asteric Image" className="w-4 h-4 sm:w-5 sm:h-5 filter-red" />
                   <h4>FEATURES</h4>
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">Innovative <span className="text-red-500 font-bold">features</span></h2>
-                <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 sm:mb-8">for your digital success</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">Innovative <span className="text-red-500 font-bold">features</span></h2>
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white mb-4 sm:mb-6 md:mb-8">for your digital success</p>
               </div>
               <div className="relative">
-                <div className="relative flex flex-col gap-4 sm:gap-6 lg:py-24 group cursor-pointer">
-                  <div className="flex flex-col gap-4 sm:gap-5">
-                    <p className="text-white text-center lg:text-justify leading-relaxed text-base sm:text-lg">Our digital services empower brands with innovative strategies and solutions for sustainable growth and engagement.</p>
+                <div className="relative flex flex-col gap-3 sm:gap-4 md:gap-6 lg:py-16 xl:py-24 group cursor-pointer">
+                  <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
+                    <p className="text-white text-center lg:text-justify leading-relaxed text-sm sm:text-base md:text-lg">Our digital services empower brands with innovative strategies and solutions for sustainable growth and engagement.</p>
                   </div>
-                  <Link className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="/about">
-                    <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
+                  <Link className="mt-4 flex !justify-center lg:!justify-start gap-3 md:gap-4 group" href="/about">
+                    <button className="inline-flex items-center justify-center px-5 md:px-8 py-1.5 md:py-2 rounded-full bg-gray-600 text-white font-bold text-base md:text-lg whitespace-nowrap">
                       Learn More
                     </button>
-                    <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-lg sm:text-22 !text-black rounded-full">
+                    <span className="w-10 h-10 md:w-12 md:h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-base md:text-lg sm:text-22 !text-black rounded-full">
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path>
                       </svg>
@@ -254,24 +254,24 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-5 gap-4 sm:gap-6 mt-8 p-3 sm:mt-10">
-              <div data-aos="fade-up" className="bg-blackfade2/40 backdrop-blur-lg p-10 rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-5 lg:col-span-3">
-                <div className="relative overflow-hidden rounded-[32px]">
-                  <Image src="/2.png" alt="Custom Branding Solutions" width={1000} height={1000} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="grid lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 mt-6 md:mt-8 p-3 sm:mt-10">
+              <div data-aos="fade-up" className="bg-blackfade2/40 backdrop-blur-lg p-6 md:p-10 rounded-2xl md:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-5 lg:col-span-3">
+                <div className="relative overflow-hidden rounded-2xl md:rounded-[32px]">
+                  <Image src="/2.png" alt="Custom Branding Solutions" width={1000} height={1000} className="w-full h-48 md:h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-white text-2xl font-semibold mb-3">Custom Branding Solutions</h3>
-                  <p className="text-gray-400">Unique brand identity development, including logos, color palettes.</p>
+                <div className="p-4 md:p-6 lg:p-8">
+                  <h3 className="text-white text-xl md:text-2xl font-semibold mb-2 md:mb-3">Custom Branding Solutions</h3>
+                  <p className="text-gray-400 text-sm md:text-base">Unique brand identity development, including logos, color palettes.</p>
                 </div>
               </div>
 
-              <div data-aos="fade-up" className="bg-blackfade2/40 backdrop-blur-lg p-10 rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-5 lg:col-span-2">
-                <div className="relative overflow-hidden rounded-[32px]">
-                  <Image src="https://res.cloudinary.com/dbcmdtr3r/image/upload/v1752998901/dddm.b39136e5_mhs0oh.jpg" alt="Data-Driven Digital Marketing" width={1000} height={1000} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div data-aos="fade-up" className="bg-blackfade2/40 backdrop-blur-lg p-6 md:p-10 rounded-2xl md:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-5 lg:col-span-2">
+                <div className="relative overflow-hidden rounded-2xl md:rounded-[32px]">
+                  <Image src="https://res.cloudinary.com/dbcmdtr3r/image/upload/v1752998901/dddm.b39136e5_mhs0oh.jpg" alt="Data-Driven Digital Marketing" width={1000} height={1000} className="w-full h-48 md:h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-white text-2xl font-semibold mb-3">Data-Driven Digital Marketing</h3>
-                  <p className="text-gray-400">Strategies combining SEO, PPC, content marketing</p>
+                <div className="p-4 md:p-6 lg:p-8">
+                  <h3 className="text-white text-xl md:text-2xl font-semibold mb-2 md:mb-3">Data-Driven Digital Marketing</h3>
+                  <p className="text-gray-400 text-sm md:text-base">Strategies combining SEO, PPC, content marketing</p>
                 </div>
               </div>
             </div>
@@ -280,26 +280,26 @@ export default function About() {
       </section>
 
       {/* CONTENT CREATION SECTION */}
-      <section data-aos="fade-up" className="py-20">
-        <div className="container mx-auto">
-          <div className="relative bg-blackfade2/40 backdrop-blur-lg rounded-[32px] p-12 lg:p-20" style={{ opacity: 1, transform: 'none' }}>
-            <div className="flex justify-between items-start mb-20">
+      <section data-aos="fade-up" className="py-12 md:py-16 lg:py-20">
+        <div className="container mx-auto px-4">
+          <div className="relative bg-blackfade2/40 backdrop-blur-lg rounded-2xl md:rounded-3xl lg:rounded-[32px] p-6 md:p-8 lg:p-12 xl:p-20" style={{ opacity: 1, transform: 'none' }}>
+            <div className="flex flex-col lg:flex-row justify-between items-start mb-12 md:mb-16 lg:mb-20 gap-6">
               <div className="max-w-2xl">
-                <h2 className="text-3xl lg:text-4xl text-white font-semibold mb-4">Content Creation And Strategy</h2>
-                <p className="text-gray-400 text-lg">High-quality, engaging content across blogs<span className="inline-block w-2 h-2 bg-default rounded-full mx-2 mb-0.5"></span>videos, and graphics designed to captivate and retain audiences.</p>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold mb-3 md:mb-4">Content Creation And Strategy</h2>
+                <p className="text-gray-400 text-base md:text-lg">High-quality, engaging content across blogs<span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-default rounded-full mx-1 md:mx-2 mb-0.5"></span>videos, and graphics designed to captivate and retain audiences.</p>
               </div>
-              <div className="hidden lg:block relative" style={{ width: '150px', height: '150px' }}>
+              <div className="hidden lg:block relative" style={{ width: '120px', height: '120px' }}>
                 <div className="absolute inset-0" style={{ animation: 'spin 15s linear infinite' }}>
                   <svg viewBox="0 0 100 100" className="w-full h-full">
                     <defs>
                       <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
                     </defs>
-                    <text fill="#86c232" fontSize="7">
+                    <text fill="#86c232" fontSize="6">
                       <textPath href="#circle" className="uppercase tracking-[0.9px]">Get free consultation • Get free consultation •</textPath>
                     </text>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-6 h-6 text-default">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5 text-default">
                       <path d="M12 5v14"></path>
                       <path d="m19 12-7 7-7-7"></path>
                     </svg>
@@ -308,15 +308,16 @@ export default function About() {
               </div>
             </div>
             <Swiper
-              slidesPerView={2.2}
-              spaceBetween={20}
+              slidesPerView={1.2}
+              spaceBetween={15}
               autoplay={{ delay: 2000, disableOnInteraction: false }}
               loop={true}
               modules={[Autoplay]}
-              className="px-6"
+              className="px-2 md:px-4"
               breakpoints={{
-                640: { slidesPerView: 3.2 },
-                1024: { slidesPerView: 4.2 },
+                640: { slidesPerView: 2.2, spaceBetween: 20 },
+                768: { slidesPerView: 3.2, spaceBetween: 20 },
+                1024: { slidesPerView: 4.2, spaceBetween: 20 },
               }}
             >
               {[
@@ -328,8 +329,8 @@ export default function About() {
                 { src: "https://res.cloudinary.com/dbcmdtr3r/image/upload/v1752999971/fiverr.d1b6a16a_qfhq9e.png", alt: "Fiverr" },
               ].map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="flex-shrink-0 bg-[#1a1a1a] rounded-2xl px-8 py-6 flex items-center justify-center min-w-[200px]">
-                    <img src={item.src} alt={item.alt} width="100" height="30" className="w-auto h-8 brightness-100" draggable="false" />
+                  <div className="flex-shrink-0 bg-[#1a1a1a] rounded-xl md:rounded-2xl px-5 md:px-6 lg:px-8 py-4 md:py-6 flex items-center justify-center min-w-[140px] md:min-w-[180px]">
+                    <img src={item.src} alt={item.alt} width="80" height="24" className="w-auto h-6 md:h-8 brightness-100" draggable="false" />
                   </div>
                 </SwiperSlide>
               ))}
@@ -340,29 +341,29 @@ export default function About() {
       
       {/* Our Team Section */}
       <div className="container relative mx-auto px-4 !z-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
           <div className="h-fit self-start text-center lg:text-start">
-            <div className="w-full text-red-500 text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-9">
+            <div className="w-full text-red-500 text-base md:text-18 font-bold flex items-center justify-center lg:justify-start gap-2 md:gap-4 my-6 md:my-9">
               <Image
                 src="/media/asterisk_default.4355d764.png"
                 alt="Asteric"
-                width={20}
-                height={20}
-                className="w-5 h-5 filter-red"
+                width={16}
+                height={16}
+                className="w-4 h-4 md:w-5 md:h-5 filter-red"
               />
               <h4>OUR TEAM</h4>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
               Dynamic <span className="text-red-500 font-bold">team</span>
             </h2>
-            <p className="md:text-5xl lg:text-6xl text-white mb-8">
+            <p className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-6 md:mb-8">
               of digital experts
             </p>
           </div>
           <div className="relative">
-            <div className="relative flex flex-col gap-6 lg:py-24 group cursor-pointer">
-              <div className="flex flex-col gap-5">
-                <p className="text-white text-center lg:text-justify leading-relaxed lg:text-lg">
+            <div className="relative flex flex-col gap-4 md:gap-6 lg:py-16 xl:py-24 group cursor-pointer">
+              <div className="flex flex-col gap-4 md:gap-5">
+                <p className="text-white text-center lg:text-justify leading-relaxed text-sm md:text-base lg:text-lg">
                   Our digital services empower brands with innovative strategies
                   and solutions for sustainable growth and engagement. Our
                   digital services empower brands with innovative strategies and
@@ -370,24 +371,24 @@ export default function About() {
                 </p>
               </div>
               <a
-                className="mt-4 flex !justify-center lg:!justify-start gap-4 group"
+                className="mt-4 flex !justify-center lg:!justify-start gap-3 md:gap-4 group"
                 href="#"
               >
-                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold">
+                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 px-5 py-2 md:p-7 rounded-full text-base md:lg:!text-18 font-bold">
                   More About
                 </button>
-                <span className="w-14 h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                <span className="w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="lucide lucide-arrow-right text-22 !text-black rounded-full"
+                    className="lucide lucide-arrow-right text-lg md:text-22 !text-black rounded-full"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
@@ -399,24 +400,24 @@ export default function About() {
         </div>
 
         {/* Team Members */}
-        <section className="py-12">
+        <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
               {[1, 2, 3, 4].map((idx) => (
                 <div
                   key={idx}
-                  className="relative group rounded-[32px] overflow-hidden cursor-pointer h-[550px]"
+                  className="relative group rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer h-[400px] md:h-[500px] lg:h-[550px]"
                 >
                   <div className="relative h-full">
                     <Image
                       src="/media/team.53181386.jpg"
                       alt="Team Member"
                       fill
-                      className="object-cover rounded-[32px]"
+                      className="object-cover rounded-2xl md:rounded-3xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80"></div>
-                    <div className="absolute bottom-10 left-0 right-0 p-6 transform translate-y-16 opacity-0 transition-all duration-[1200ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                      <h3 className="text-white text-3xl font-semibold mb-2">
+                    <div className="absolute bottom-6 md:bottom-10 left-0 right-0 p-4 md:p-6 transform translate-y-16 opacity-0 transition-all duration-[1200ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                      <h3 className="text-white text-xl md:text-2xl lg:text-3xl font-semibold mb-1 md:mb-2">
                         {
                           [
                             "Sarah Mitchell",
@@ -426,7 +427,7 @@ export default function About() {
                           ][idx - 1]
                         }
                       </h3>
-                      <p className="text-gray-300 text-lg">
+                      <p className="text-gray-300 text-base md:text-lg">
                         {
                           [
                             "Senior Project Manager",
@@ -436,24 +437,24 @@ export default function About() {
                           ][idx - 1]
                         }
                       </p>
-                      <div className="hidden group-hover:flex gap-3 mt-4 transform translate-y-8 opacity-0 transition-all duration-[1000ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="hidden group-hover:flex gap-2 md:gap-3 mt-3 md:mt-4 transform translate-y-8 opacity-0 transition-all duration-[1000ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
                         {/* Social icons */}
                         <a
                           href="#"
-                          className="w-12 h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
+                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
                         >
                           <div className="text-red-500 group-hover:text-white transition-colors duration-300">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="26"
-                              height="26"
+                              width="20"
+                              height="20"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-facebook w-6 h-6"
+                              className="lucide lucide-facebook w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
                             >
                               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
@@ -461,20 +462,20 @@ export default function About() {
                         </a>
                         <a
                           href="#"
-                          className="w-12 h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
+                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
                         >
                           <div className="text-red-500 group-hover:text-white transition-colors duration-300">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="26"
-                              height="26"
+                              width="20"
+                              height="20"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-instagram w-6 h-6"
+                              className="lucide lucide-instagram w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
                             >
                               <rect
                                 width="20"
@@ -496,20 +497,20 @@ export default function About() {
                         </a>
                         <a
                           href="#"
-                          className="w-12 h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
+                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
                         >
                           <div className="text-red-500 group-hover:text-white transition-colors duration-300">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="26"
-                              height="26"
+                              width="20"
+                              height="20"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-twitter w-6 h-6"
+                              className="lucide lucide-twitter w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
                             >
                               <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                             </svg>
@@ -527,37 +528,37 @@ export default function About() {
       </div>
 
       {/* Why Choose Us Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        <div className="container relative mx-auto !z-20 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-5 gap-6">
-            <div className="space-y-4">
+      <section className="relative overflow-hidden py-12 md:py-16 lg:py-20">
+        <div className="container relative mx-auto !z-20 px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-5 gap-4 md:gap-6">
+            <div className="space-y-3 md:space-y-4">
               <div className="flex items-center gap-2">
                 <Image
                   src="/media/asterisk_default.4355d764.png"
                   alt="Asteric"
-                  width={16}
-                  height={16}
-                  className="w-4 h-4 filter-red"
+                  width={14}
+                  height={14}
+                  className="w-3 h-3 md:w-4 md:h-4 filter-red"
                 />
-                <span className="text-white uppercase tracking-wider text-sm font-semibold">
+                <span className="text-white uppercase tracking-wider text-xs md:text-sm font-semibold">
                   WHY CHOOSE
                 </span>
               </div>
-              <h2 className="text-3xl lg:text-4xl !leading-normal text-white font-light">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl !leading-normal text-white font-light">
                 Expertise for{" "}
                 <span className="text-red-500 font-semibold">your digital</span>
                 <br />
                 growth journey
               </h2>
             </div>
-            <p className="text-gray-400 text-base leading-relaxed max-w-lg">
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-lg">
               Our dedicated team is committed to understanding your unique
               needs, ensuring that we provide innovative strategies that drive
               results. With a focus on quality and integrity.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center mt-8">
+            <div className="space-y-6 md:space-y-8">
               {[
                 {
                   title: "Data-Driven Approach",
@@ -574,7 +575,7 @@ export default function About() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative p-6 rounded-2xl bg-transparent border border-gray-800 overflow-hidden cursor-pointer group"
+                  className="relative p-4 md:p-6 rounded-xl md:rounded-2xl bg-transparent border border-gray-800 overflow-hidden cursor-pointer group"
                 >
                   <div
                     className="absolute inset-0 transition-transform duration-700 ease-in-out bg-[length:130%_100%] bg-no-repeat"
@@ -584,16 +585,16 @@ export default function About() {
                     }}
                   ></div>
                   <div className="relative z-10">
-                    <h3 className="text-white text-lg lg:text-xl font-semibold mb-3">
+                    <h3 className="text-white text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="lg:sticky lg:top-20 space-y-6">
-              <div className="image-container group relative w-full h-full rounded-2xl overflow-hidden">
+            <div className="lg:sticky lg:top-20 space-y-4 md:space-y-6 mt-6 lg:mt-0">
+              <div className="image-container group relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden">
                 <Image
                   src="/media/whyus.fe999c9a.png"
                   alt="Business meeting"
@@ -605,13 +606,13 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-20 -right-32 z-0">
+        <div className="absolute bottom-10 md:bottom-20 -right-20 md:-right-32 z-0">
           <Image
             src="/media/hex.eced7c60.png"
             alt="Hex"
-            width={240}
-            height={240}
-            className="w-60 h-60 animate-spin-grow"
+            width={180}
+            height={180}
+            className="w-40 h-40 md:w-60 md:h-60 animate-spin-grow"
           />
         </div>
       </section>

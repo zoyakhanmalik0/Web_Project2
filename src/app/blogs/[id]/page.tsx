@@ -39,31 +39,58 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   if (!blog) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-white bg-black">
-        <h1 className="text-4xl font-bold mb-4">Blog Not Found</h1>
-        <Link href="/blogs" className="text-red-500 underline">Back to Blogs</Link>
+      <div className="min-h-screen flex flex-col items-center justify-center text-white bg-black px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">Blog Not Found</h1>
+        <Link href="/blogs" className="text-red-500 underline text-lg">Back to Blogs</Link>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white py-8 px-2 sm:py-16 sm:px-4 flex flex-col items-center">
-      <div className="max-w-2xl w-full">
-        <Link href="/blogs" className="text-red-500 underline mb-8 inline-block">&larr; Back to Blogs</Link>
-        <div className="bg-[#18181b] rounded-3xl shadow-lg overflow-hidden mb-8 w-full max-w-xs sm:max-w-xl mx-auto">
+    <div className="min-h-screen bg-black text-white py-6 px-4 sm:py-8 md:py-12 lg:py-16 flex flex-col items-center">
+      <div className="w-full max-w-2xl">
+        <Link href="/blogs" className="text-red-500 underline mb-6 inline-block text-base md:text-lg">&larr; Back to Blogs</Link>
+        
+        <div className="bg-[#18181b] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden mb-6 md:mb-8 w-full">
           {/* Thin red top border */}
-          <div className="h-2 bg-red-500 w-full" />
-          <div className="p-4 flex flex-col items-center">
-            <Image
-              src={blog.img}
-              alt={blog.title}
-              width={800}
-              height={400}
-              className="rounded-xl w-full h-auto object-cover mb-4"
-              priority
-            />
-            <h1 className="text-lg sm:text-2xl font-bold mb-2 text-white text-left w-full">{blog.title}</h1>
-            <p className="text-sm sm:text-base text-gray-300 text-left w-full">{content}</p>
+          <div className="h-1 md:h-2 bg-red-500 w-full" />
+          <div className="p-4 md:p-6 flex flex-col items-center">
+            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 mb-4 md:mb-6">
+              <Image
+                src={blog.img}
+                alt={blog.title}
+                fill
+                className="rounded-lg md:rounded-xl object-cover"
+                priority
+              />
+            </div>
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white text-left w-full">{blog.title}</h1>
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 text-left w-full leading-relaxed md:leading-loose">{content}</p>
+          </div>
+        </div>
+
+        {/* Related Blogs Section */}
+        <div className="w-full mt-8 md:mt-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-white">Related Blogs</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {blogs.filter((_, index) => index !== id).slice(0, 2).map((relatedBlog, index) => (
+              <Link key={index} href={`/blogs/${index + 1}`}>
+                <div className="bg-[#18181b] rounded-xl md:rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="h-1 md:h-2 bg-red-500 w-full" />
+                  <div className="p-3 md:p-4">
+                    <div className="relative w-full h-32 sm:h-36 md:h-40 mb-3 md:mb-4">
+                      <Image
+                        src={relatedBlog.img}
+                        alt={relatedBlog.title}
+                        fill
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-white line-clamp-2">{relatedBlog.title}</h3>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
