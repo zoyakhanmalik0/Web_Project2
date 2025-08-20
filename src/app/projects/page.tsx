@@ -1,6 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import Footer from "../components/Footer";
 
 const categories = [
   'All',
@@ -47,6 +49,44 @@ const projects = [
   { src: '/media/logo6.a59cfe2a.jpg', label: 'Logo' },
 ];
 
+/* ✅ Cursor Following Dot Component */
+function CursorDot() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fixed w-4 h-4 bg-red-500 rounded-full pointer-events-none z-[9999] transition-opacity duration-200 transform-gpu ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      style={{
+        left: position.x - 8,
+        top: position.y - 8,
+        transition: "left 0.15s ease-out, top 0.15s ease-out",
+      }}
+    />
+  );
+}
+
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
 
@@ -56,18 +96,23 @@ export default function Projects() {
       : projects.filter((p) => p.label === activeCategory);
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+      {/* Cursor Following Dot */}
+      <CursorDot />
+      
       {/* Hero Section */}
-      <div className="w-full bg-cover bg-center bg-black" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
-        <div 
-          className="w-full h-full flex items-center justify-center py-32 relative bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}
-        >
-          <div className="flex flex-col justify-center items-center gap-6 font-semibold text-white">
-            <h1 className="text-5xl xl:text-7xl">
-              Our <span className="text-red-500">Projects</span>
-            </h1>
-          </div>
+      <div className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
+        <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
+          <h1 className="text-5xl xl:text-7xl">
+            Our <span className="text-red-500">Projects</span>
+          </h1>
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="breadcrumb">
+            <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
+              <li><Link className="hover:underline" href="/">Home</Link></li>
+              <li className="flex items-center"><span className="mx-2">*</span><span className="text-red-500">Our Projects</span></li>
+            </ul>
+          </nav>
         </div>
       </div>
 
@@ -113,22 +158,29 @@ export default function Projects() {
                       </span>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-                      <div className="w-20 h-20 border border-white hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="lucide lucide-arrow-up-right w-8 h-8 text-white group-hover:text-black"
-                        >
-                          <path d="M7 7h10v10" />
-                          <path d="M7 17 17 7" />
-                        </svg>
+                      {/* Circle with arrow */}
+                      <div className="relative w-20 h-20">
+                        {/* Outer circle that becomes red on hover */}
+                        <div className="absolute inset-0 border-2 border-white rounded-full transition-all duration-300 group-hover:bg-red-600 group-hover:border-red-600 group-hover:scale-110"></div>
+                        
+                        {/* Arrow that moves right and turns black on hover */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-arrow-up-right w-8 h-8 text-white transition-all duration-300 transform translate-x-0 translate-y-0 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-black"
+                          >
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -143,6 +195,8 @@ export default function Projects() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }

@@ -53,12 +53,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title }) => (
       </h3>
       <a
         href="#"
-        className="text-gray-300 font-semibold flex items-center gap-2 transition-colors duration-300 hover:text-red-500"
-      >
+        className="text-white-300 font-semibold flex items-center gap-2 transition-colors duration-300 hover:text-red-500 "
+      style={{color:"red"}}>
+        
         Read More
-        <span className="transform transition-transform duration-300 hover:translate-x-1">
-          &rarr;
-        </span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right ml-2 w-4 h-4"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+
       </a>
     </div>
   </div>
@@ -96,10 +96,11 @@ export default function Page() {
             {/* Left Column: Title */}
             <div className="text-left">
               {/* 🔥 LATEST NEWS bigger, no red background */}
-              <div className="inline-flex items-center gap-3 text-red-500 text-2xl md:text-3xl font-extrabold mb-6">
-                <StarIcon className="w-7 h-7" />
-                LATEST NEWS
+              <div className="inline-flex items-center gap-2 text-red-500 text-lg md:text-xl mb-4 font-bold">
+                 <StarIcon className="w-5 h-5" />
+                  LATEST NEWS
               </div>
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
                 Insights on digital{" "}
                 <span className="text-red-500">innovation</span> and{" "}
@@ -108,7 +109,7 @@ export default function Page() {
             </div>
             {/* Right Column: Description */}
             <div className="text-center md:text-left">
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-white-500 leading-relaxed">
                 Explore the latest trends, strategies, and tools driving digital
                 innovation and helping businesses thrive in a rapidly evolving
                 digital landscape.

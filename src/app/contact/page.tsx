@@ -7,6 +7,74 @@ import CTA from "../components/CTASection";
 import { useState, useEffect } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+/* ✅ Cursor Following Dot Component */
+function CursorDot() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove as EventListener);
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove as EventListener);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fixed w-4 h-4 bg-red-500 rounded-full pointer-events-none z-[9999] transition-opacity duration-200 transform-gpu ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      style={{
+        left: position.x - 8,
+        top: position.y - 8,
+        transition: "left 0.15s ease-out, top 0.15s ease-out",
+      }}
+    />
+  );
+}
+
+/* ✅ Red Dim Circle Background Effect */
+function RedDimCircle() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    document.addEventListener("mousemove", handleMouseMove as EventListener);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove as EventListener);
+    };
+  }, []);
+
+  return (
+    <div
+      className="fixed pointer-events-none z-0 opacity-20"
+      style={{
+        left: 0,
+        top: 0,
+        width: '100vw',
+        height: '100vh',
+        background: `radial-circle(600px at ${position.x}px ${position.y}px, rgba(239, 68, 68, 0.15), transparent 70%)`,
+      }}
+    />
+  );
+}
+
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showToast, setShowToast] = useState(false);
@@ -16,51 +84,51 @@ export default function ContactPage() {
     setSubmitted(true);
     setShowToast(true);
 
-    // Auto hide toast after 3s
     setTimeout(() => {
       setShowToast(false);
     }, 3000);
   };
 
   return (
-    <div className="bg-black min-h-screen relative">
-      {/* ✅ Cursor Dot */}
+    <div
+      className="!w-full bg-cover bg-center bg-black text-white pb-10 relative overflow-hidden"
+      style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
+    >
+      {/* Red Dim Circle Background Effect */}
+      <RedDimCircle />
+      
+      {/* Cursor Following Dot */}
       <CursorDot />
 
       {/* Hero Section */}
       <div
-        className="!w-full bg-cover bg-center bg-black text-white pb-10"
-        style={{ backgroundImage: "url('/media/bg.0f5970d1.png')" }}
+        className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
       >
-        <div
-          className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/media/Inner_bg.23beb686.jpg')" }}
-        >
-          <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
-            <span className="text-5xl xl:text-7xl">
-              Contact <span className="text-red-500">Us</span>
-            </span>
-            <nav aria-label="breadcrumb">
-              <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
-                <li>
-                  <Link className="hover:underline" href="/">
-                    Home
-                  </Link>
-                </li>
-                <li className="flex items-center">
-                  <span className="mx-2">*</span>
-                  <span className="text-red-500">Contact</span>
-                </li>
-              </ul>
-            </nav>
-          </div>
+        <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
+          <span className="text-5xl xl:text-7xl">
+            Contact <span className="text-red-500">Us</span>
+          </span>
+          <nav aria-label="breadcrumb">
+            <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
+              <li>
+                <Link className="hover:underline" href="/">
+                  Home
+                </Link>
+              </li>
+              <li className="flex items-center">
+                <span className="mx-2">*</span>
+                <span className="text-red-500">Contact</span>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
 
       <Services />
 
       {/* Main Contact Section */}
-      <section className="py-20">
+      <section className="py-20 relative z-10">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left Column - Contact Info */}
@@ -137,7 +205,6 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  style={{ backgroundColor: "red" }}
                   disabled={submitted}
                   className={`w-full h-12 rounded-md font-semibold text-white transition-all duration-300
                     ${submitted ? "bg-red-600 cursor-not-allowed" : "bg-red-500 hover:bg-red-600"}`}
@@ -158,7 +225,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <div className="wrapper">
+      <div className="wrapper relative z-10">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9939.696399897436!2d-0.1415889!3d51.5013647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c3b42f5bcd%3A0xd3b8d7b5c34c1e6!2sWestminster%2C%20London%20SW1A%201AA%2C%20UK!5e0!3m2!1sen!2suk!4v1723978572000!5m2!1sen!2suk"
           width="100%"
@@ -174,43 +241,5 @@ export default function ContactPage() {
       <CTA />
       <Footer />
     </div>
-  );
-}
-
-/* ✅ Cursor Following Dot Component */
-function CursorDot() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
-
-  return (
-    <div
-      className={`fixed w-4 h-4 bg-red-500 rounded-full pointer-events-none z-[9999] transition-opacity duration-200 transform-gpu ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-      style={{
-        left: position.x - 8,
-        top: position.y - 8,
-        transition: "left 0.15s ease-out, top 0.15s ease-out",
-      }}
-    />
   );
 }

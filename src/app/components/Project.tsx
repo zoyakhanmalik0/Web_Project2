@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from "../components/Footer";
 
 /* ✅ Cursor Following Dot Component */
 function CursorDot() {
@@ -69,26 +70,11 @@ export default function Projects() {
       : projects.filter((p) => p.label === activeCategory);
 
   return (
-    <div style={{ background: '#000', minHeight: '100vh' }}>
+    <div className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
       {/* Render cursor dot */}
       <CursorDot />
 
-      {/* Hero Section */}
-      <div
-        className="!w-full bg-cover bg-center bg-black"
-        style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}
-      >
-        <div
-          className="w-full h-full flex items-center justify-center py-32 relative bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}
-        >
-          <div className="flex flex-col justify-center items-center gap-6 font-semibold text-white">
-            <span className="text-5xl xl:text-7xl">
-              Our <span className="text-red-500">Projects</span>
-            </span>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Projects Grid Section */}
       <section>
@@ -97,18 +83,25 @@ export default function Projects() {
           <div className="py-12 flex justify-center flex-wrap gap-4">
             {categories.map((cat) => (
               <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                className={`inline-flex items-center justify-center whitespace-nowrap text-lg font-semibold px-8 py-3 rounded-full border-0 transition-colors duration-300 ${
-                  activeCategory === cat
-                    ? 'bg-red-600 text-white'
-                    : 'bg-[#222] text-white hover:bg-red-600 hover:text-white'
-                }`}
-                style={{ minWidth: 120 }}
-              >
-                {cat}
-              </button>
+  key={cat}
+  type="button"
+  onClick={() => setActiveCategory(cat)}
+  style={{
+    minWidth: 120,
+    padding: "12px 32px",
+    borderRadius: "9999px",
+    fontSize: "18px",
+    fontWeight: 600,
+    cursor: "pointer",
+    border: "none",
+    transition: "all 0.3s ease",
+    backgroundColor: activeCategory === cat ? "red" : "#222",
+    color: "white",
+  }}
+>
+  {cat}
+</button>
+
             ))}
           </div>
 

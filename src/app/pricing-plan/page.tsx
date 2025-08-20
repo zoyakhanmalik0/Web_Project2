@@ -2,10 +2,53 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from "../components/Footer";
+import Services from "../components/MovingServices";
+import { useState, useEffect } from "react";
+
+/* ✅ Cursor Following Dot Component */
+function CursorDot() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove as EventListener);
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove as EventListener);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fixed w-4 h-4 bg-red-500 rounded-full pointer-events-none z-[9999] transition-opacity duration-200 transform-gpu ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      style={{
+        left: position.x - 8,
+        top: position.y - 8,
+        transition: "left 0.15s ease-out, top 0.15s ease-out",
+      }}
+    />
+  );
+}
 
 export default function PricingPlan() {
   return (
     <div className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+      {/* Cursor Following Dot */}
+      <CursorDot />
+      
       {/* Hero Section */}
       <div className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
         <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
@@ -18,19 +61,7 @@ export default function PricingPlan() {
           </nav>
         </div>
       </div>
-      {/* Services Bar */}
-      <div className="relative w-full overflow-hidden py-3 bg-default">
-        <div className="flex items-center space-x-8 w-max">
-          {['IOS/Android App Development','Website Development','Digital Marketing','Graphic Designing','Content Writing','Search Engine Optimization (SEO)','Point of Sale (POS)','Cyber Security','IOS/Android App Development','Website Development','Digital Marketing','Graphic Designing','Content Writing','Search Engine Optimization (SEO)','Point of Sale (POS)','Cyber Security'].map((service, idx) => (
-            <div key={idx} className="flex items-center justify-center gap-6">
-              <span className="whitespace-nowrap text-xl font-bold text-black">{service}</span>
-              <span className="flex justify-center items-center">
-                <Image src="/media/asteric.3e45eb6d.png" alt="Astrivix Asteric Image" width={16} height={16} className="w-4 h-4" />
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
+       <Services/>
       {/* Pricing Cards */}
       <div className="container mx-auto py-20">
         <div className="grid md:grid-cols-2 gap-8">
@@ -126,4 +157,4 @@ export default function PricingPlan() {
       <Footer />
     </div>
   );
-} 
+}

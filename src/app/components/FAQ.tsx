@@ -40,14 +40,16 @@ const AccordionItem = ({
   onPress: () => void;
 }) => {
   return (
-    <div className="border-b border-gray-700">
+    <div className="mb-4">
       <button
         onClick={onPress}
-        className="flex justify-between items-center w-full py-5 px-6 text-left text-lg font-medium text-gray-200 hover:bg-gray-800 focus:outline-none"
+        className={`flex justify-between items-center w-full py-4 px-6 text-left text-lg font-medium text-gray-200 rounded-xl transition-colors ${
+          isOpen ? "bg-red-500/10" : "bg-transparent hover:bg-gray-800/30"
+        }`}
       >
         <span>{question}</span>
         {isOpen ? (
-          <ChevronUp className="w-5 h-5 text-green-400" />
+          <ChevronUp className="w-5 h-5 text-red-400" />
         ) : (
           <ChevronDown className="w-5 h-5 text-gray-400" />
         )}
@@ -59,7 +61,7 @@ const AccordionItem = ({
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="p-6 pt-0 text-gray-400">
+        <div className="p-6 text-gray-400 bg-[#1a1a1a] rounded-b-xl">
           <p>{answer}</p>
         </div>
       </div>
@@ -76,12 +78,15 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="bg-[#0a0a0a] min-h-screen flex items-center justify-center font-sans text-white p-4 sm:p-8">
-      <main className="bg-[#121212] rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-6xl overflow-hidden">
-        {/* Left Panel: Image - made narrower */}
+    <div
+      className="!w-full bg-cover bg-center bg-black text-white pb-16 pt-20"
+      style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
+    >
+      <main className="bg-[#121212] rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-6xl mx-auto overflow-hidden">
+        {/* Left Panel: Image */}
         <div className="w-full md:w-[35%] relative">
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+            src="https://www.shutterstock.com/image-photo/young-team-manager-woman-talking-600nw-2414833253.jpg"
             alt="Professional woman holding a laptop"
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -90,25 +95,25 @@ const FAQSection = () => {
             }}
           />
 
-          {/* Phone Badge on RIGHT SIDE with smooth back & forth animation */}
-          <div className="absolute bottom-6 right-6 bg-black bg-opacity-60 backdrop-blur-sm text-white px-4 py-2 rounded-full flex items-center space-x-3 animate-[slideRight_4s_ease-in-out_infinite] shadow-lg shadow-green-500/30">
-            <Phone className="w-5 h-5 text-green-400" />
+          {/* Phone Badge */}
+          <div className="absolute bottom-6 right-6 bg-black bg-opacity-60 backdrop-blur-sm text-white px-4 py-2 rounded-full flex items-center space-x-3 animate-[slideRight_4s_ease-in-out_infinite] shadow-lg shadow-red-500/30">
+            <Phone className="w-5 h-5 text-red-400" />
             <span className="text-base font-medium">(30) 8855-314</span>
           </div>
         </div>
 
-        {/* Right Panel: FAQ Section - made wider and darker */}
-        <div className="w-full md:w-[65%] p-12 flex flex-col justify-center md:ml-12">
-          <h3 className="text-sm font-bold text-green-400 tracking-widest uppercase mb-2">
+        {/* Right Panel: FAQ */}
+        <div className="w-full md:w-[60%] p-12 flex flex-col justify-center md:ml-16">
+          <h3 className="text-sm font-bold text-red-400 tracking-widest uppercase mb-2">
             * Have any questions?
           </h3>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-8">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-10">
             Let us address your <br />
-            <span className="text-green-400">questions today!</span>
+            <span className="text-red-400">questions today!</span>
           </h1>
 
-          {/* FAQ box with full height same as image - made darker */}
-          <div className="w-full bg-[#111111] rounded-lg flex-grow h-full">
+          {/* FAQ List */}
+          <div className="w-full space-y-4">
             {FAQ_DATA.map((item, index) => (
               <AccordionItem
                 key={index}
@@ -122,14 +127,14 @@ const FAQSection = () => {
         </div>
       </main>
 
-      {/* Custom Keyframes for right-side sliding */}
+      {/* Animation */}
       <style jsx>{`
         @keyframes slideRight {
           0% {
             transform: translateX(0px);
           }
           50% {
-            transform: translateX(-40px); /* moves leftwards a bit */
+            transform: translateX(-40px);
           }
           100% {
             transform: translateX(0px);

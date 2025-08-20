@@ -1,7 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
 
 // Star Icon Component
 type StarIconProps = {
@@ -188,12 +191,61 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative bg-black text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section 
+      className="relative w-full overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-black text-white"
+      style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
+    >
+      {/* Overlay Inner Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-30"
+        style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
+      />
+
       {/* Decorative Globe background element */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] rounded-full bg-gradient-to-tr from-gray-900 via-gray-800 to-black opacity-30 pointer-events-none"></div>
 
       <div className="container mx-auto relative z-10 max-w-7xl">
-        {/* Top Section: Ratings & Testimonial */}
+        {/* Top Section: Heading and Description/CTA */}
+        <div className="grid md:grid-cols-2 gap-8 mb-24">
+          {/* Left Side - Heading */}
+          <div>
+           <div className="flex items-center gap-2 mb-6" style={{ opacity: 1, transform: 'none' }}>
+  <span className="text-default text-3xl">*</span>
+  <span className="text-red-500 text-lg md:text-xl tracking-widest font-semibold">
+    TESTIMONIALS
+  </span>
+</div>
+
+<h2 className="text-5xl md:text-6xl font-bold leading-snug">
+  Read what they <br /> have to say about <br />
+  <span className="text-red-500">working with us</span>
+</h2>
+
+          </div>
+
+          {/* Right Side - Description & CTA */}
+          <div className="flex flex-col gap-6 justify-center">
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Discover how our clients have achieved success through our innovative
+              solutions and dedicated support.
+            </p>
+              <Link className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="/about">
+                    <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
+                      All Testimonials
+                    </button>
+                    <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-lg sm:text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </span>
+                  </Link>
+
+             </div>
+             
+                </div>
+                
+          </div>
+        
+
+        {/* Middle Section: Ratings & Testimonial */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           {/* Left: Rating Block */}
           <div className="flex flex-col gap-4 text-center lg:text-left items-center lg:items-start">
@@ -217,6 +269,7 @@ export default function Testimonials() {
             <h2 className="text-4xl font-semibold mt-4 max-w-md">
               Customer experiences that speak for themselves
             </h2>
+            
             <div className="flex -space-x-2 overflow-hidden mt-4">
               <img
                 className="inline-block h-10 w-10 rounded-full ring-2 ring-black"
@@ -400,7 +453,17 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
+
+      {/* Decorative Sphere Image */}
+      <div className="absolute bottom-20 -left-32 z-0">
+        <Image
+          src="/media/CTA.61aa7579.png"
+          alt="Astrivix Sphere Image"
+          width={320}
+          height={320}
+          className="w-80 h-80 animate-spin-grow"
+        />
       </div>
-    </section>
+    </section>//
   );
 }

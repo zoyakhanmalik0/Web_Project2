@@ -5,7 +5,16 @@ import Image from "next/image";
 
 export default function CTASection() {
   return (
-    <section className="relative w-full overflow-hidden py-24 md:py-32">
+    <section
+      className="relative w-full overflow-hidden py-24 md:py-32 bg-cover bg-center bg-black text-white"
+      style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
+    >
+      {/* Overlay Inner Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-30"
+        style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
+      />
+
       <div className="relative max-w-[90rem] mx-auto sm:px-6 lg:px-8 z-10">
         <div className="flex flex-col items-center text-center">
           <span className="text-white text-32 font-semibold uppercase tracking-wider">

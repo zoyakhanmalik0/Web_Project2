@@ -11,7 +11,8 @@ import CTA from "./components/CTASection";
 import NEWS from "./components/lastedtnews";
 import Benifit from "./components/keyBenifit";
 import Ratings from "./components/Rating";
-import Projects from './projects/page';
+import Projects from "./components/Project";
+
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,6 +22,7 @@ import { Autoplay } from "swiper/modules";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import RotatingText from "./components/RotatingText";
+import { color } from "framer-motion";
 
 // Cursor Following Dot Component
 function CursorDot() {
@@ -353,7 +355,9 @@ export default function Home() {
               </p>
               <div data-aos="fade-right" className="mt-4 flex justify-center lg:justify-start gap-4 group">
                 <Link href="/contact">
-                  <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-gray-600 p-7 rounded-full lg:!text-18 font-bold bg-red-600 text-white shadow-lg hover:bg-red-700 transition-all min-w-[140px]">Contact Us</button>
+                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 bg-red-600 p-7 rounded-full lg:text-base font-bold text-white shadow-lg hover:bg-red-700 min-w-[140px]">
+                  Contact Us
+                </button>
                 </Link>
                 <span className="w-14 h-14 rounded-full flex items-center justify-center bg-default transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
                   <svg
@@ -426,7 +430,7 @@ export default function Home() {
           <img
             src="/media/sphere.4b56a70e.png"
             alt="Acciobyte Sphere Image"
-            className="w-96 h-96 animate-spin-slow filter-red"
+            className="w-96 h-96 animate-spin-slow filter-gray"
           />
         </div>
       </section>
@@ -474,7 +478,17 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12 sm:mt-16 lg:mt-20 transition-all duration-700" data-aos="fade-up">
-              <p className="text-white text-lg sm:text-xl">Let&apos;s make something great work together. <Link className="text-red-500 hover:underline underline-offset-4" href="/pricing-plan">Get Free Quote</Link></p>
+              <p className="text-white text-lg sm:text-xl">
+  Let&apos;s make something great work together.{" "}
+  <Link
+    className="text-red-500 hover:underline underline-offset-4"
+    href="/pricing-plan"
+    style={{ color: "red" }}
+  >
+    <b>Get Free Quote</b>
+  </Link>
+</p>
+
             </div>
           </div>
         </div>
@@ -537,7 +551,7 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute bottom-20 right-[-22%] translate-x-1/2 -z-10 hidden pointer-events-none select-none lg:block">
-            <img src="/media/hex.eced7c60.png" alt="Astrivix Sphere Image" className="w-80 h-80 animate-spin-grow filter-red" />
+            <img src="/media/hex.eced7c60.png" alt="Astrivix Sphere Image" className="w-80 h-80 animate-spin-grow filter-gray" />
           </div>
         </div>
       </section>
@@ -549,7 +563,7 @@ export default function Home() {
             <div className="col-span-2">
               <div className="flex items-center gap-2 mb-6" style={{ opacity: 1, transform: 'none' }}>
                 <span className="text-default text-2xl">*</span>
-                <span className="text-white text-sm tracking-widest">JOIN AGENCY</span>
+                <span className="text-red-500 text-sm tracking-widest">JOIN AGENCY</span>
               </div>
               <h2 data-aos="fade-up" className="text-4xl lg:text-6xl text-white font-light" style={{ opacity: 1, transform: 'none' }}>
                 Join our <span className="text-default">agency</span> of creative innovators
@@ -622,10 +636,15 @@ export default function Home() {
           <div className="relative mx-auto z-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div data-aos="fade-right" className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-red-500 text-base sm:text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-6 sm:my-9">
-                  <img src="/media/asterisk_default.4355d764.png" alt="Astrivix Asteric Image" className="w-4 h-4 sm:w-5 sm:h-5 filter-red" />
-                  <h4>FEATURES</h4>
-                </div>
+                <div className="w-full text-red-500 text-xl sm:text-2xl font-bold flex items-center justify-center lg:justify-start gap-5 my-8 sm:my-12">
+  <img
+    src="/media/asterisk_default.4355d764.png"
+    alt="Astrivix Asteric Image"
+    className="w-6 h-6 sm:w-8 sm:h-8 filter-red"
+  />
+  <h4>FEATURES</h4>
+</div>
+
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">Innovative <span className="text-red-500 font-bold">features</span></h2>
                 <p className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 sm:mb-8">for your digital success</p>
               </div>
@@ -735,27 +754,39 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left Side */}
             <div className="text-center lg:text-left">
-              <div className="flex items-center gap-2 justify-center lg:justify-start mb-4">
-                <span className="text-default text-lg">*</span>
-                <h4 className="text-white uppercase tracking-wider font-semibold">
-                  HOW IT WORK
-                </h4>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-light leading-tight">
-                Our proven{' '}
-                <span className="text-default font-bold">process </span> 
-                 
-              </h2>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-light leading-tight">for achieving</h2>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-light leading-tight">success</h2>
+              <div className="w-full text-red-500 text-xl sm:text-2xl font-bold flex items-center justify-center lg:justify-start gap-5 my-8 sm:my-12">
+  <img
+    src="/media/asterisk_default.4355d764.png"
+    alt="Astrivix Asteric Image"
+    className="w-6 h-6 sm:w-8 sm:h-8 filter-red"
+  />
+  <h4>HOW IT WORK</h4>
+</div>
+
+<h2 className="text-7xl md:text-8xl lg:text-9xl text-white font-light leading-snug">
+  Our proven
+</h2>
+<h2 className="text-7xl md:text-8xl lg:text-9xl text-white font-light leading-snug">
+  <span className="text-default font-bold">process</span> for
+</h2>
+<h2 className="text-7xl md:text-8xl lg:text-9xl text-white font-light leading-snug">
+  achieving success
+</h2>
+
+
+
+
             </div>
             {/* Right Side */}
-            <div className="text-center lg:text-left">
-              <p className="text-gray-300 text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Our proven process combines research, strategy, and creativity to
-                deliver tailored solutions that drive measurable results.
-              </p>
-            </div>
+<div className="text-center lg:text-left">
+  <p className="text-white text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+    Our proven process combines research, strategy, and creativity to
+    deliver tailored solutions that drive measurable results.
+  </p>
+</div>
+
+
+
           </div>
         </div>
       </section>

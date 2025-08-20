@@ -12,7 +12,7 @@ const benefitsData = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-red-500"
+        className="w-12 h-12 text-red-500"
       >
         <path
           strokeLinecap="round"
@@ -42,7 +42,7 @@ const benefitsData = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-red-500"
+        className="w-12 h-12 text-red-500"
       >
         <path
           strokeLinecap="round"
@@ -87,7 +87,7 @@ const benefitsData = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-red-500"
+        className="w-12 h-12 text-red-500"
       >
         <path
           strokeLinecap="round"
@@ -115,7 +115,7 @@ const benefitsData = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-red-500"
+        className="w-12 h-12 text-red-500"
       >
         <path
           strokeLinecap="round"
@@ -153,10 +153,12 @@ const BenefitCard: React.FC<BenefitCardProps> = ({
 }) => {
   return (
     <div className="p-6 sm:p-8 flex flex-col h-full">
-      {/* Number and Icon Row */}
-      <div className="flex justify-between items-start mb-6">
-        <span className="text-2xl font-bold text-gray-400">{id}</span>
-        <div className="text-red-500">{icon}</div>
+      {/* Number */}
+      <span className="text-2xl font-bold text-gray-400 mb-6">{id}</span>
+      
+      {/* Icon - placed below the number */}
+      <div className="text-red-500 mb-6 flex justify-left">
+        {icon}
       </div>
 
       {/* Content */}

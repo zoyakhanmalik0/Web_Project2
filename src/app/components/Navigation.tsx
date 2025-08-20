@@ -15,18 +15,18 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Contact Sidebar Button */}
+      {/* Contact Sidebar Button - Fixed for both desktop and mobile */}
       <button
         onClick={() => setShowContact((prev) => !prev)}
         aria-label="Open Contact Sidebar"
-        className="hidden lg:block fixed z-[10001] bg-transparent border-none p-0 cursor-pointer"
+        className="fixed z-[10001] bg-transparent border-none p-0 cursor-pointer"
         style={{
           top: 16,
           right: 32,
         }}
       >
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="28" cy="28" r="26" fill="#111" />
+          <circle cx="28" cy="28" r="26" fill="red" />
           {Array.from({ length: 3 }).map((_, row) =>
             Array.from({ length: 3 }).map((_, col) => (
               <circle
@@ -34,7 +34,7 @@ export default function Navigation() {
                 cx={18 + col * 10}
                 cy={18 + row * 10}
                 r="3.2"
-                fill="#BFF747"
+                fill="black"
               />
             ))
           )}
@@ -125,7 +125,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="flex lg:hidden w-12 h-12 items-center justify-center rounded-lg cursor-pointer bg-[#111] text-white transition-colors"
+            className="flex lg:hidden w-12 h-12 items-center justify-center rounded-lg cursor-pointer bg-reds text-white transition-colors"
             aria-label="Toggle mobile menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

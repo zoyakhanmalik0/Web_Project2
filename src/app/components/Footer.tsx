@@ -16,22 +16,26 @@ export default function Footer() {
           <div className="space-y-4 text-center lg:text-left">
             <Image
               src="/media/log.jpg"
-              alt="Sociobyte Logo"
+              alt="Acciobyte Logo"
               width={120}
               height={80}
               className="mx-auto lg:mx-0"
             />
-            <p className="text-gray-400 font-medium">
-              123 Creative Lane London, SW1A 1AA United Kingdom
+            <p className="font-medium">
+              14 West Street Wakefield WF2 8UA England
             </p>
-            <p className="text-gray-400 font-medium">(309) 8855–314</p>
-            <p className="text-gray-400 font-medium">contact@sociobyte.com</p>
+            <p className="font-medium hover:text-red-500 transition-colors duration-300 cursor-pointer">
+              +447861402051
+            </p>
+            <p className="font-medium hover:text-red-500 transition-colors duration-300 cursor-pointer">
+              contact@acciobyte.com
+            </p>
           </div>
 
           {/* Popular Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-5">Popular Services</h4>
-            <ul className="space-y-4 text-gray-400">
+            <h4 className="text-lg font-bold mb-5">Popular Services</h4>
+            <ul className="space-y-3">
               {[
                 "Website Development",
                 "Android & iOS Development",
@@ -44,12 +48,12 @@ export default function Footer() {
                 "Cyber Security",
                 "E-Commerce",
                 "Illustrations",
-                "Video Admission",
+                "Video Animation",
                 "Point of Sale (POS)",
               ].map((service, idx) => (
                 <li
                   key={idx}
-                  className="hover:text-red-500 transition-colors duration-300 cursor-pointer font-medium"
+                  className="hover:text-red-500 transition-colors duration-300 cursor-pointer"
                 >
                   {service}
                 </li>
@@ -59,8 +63,8 @@ export default function Footer() {
 
           {/* Useful Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-5">Useful Links</h4>
-            <ul className="space-y-4 text-gray-400">
+            <h4 className="text-lg font-bold mb-5">Useful Links</h4>
+            <ul className="space-y-3">
               {[
                 "Home",
                 "Project",
@@ -70,10 +74,10 @@ export default function Footer() {
                 "Privacy Policy",
                 "Terms of Services",
               ].map((link, idx) => (
-                <li key={idx} className="font-medium">
+                <li key={idx}>
                   <Link
-                    href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="hover:text-red-500 transition-colors duration-300 cursor-pointer"
+                    href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="hover:text-red-500 transition-colors duration-300"
                   >
                     {link}
                   </Link>
@@ -84,22 +88,31 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-5">
-              Subscribe Our Newsletter
-            </h4>
+            <h4 className="text-lg font-bold mb-5">Subscribe Our Newsletter</h4>
             <form className="flex flex-col space-y-4">
               <input
                 type="email"
                 placeholder="your_email@example.com"
-                className="px-4 py-3 rounded-md text-black bg-white focus:outline-none text-base border border-gray-300 focus:ring-2 focus:ring-red-500"
+                className="px-4 py-3 rounded-md text-black bg-white focus:outline-none text-base border border-gray-300"
               />
               <button
-                type="submit"
-                style={{ backgroundColor: 'red' }}
-                className="bg-red-600 hover:bg-red-700 text-white py-3 rounded-md font-bold shadow-lg transition-colors duration-300 text-base cursor-pointer w-full transform hover:scale-105 transition-transform"
-              >
-                Subscribe
-              </button>
+  type="submit"
+  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "black")}
+  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "red")}
+  style={{
+    backgroundColor: "red",
+    color: "white",
+    padding: "12px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+    fontSize: "16px",
+    cursor: "pointer",
+    width: "100%",
+    transition: "all 0.3s ease",
+  }}
+>
+  Subscribe
+</button>
             </form>
           </div>
         </div>
@@ -111,8 +124,8 @@ export default function Footer() {
 
           {/* Copyright Section */}
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white font-bold text-sm mb-4 md:mb-0">
-              © 2025 — Tech Guru All Rights Reserved.
+            <p className="text-white text-sm">
+              © 2025 — Acciobyte All Rights Reserved.
             </p>
           </div>
         </div>
