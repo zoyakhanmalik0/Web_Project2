@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from "../components/Footer";
+import DonutBackground from "../components/DonutBackground";
 
 const categories = [
   'All',
@@ -96,43 +97,70 @@ export default function Projects() {
       : projects.filter((p) => p.label === activeCategory);
 
   return (
-    <div className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
-      {/* Cursor Following Dot */}
-      <CursorDot />
-      
-      {/* Hero Section */}
-      <div className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
-        <div className="flex flex-col justify-center items-center gap-8 font-semibold text-white">
-          <h1 className="text-5xl xl:text-7xl">
-            Our <span className="text-red-500">Projects</span>
-          </h1>
-          {/* Breadcrumb Navigation */}
-          <nav aria-label="breadcrumb">
-            <ul className="container flex items-center space-x-2 text-lg font-semibold text-white py-1.5 px-2">
-              <li><Link className="hover:underline" href="/">Home</Link></li>
-              <li className="flex items-center"><span className="mx-2">*</span><span className="text-red-500">Our Projects</span></li>
-            </ul>
-          </nav>
+    <DonutBackground density="low">
+      <div className="!w-full bg-cover bg-center bg-black text-white pb-10 relative overflow-hidden" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+        {/* Blurred Rings for Projects Page */}
+        <div className="absolute top-0 left-[-220px] z-[-10]" style={{width:'520px',height:'520px'}}>
+          <div style={{
+            borderRadius: '50%',
+            border: '40px solid #ef4444',
+            filter: 'blur(48px) brightness(0.7)',
+            boxShadow: '0 0 64px 16px #ef4444, 0 0 128px 32px #ef4444',
+            boxSizing: 'border-box',
+            position: 'absolute',
+            top: '-180px', // move ring higher
+            left: '-320px', // move ring more left
+            width: '700px', // increase size
+            height: '700px',
+          }} />
         </div>
-      </div>
+        <div className="absolute bottom-[-120px] right-[-220px] z-[-10]" style={{width:'540px',height:'540px'}}>
+          <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            border: '44px solid #ef4444',
+            filter: 'blur(48px) brightness(0.7)',
+            boxShadow: '0 0 64px 16px #ef4444, 0 0 128px 32px #ef4444',
+            boxSizing: 'border-box',
+          }} />
+        </div>
+        {/* Cursor Following Dot */}
+        <CursorDot />
+        
+        {/* Hero Section */}
+        <div className="relative flex items-center justify-center w-full h-full py-32 bg-center bg-no-repeat bg-cover sm:py-40 lg:py-48" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
+          <div className="flex flex-col items-center justify-center gap-6 px-4 font-semibold text-white sm:gap-8 sm:px-6">
+            <h1 className="text-4xl text-center sm:text-5xl xl:text-7xl">
+              Our <span className="text-red-500">Projects</span>
+            </h1>
+            {/* Breadcrumb Navigation */}
+            <nav aria-label="breadcrumb">
+              <ul className="container flex items-center space-x-2 text-base sm:text-lg font-semibold text-white py-1.5 px-2">
+                <li><Link className="hover:underline" href="/">Home</Link></li>
+                <li className="flex items-center"><span className="mx-2">*</span><span className="text-red-500">Our Projects</span></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
       {/* Projects Grid Section */}
       <section className="pb-20">
-        <div className="container mx-auto px-4">
+        <div className="container px-4 mx-auto sm:px-6 lg:px-8">
           {/* Category Tabs */}
           <div className="py-12">
-            <div className="flex justify-center flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 ${
+                  className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base lg:text-lg font-semibold transition-colors duration-300 ${
                     activeCategory === cat
                       ? 'bg-red-600 text-white'
                       : 'bg-[#222] text-white hover:bg-red-600'
                   }`}
-                  style={{ minWidth: '120px' }}
+                  style={{ minWidth: '100px' }}
                 >
                   {cat}
                 </button>
@@ -142,40 +170,40 @@ export default function Projects() {
 
           {/* Projects Grid */}
           <div className="relative w-full">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-6 lg:gap-8">
               {filteredProjects.map((project, idx) => (
-                <div key={idx} className="group cursor-pointer relative">
-                  <div className="relative rounded-3xl overflow-hidden bg-white aspect-[4/3]">
+                <div key={idx} className="relative cursor-pointer group">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white aspect-[4/3] w-full">
                     <Image
                       src={project.src}
                       alt={`Project ${idx + 1}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-6 right-6">
-                      <span className="px-4 py-2 bg-white/40 backdrop-blur-3xl rounded-full text-white text-sm">
+                    <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+                      <span className="px-3 py-1 text-xs font-medium text-white rounded-full sm:px-4 sm:py-2 bg-white/40 backdrop-blur-3xl sm:text-sm">
                         {project.label}
                       </span>
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                    <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100 bg-black/30">
                       {/* Circle with arrow */}
-                      <div className="relative w-20 h-20">
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20">
                         {/* Outer circle that becomes red on hover */}
-                        <div className="absolute inset-0 border-2 border-white rounded-full transition-all duration-300 group-hover:bg-red-600 group-hover:border-red-600 group-hover:scale-110"></div>
+                        <div className="absolute inset-0 transition-all duration-300 border-2 border-white rounded-full group-hover:bg-red-600 group-hover:border-red-600 group-hover:scale-110"></div>
                         
                         {/* Arrow that moves right and turns black on hover */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="lucide lucide-arrow-up-right w-8 h-8 text-white transition-all duration-300 transform translate-x-0 translate-y-0 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-black"
+                            className="w-6 h-6 text-white transition-all duration-300 transform translate-x-0 translate-y-0 lucide lucide-arrow-up-right sm:w-8 sm:h-8 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-black"
                           >
                             <path d="M7 7h10v10" />
                             <path d="M7 17 17 7" />
@@ -187,7 +215,7 @@ export default function Projects() {
                 </div>
               ))}
               {filteredProjects.length === 0 && (
-                <div className="col-span-full text-center text-gray-400 text-xl py-20">
+                <div className="py-16 text-lg text-center text-gray-400 col-span-full sm:text-xl sm:py-20">
                   No projects found in this category.
                 </div>
               )}
@@ -197,6 +225,7 @@ export default function Projects() {
       </section>
       
       <Footer />
-    </div>
+      </div>
+    </DonutBackground>
   );
 }

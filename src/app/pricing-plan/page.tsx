@@ -45,7 +45,30 @@ function CursorDot() {
 
 export default function PricingPlan() {
   return (
-    <div className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+    <div className="!w-full bg-cover bg-center bg-black text-white pb-10 relative overflow-hidden" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+      {/* Blurred Rings for Pricing Plan Page */}
+      <div className="absolute top-0 left-[-220px] z-[-10]" style={{width:'520px',height:'520px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(32px) brightness(0.35)',
+          boxShadow: '0 0 32px 8px #ef4444, 0 0 64px 16px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      <div className="absolute bottom-[-120px] right-[-220px] z-[-10]" style={{width:'540px',height:'540px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '44px solid #ef4444',
+          filter: 'blur(32px) brightness(0.35)',
+          boxShadow: '0 0 32px 8px #ef4444, 0 0 64px 16px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
       {/* Cursor Following Dot */}
       <CursorDot />
       

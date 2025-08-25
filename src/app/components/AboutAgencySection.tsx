@@ -32,8 +32,59 @@ export default function AboutAgencySection() {
   ];
 
   return (
-    <section className="relative min-h-screen py-20 lg:py-40 overflow-visible">
+  <section className="relative min-h-screen py-20 lg:py-40 overflow-hidden">
+      {/* Blurred Ring for About Agency Section */}
+      <div className="absolute top-1/2 left-1/2 z-[-10]" style={{transform:'translate(-50%,-50%)',width:'520px',height:'520px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(16px) brightness(0.12)',
+          boxShadow: '0 0 4px 1px #ef4444, 0 0 8px 2px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      {/* Left Red Ring - Extreme Left (outside container, max z-index) */}
+  <div className="absolute top-[28%] left-[-320px] z-[-10]" style={{width:'540px',height:'540px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '56px solid #ef4444',
+          filter: 'blur(32px) brightness(0.35)',
+          boxShadow: '0 0 32px 8px #ef4444, 0 0 64px 16px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      {/* Right Red Ring - Extreme Right (outside container, max z-index) */}
+  <div className="absolute top-[18%] right-[-320px] z-[-10]" style={{width:'540px',height:'540px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '56px solid #ef4444',
+          filter: 'blur(32px) brightness(0.35)',
+          boxShadow: '0 0 32px 8px #ef4444, 0 0 64px 16px #ef4444',
+          boxSizing: 'border-box',
+          position: 'relative',
+          top: '220px', // move ring downward but keep visible
+          left: '60px', // move ring right but keep visible
+        }} />
+      </div>
       <div className="container relative mx-auto !z-20">
+      {/* Blurred Ring for Hero Section */}
+      <div className="absolute top-[40%] left-1/2 z-[-10]" style={{transform:'translate(-50%,-50%)',width:'480px',height:'480px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '36px solid #ef4444',
+          filter: 'blur(16px) brightness(0.12)',
+          boxShadow: '0 0 4px 1px #ef4444, 0 0 8px 2px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side */}
           <div
@@ -132,13 +183,6 @@ export default function AboutAgencySection() {
       </div>
 
       {/* Background Sphere */}
-      <div className="absolute bottom-20 -left-32 z-0">
-        <img
-          src="/media/sphere.4b56a70e.png"
-          alt="Acciobyte Sphere Image"
-          className="w-96 h-96 animate-spin-slow filter-gray"
-        />
-      </div>
     </section>
   );
 }

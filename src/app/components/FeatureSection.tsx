@@ -2,7 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 
 {/* Features Section */}
-<section className="py-12 lg:py-20 bg-black text-white">
+<section className="py-12 lg:py-20 bg-black text-white relative overflow-hidden">
+  {/* Blurred Rings for Innovative Features Section */}
+  <div className="absolute top-0 left-[-220px] z-[-10]" style={{width:'520px',height:'520px'}}>
+    <div style={{
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      border: '40px solid #ef4444',
+      filter: 'blur(20px) brightness(0.18)',
+      boxShadow: '0 0 8px 2px #ef4444, 0 0 16px 4px #ef4444',
+      boxSizing: 'border-box',
+    }} />
+  </div>
+  <div className="absolute bottom-[-120px] right-[-220px] z-[-10]" style={{width:'540px',height:'540px'}}>
+    <div style={{
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      border: '44px solid #ef4444',
+      filter: 'blur(20px) brightness(0.18)',
+      boxShadow: '0 0 8px 2px #ef4444, 0 0 16px 4px #ef4444',
+      boxSizing: 'border-box',
+    }} />
+  </div>
   <div className="container mx-auto px-4">
     {/* Top Part: Title and Description */}
     <div className="grid lg:grid-cols-2 gap-10 items-center mb-16">

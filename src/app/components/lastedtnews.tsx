@@ -1,5 +1,7 @@
+// ...existing code...
 "use client";
 import React from "react";
+import DonutBackground from "./DonutBackground";
 
 // ✅ Star Icon Component
 type StarIconProps = {
@@ -33,12 +35,12 @@ type BlogCardProps = {
 };
 
 const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title }) => (
-  <div className="bg-[#1c1c1e] rounded-2xl overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+  <div className="bg-[#1c1c1e] rounded-2xl overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-300 ease-in-out transform hover:-translate-y-1 h-full">
     <div className="overflow-hidden">
       <img
         src={imageUrl}
         alt={title}
-        className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+        className="object-cover w-full h-48 transition-transform duration-500 sm:h-56 lg:h-48 hover:scale-105"
         onError={(e) => {
           const target = e.currentTarget as HTMLImageElement;
           target.onerror = null;
@@ -47,18 +49,19 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title }) => (
         }}
       />
     </div>
-    <div className="p-6 flex-grow flex flex-col">
-      <h3 className="text-xl font-semibold text-white mb-4 flex-grow">
+    <div className="flex flex-col flex-grow p-4 sm:p-6">
+      <h3 className="flex-grow mb-4 text-lg font-semibold leading-relaxed text-white sm:text-xl">
         {title}
       </h3>
       <a
         href="#"
-        className="text-white-300 font-semibold flex items-center gap-2 transition-colors duration-300 hover:text-red-500 "
-      style={{color:"red"}}>
-        
+        className="flex items-center gap-2 mt-auto font-semibold text-red-500 transition-colors duration-300 hover:text-red-400"
+      >
         Read More
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right ml-2 w-4 h-4"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
       </a>
     </div>
   </div>
@@ -88,20 +91,44 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-black text-gray-200 min-h-screen font-sans">
-      <div className="container mx-auto px-6 py-16 md:py-24">
-        {/* Header Section */}
-        <header className="mb-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+    <DonutBackground density="low">
+      <div className="min-h-screen font-sans text-gray-200 bg-black">
+        <div className="container px-4 py-12 mx-auto sm:px-6 lg:px-8 sm:py-16 md:py-24 relative">
+          {/* Blurred Rings for Insights Section */}
+          <div className="absolute top-0 left-[-220px] z-0" style={{width:'520px',height:'520px'}}>
+            <div style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '50%',
+              border: '40px solid #ef4444',
+              filter: 'blur(28px) brightness(0.3)',
+              boxShadow: '0 0 16px 4px #ef4444, 0 0 32px 8px #ef4444',
+              boxSizing: 'border-box',
+            }} />
+          </div>
+          <div className="absolute bottom-[-120px] right-[-220px] z-0" style={{width:'540px',height:'540px'}}>
+            <div style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '50%',
+              border: '44px solid #ef4444',
+              filter: 'blur(30px) brightness(0.3)',
+              boxShadow: '0 0 18px 5px #ef4444, 0 0 36px 10px #ef4444',
+              boxSizing: 'border-box',
+            }} />
+          </div>
+          {/* Header Section */}
+          <header className="mb-12 sm:mb-16 relative z-10">
+          <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 sm:gap-12">
             {/* Left Column: Title */}
-            <div className="text-left">
+            <div className="text-center md:text-left">
               {/* 🔥 LATEST NEWS bigger, no red background */}
-              <div className="inline-flex items-center gap-2 text-red-500 text-lg md:text-xl mb-4 font-bold">
+              <div className="inline-flex items-center gap-2 mb-4 text-lg font-bold text-red-500 md:text-xl">
                  <StarIcon className="w-5 h-5" />
                   LATEST NEWS
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+              <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 Insights on digital{" "}
                 <span className="text-red-500">innovation</span> and{" "}
                 <span className="text-red-500">growth</span>
@@ -109,7 +136,7 @@ export default function Page() {
             </div>
             {/* Right Column: Description */}
             <div className="text-center md:text-left">
-              <p className="text-lg text-white-500 leading-relaxed">
+              <p className="text-base leading-relaxed text-gray-300 sm:text-lg">
                 Explore the latest trends, strategies, and tools driving digital
                 innovation and helping businesses thrive in a rapidly evolving
                 digital landscape.
@@ -120,7 +147,7 @@ export default function Page() {
 
         {/* Blog Cards Section */}
         <main>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
             {blogPosts.map((post) => (
               <BlogCard
                 key={post.id}
@@ -132,7 +159,7 @@ export default function Page() {
         </main>
 
         {/* Pagination Section */}
-        <footer className="mt-16 flex justify-center">
+        <footer className="flex justify-center mt-12 sm:mt-16">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -141,5 +168,6 @@ export default function Page() {
         </footer>
       </div>
     </div>
+    </DonutBackground>
   );
 }

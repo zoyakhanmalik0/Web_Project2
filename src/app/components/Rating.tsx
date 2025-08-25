@@ -195,6 +195,20 @@ export default function Testimonials() {
       className="relative w-full overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-black text-white"
       style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
     >
+      {/* Blurred Rings for Testimonials Section */}
+      <div className="absolute top-1/2 right-[-240px] z-0" style={{transform:'translateY(-50%)',width:'600px',height:'600px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '48px solid #ef4444',
+          filter: 'blur(32px) brightness(0.3)',
+          boxShadow: '0 0 24px 8px #ef4444, 0 0 48px 16px #ef4444',
+          boxSizing: 'border-box',
+          left: '-120px',
+          position: 'relative',
+        }} />
+      </div>
       {/* Overlay Inner Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"

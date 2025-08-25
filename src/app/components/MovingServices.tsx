@@ -4,7 +4,7 @@ import React from "react";
 
 const ScrollingServicesBar = () => {
   return (
-    <section className="w-full overflow-hidden min-h-[60px] bg-default flex items-center justify-center py-2">
+    <section className="w-full overflow-hidden min-h-[60px] bg-default flex items-center justify-center !mt-0 !mb-0">
       <div
         className="whitespace-nowrap flex items-center gap-6 text-black font-bold text-xl md:text-2xl"
         style={{

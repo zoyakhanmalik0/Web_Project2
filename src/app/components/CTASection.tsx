@@ -9,6 +9,29 @@ export default function CTASection() {
       className="relative w-full overflow-hidden py-24 md:py-32 bg-cover bg-center bg-black text-white"
       style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
     >
+      {/* Blurred Rings for CTA Section */}
+      <div className="absolute top-0 left-[-220px] z-0" style={{width:'520px',height:'520px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(28px) brightness(0.3)',
+          boxShadow: '0 0 16px 4px #ef4444, 0 0 32px 8px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      <div className="absolute bottom-[-120px] right-[-220px] z-0" style={{width:'540px',height:'540px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '44px solid #ef4444',
+          filter: 'blur(30px) brightness(0.3)',
+          boxShadow: '0 0 18px 5px #ef4444, 0 0 36px 10px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
       {/* Overlay Inner Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"

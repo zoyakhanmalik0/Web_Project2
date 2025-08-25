@@ -92,11 +92,11 @@ export default function About() {
       
       {/* Hero Section */}
       <div
-        className="w-full h-full flex items-center justify-center py-24 md:py-48 relative bg-cover bg-center bg-no-repeat"
+        className="relative flex items-center justify-center w-full h-full py-24 bg-center bg-no-repeat bg-cover md:py-48"
         style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
       >
-        <div className="flex flex-col justify-center items-center gap-4 md:gap-8 font-semibold text-white px-4">
-          <span className="text-4xl md:text-5xl xl:text-7xl text-center">
+        <div className="flex flex-col items-center justify-center gap-4 px-4 font-semibold text-white md:gap-8">
+          <span className="text-4xl text-center md:text-5xl xl:text-7xl">
             About <span className="text-red-500">us</span>
           </span>
           <nav aria-label="breadcrumb">
@@ -118,28 +118,28 @@ export default function About() {
       <Services/>
       
       {/* ABOUT/AGENCY SECTION */}
-      <section ref={addressRef} className="relative py-12 md:py-20 lg:py-40 overflow-visible">
+      <section ref={addressRef} className="relative py-12 overflow-visible md:py-20 lg:py-40">
         <div className="container relative mx-auto !z-20 px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
+          <div className="grid items-start gap-8 lg:grid-cols-2 md:gap-16">
             <div
-              className="lg:sticky lg:top-24 h-fit self-start text-center lg:text-start"
+              className="self-start text-center lg:sticky lg:top-24 h-fit lg:text-start"
               style={{ opacity: 1, transform: "none" }}
             >
-              <div data-aos="fade-right" className="w-full text-default text-base md:text-18 font-bold flex items-center justify-center lg:justify-start gap-4 my-6 md:my-9">
+              <div data-aos="fade-right" className="flex items-center justify-center w-full gap-4 my-6 text-base font-bold text-default md:text-18 lg:justify-start md:my-9">
                 <img
                   src="/media/asterisk_default.4355d764.png"
                   alt="Acciobyte Asteric Image"
-                  className="text-red-500 w-4 h-4 md:w-5 md:h-5 filter-red"
+                  className="w-4 h-4 text-red-500 md:w-5 md:h-5 filter-red"
                 />
                 <h4>ABOUT AGENCY</h4>
               </div>
-              <h2 data-aos="fade-right" className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
-                Crafting <span className="text-default font-bold">unique digital</span>
+              <h2 data-aos="fade-right" className="mb-4 text-3xl text-white md:text-4xl lg:text-5xl xl:text-6xl">
+                Crafting <span className="font-bold text-default">unique digital</span>
               </h2>
-              <p data-aos="fade-right" className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-6 md:mb-8">
+              <p data-aos="fade-right" className="mb-6 text-2xl text-white md:text-4xl lg:text-5xl xl:text-6xl md:mb-8">
                 experiences that elevate your brand
               </p>
-              <div data-aos="fade-right" className="mt-4 flex justify-center lg:justify-start gap-4 group">
+              <div data-aos="fade-right" className="flex justify-center gap-4 mt-4 lg:justify-start group">
                 <Link href="/contact">
                   <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground shadow hover:bg-primary/90 h-9 bg-red-600 px-5 py-2 md:p-7 rounded-full text-base md:lg:!text-18 font-bold text-white shadow-lg hover:bg-red-700 transition-all min-w-[140px]">
                     Contact Us
@@ -190,7 +190,7 @@ export default function About() {
                   description: "Our goal is simple: empower brands to grow and succeed in the digital world. Through strong client partnerships and custom strategies, we deliver results that matter."
                 }
               ].map((item, index) => (
-                <div key={index} className="relative flex gap-4 md:gap-6 group cursor-pointer" style={{ opacity: 1, transform: "none" }}>
+                <div key={index} className="relative flex gap-4 cursor-pointer md:gap-6 group" style={{ opacity: 1, transform: "none" }}>
                   <div className="hidden lg:block absolute -left-[40px] top-1/2 w-6 h-6 md:w-8 md:h-8 rounded-full -translate-y-1/2">
                     <img src="/media/dot.5c102e3c.svg" alt="Acciobyte Dot Service" className="filter-red" />
                   </div>
@@ -198,12 +198,12 @@ export default function About() {
                     <img
                       src={item.icon}
                       alt="Acciobyte Service Icon"
-                      className="w-14 h-14 md:w-20 md:h-20 bg-default rounded-lg p-2 md:p-3"
+                      className="p-2 rounded-lg w-14 h-14 md:w-20 md:h-20 bg-default md:p-3"
                     />
-                    <h3 className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 group-hover:text-default transition-colors">
+                    <h3 className="mb-2 text-lg font-bold text-white transition-colors md:text-xl lg:text-2xl xl:text-3xl group-hover:text-default">
                       {item.title}
                     </h3>
-                    <p className="text-white text-justify leading-relaxed text-sm md:text-base lg:text-lg">
+                    <p className="text-sm leading-relaxed text-justify text-white md:text-base lg:text-lg">
                       {item.description}
                     </p>
                   </div>
@@ -212,7 +212,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 md:bottom-20 -left-20 md:-left-32 z-0">
+        <div className="absolute z-0 bottom-10 md:bottom-20 -left-20 md:-left-32">
           <img
             src="/media/sphere.4b56a70e.png"
             alt="Acciobyte Sphere Image"
@@ -222,22 +222,45 @@ export default function About() {
       </section>
       
       {/* FEATURES SECTION */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-black overflow-x-hidden">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="relative mx-auto z-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-start">
-              <div data-aos="fade-right" className="h-fit self-start text-center lg:text-start">
-                <div className="w-full text-red-500 text-sm md:text-base sm:text-18 font-bold flex items-center justify-center lg:justify-start gap-2 md:gap-4 my-4 md:my-6 sm:my-9">
+      <section className="py-12 overflow-x-hidden bg-black sm:py-16 lg:py-20 relative overflow-hidden">
+        {/* Blurred Rings for Innovative Features Section */}
+        <div className="absolute top-0 left-[-220px] z-[-10]" style={{width:'520px',height:'520px'}}>
+          <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            border: '40px solid #ef4444',
+            filter: 'blur(16px) brightness(0.12)',
+            boxShadow: '0 0 4px 1px #ef4444, 0 0 8px 2px #ef4444',
+            boxSizing: 'border-box',
+          }} />
+        </div>
+        <div className="absolute bottom-[-120px] right-[-220px] z-[-10]" style={{width:'540px',height:'540px'}}>
+          <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            border: '44px solid #ef4444',
+            filter: 'blur(16px) brightness(0.12)',
+            boxShadow: '0 0 4px 1px #ef4444, 0 0 8px 2px #ef4444',
+            boxSizing: 'border-box',
+          }} />
+        </div>
+        <div className="container px-4 mx-auto lg:px-6">
+          <div className="relative z-20 mx-auto">
+            <div className="grid items-start grid-cols-1 gap-6 lg:grid-cols-2 md:gap-8 lg:gap-16">
+              <div data-aos="fade-right" className="self-start text-center h-fit lg:text-start">
+                <div className="flex items-center justify-center w-full gap-2 my-4 text-sm font-bold text-red-500 md:text-base sm:text-18 lg:justify-start md:gap-4 md:my-6 sm:my-9">
                   <img src="/media/asterisk_default.4355d764.png" alt="Astrivix Asteric Image" className="w-4 h-4 sm:w-5 sm:h-5 filter-red" />
                   <h4>FEATURES</h4>
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">Innovative <span className="text-red-500 font-bold">features</span></h2>
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white mb-4 sm:mb-6 md:mb-8">for your digital success</p>
+                <h2 className="mb-4 text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Innovative <span className="font-bold text-red-500">features</span></h2>
+                <p className="mb-4 text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl sm:mb-6 md:mb-8">for your digital success</p>
               </div>
               <div className="relative">
-                <div className="relative flex flex-col gap-3 sm:gap-4 md:gap-6 lg:py-16 xl:py-24 group cursor-pointer">
+                <div className="relative flex flex-col gap-3 cursor-pointer sm:gap-4 md:gap-6 lg:py-16 xl:py-24 group">
                   <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
-                    <p className="text-white text-center lg:text-justify leading-relaxed text-sm sm:text-base md:text-lg">Our digital services empower brands with innovative strategies and solutions for sustainable growth and engagement.</p>
+                    <p className="text-sm leading-relaxed text-center text-white lg:text-justify sm:text-base md:text-lg">Our digital services empower brands with innovative strategies and solutions for sustainable growth and engagement.</p>
                   </div>
                   <Link className="mt-4 flex !justify-center lg:!justify-start gap-3 md:gap-4 group" href="/about">
                     <button className="inline-flex items-center justify-center px-5 md:px-8 py-1.5 md:py-2 rounded-full bg-gray-600 text-white font-bold text-base md:text-lg whitespace-nowrap">
@@ -254,24 +277,24 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 mt-6 md:mt-8 p-3 sm:mt-10">
+            <div className="grid gap-3 p-3 mt-6 lg:grid-cols-5 sm:gap-4 md:gap-6 md:mt-8 sm:mt-10">
               <div data-aos="fade-up" className="bg-blackfade2/40 backdrop-blur-lg p-6 md:p-10 rounded-2xl md:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-5 lg:col-span-3">
                 <div className="relative overflow-hidden rounded-2xl md:rounded-[32px]">
-                  <Image src="/2.png" alt="Custom Branding Solutions" width={1000} height={1000} className="w-full h-48 md:h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src="/2.png" alt="Custom Branding Solutions" width={1000} height={1000} className="object-cover w-full h-48 transition-transform duration-500 md:h-64 lg:h-80 group-hover:scale-105" />
                 </div>
                 <div className="p-4 md:p-6 lg:p-8">
-                  <h3 className="text-white text-xl md:text-2xl font-semibold mb-2 md:mb-3">Custom Branding Solutions</h3>
-                  <p className="text-gray-400 text-sm md:text-base">Unique brand identity development, including logos, color palettes.</p>
+                  <h3 className="mb-2 text-xl font-semibold text-white md:text-2xl md:mb-3">Custom Branding Solutions</h3>
+                  <p className="text-sm text-gray-400 md:text-base">Unique brand identity development, including logos, color palettes.</p>
                 </div>
               </div>
 
               <div data-aos="fade-up" className="bg-blackfade2/40 backdrop-blur-lg p-6 md:p-10 rounded-2xl md:rounded-[32px] overflow-hidden group hover:bg-[#151515] transition-colors duration-300 col-span-5 lg:col-span-2">
                 <div className="relative overflow-hidden rounded-2xl md:rounded-[32px]">
-                  <Image src="https://res.cloudinary.com/dbcmdtr3r/image/upload/v1752998901/dddm.b39136e5_mhs0oh.jpg" alt="Data-Driven Digital Marketing" width={1000} height={1000} className="w-full h-48 md:h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src="https://res.cloudinary.com/dbcmdtr3r/image/upload/v1752998901/dddm.b39136e5_mhs0oh.jpg" alt="Data-Driven Digital Marketing" width={1000} height={1000} className="object-cover w-full h-48 transition-transform duration-500 md:h-64 lg:h-80 group-hover:scale-105" />
                 </div>
                 <div className="p-4 md:p-6 lg:p-8">
-                  <h3 className="text-white text-xl md:text-2xl font-semibold mb-2 md:mb-3">Data-Driven Digital Marketing</h3>
-                  <p className="text-gray-400 text-sm md:text-base">Strategies combining SEO, PPC, content marketing</p>
+                  <h3 className="mb-2 text-xl font-semibold text-white md:text-2xl md:mb-3">Data-Driven Digital Marketing</h3>
+                  <p className="text-sm text-gray-400 md:text-base">Strategies combining SEO, PPC, content marketing</p>
                 </div>
               </div>
             </div>
@@ -281,14 +304,14 @@ export default function About() {
 
       {/* CONTENT CREATION SECTION */}
       <section data-aos="fade-up" className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4">
+        <div className="container px-4 mx-auto">
           <div className="relative bg-blackfade2/40 backdrop-blur-lg rounded-2xl md:rounded-3xl lg:rounded-[32px] p-6 md:p-8 lg:p-12 xl:p-20" style={{ opacity: 1, transform: 'none' }}>
-            <div className="flex flex-col lg:flex-row justify-between items-start mb-12 md:mb-16 lg:mb-20 gap-6">
+            <div className="flex flex-col items-start justify-between gap-6 mb-12 lg:flex-row md:mb-16 lg:mb-20">
               <div className="max-w-2xl">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold mb-3 md:mb-4">Content Creation And Strategy</h2>
-                <p className="text-gray-400 text-base md:text-lg">High-quality, engaging content across blogs<span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-default rounded-full mx-1 md:mx-2 mb-0.5"></span>videos, and graphics designed to captivate and retain audiences.</p>
+                <h2 className="mb-3 text-2xl font-semibold text-white md:text-3xl lg:text-4xl md:mb-4">Content Creation And Strategy</h2>
+                <p className="text-base text-gray-400 md:text-lg">High-quality, engaging content across blogs<span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 bg-default rounded-full mx-1 md:mx-2 mb-0.5"></span>videos, and graphics designed to captivate and retain audiences.</p>
               </div>
-              <div className="hidden lg:block relative" style={{ width: '120px', height: '120px' }}>
+              <div className="relative hidden lg:block" style={{ width: '120px', height: '120px' }}>
                 <div className="absolute inset-0" style={{ animation: 'spin 15s linear infinite' }}>
                   <svg viewBox="0 0 100 100" className="w-full h-full">
                     <defs>
@@ -299,7 +322,7 @@ export default function About() {
                     </text>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5 text-default">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 lucide lucide-arrow-down text-default">
                       <path d="M12 5v14"></path>
                       <path d="m19 12-7 7-7-7"></path>
                     </svg>
@@ -341,9 +364,9 @@ export default function About() {
       
       {/* Our Team Section */}
       <div className="container relative mx-auto px-4 !z-20">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
-          <div className="h-fit self-start text-center lg:text-start">
-            <div className="w-full text-red-500 text-base md:text-18 font-bold flex items-center justify-center lg:justify-start gap-2 md:gap-4 my-6 md:my-9">
+        <div className="grid items-start gap-8 lg:grid-cols-2 md:gap-16">
+          <div className="self-start text-center h-fit lg:text-start">
+            <div className="flex items-center justify-center w-full gap-2 my-6 text-base font-bold text-red-500 md:text-18 lg:justify-start md:gap-4 md:my-9">
               <Image
                 src="/media/asterisk_default.4355d764.png"
                 alt="Asteric"
@@ -353,17 +376,17 @@ export default function About() {
               />
               <h4>OUR TEAM</h4>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
-              Dynamic <span className="text-red-500 font-bold">team</span>
+            <h2 className="mb-4 text-3xl text-white md:text-4xl lg:text-5xl xl:text-6xl">
+              Dynamic <span className="font-bold text-red-500">team</span>
             </h2>
-            <p className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-6 md:mb-8">
+            <p className="mb-6 text-2xl text-white md:text-4xl lg:text-5xl xl:text-6xl md:mb-8">
               of digital experts
             </p>
           </div>
           <div className="relative">
-            <div className="relative flex flex-col gap-4 md:gap-6 lg:py-16 xl:py-24 group cursor-pointer">
+            <div className="relative flex flex-col gap-4 cursor-pointer md:gap-6 lg:py-16 xl:py-24 group">
               <div className="flex flex-col gap-4 md:gap-5">
-                <p className="text-white text-center lg:text-justify leading-relaxed text-sm md:text-base lg:text-lg">
+                <p className="text-sm leading-relaxed text-center text-white lg:text-justify md:text-base lg:text-lg">
                   Our digital services empower brands with innovative strategies
                   and solutions for sustainable growth and engagement. Our
                   digital services empower brands with innovative strategies and
@@ -401,8 +424,8 @@ export default function About() {
 
         {/* Team Members */}
         <section className="py-8 md:py-12">
-          <div className="container mx-auto px-4">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+          <div className="container px-4 mx-auto">
+            <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-8 lg:gap-10">
               {[1, 2, 3, 4].map((idx) => (
                 <div
                   key={idx}
@@ -417,7 +440,7 @@ export default function About() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80"></div>
                     <div className="absolute bottom-6 md:bottom-10 left-0 right-0 p-4 md:p-6 transform translate-y-16 opacity-0 transition-all duration-[1200ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                      <h3 className="text-white text-xl md:text-2xl lg:text-3xl font-semibold mb-1 md:mb-2">
+                      <h3 className="mb-1 text-xl font-semibold text-white md:text-2xl lg:text-3xl md:mb-2">
                         {
                           [
                             "Sarah Mitchell",
@@ -427,7 +450,7 @@ export default function About() {
                           ][idx - 1]
                         }
                       </h3>
-                      <p className="text-gray-300 text-base md:text-lg">
+                      <p className="text-base text-gray-300 md:text-lg">
                         {
                           [
                             "Senior Project Manager",
@@ -441,9 +464,9 @@ export default function About() {
                         {/* Social icons */}
                         <a
                           href="#"
-                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
+                          className="flex items-center justify-center w-8 h-8 transition-colors duration-300 border-2 border-red-500 rounded-full md:w-10 md:h-10 lg:w-12 lg:h-12 group hover:bg-red-500"
                         >
-                          <div className="text-red-500 group-hover:text-white transition-colors duration-300">
+                          <div className="text-red-500 transition-colors duration-300 group-hover:text-white">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
@@ -454,7 +477,7 @@ export default function About() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-facebook w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
+                              className="w-4 h-4 lucide lucide-facebook md:w-5 md:h-5 lg:w-6 lg:h-6"
                             >
                               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
@@ -462,9 +485,9 @@ export default function About() {
                         </a>
                         <a
                           href="#"
-                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
+                          className="flex items-center justify-center w-8 h-8 transition-colors duration-300 border-2 border-red-500 rounded-full md:w-10 md:h-10 lg:w-12 lg:h-12 group hover:bg-red-500"
                         >
-                          <div className="text-red-500 group-hover:text-white transition-colors duration-300">
+                          <div className="text-red-500 transition-colors duration-300 group-hover:text-white">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
@@ -475,7 +498,7 @@ export default function About() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-instagram w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
+                              className="w-4 h-4 lucide lucide-instagram md:w-5 md:h-5 lg:w-6 lg:h-6"
                             >
                               <rect
                                 width="20"
@@ -497,9 +520,9 @@ export default function About() {
                         </a>
                         <a
                           href="#"
-                          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full border-2 border-red-500 flex items-center justify-center group hover:bg-red-500 transition-colors duration-300"
+                          className="flex items-center justify-center w-8 h-8 transition-colors duration-300 border-2 border-red-500 rounded-full md:w-10 md:h-10 lg:w-12 lg:h-12 group hover:bg-red-500"
                         >
-                          <div className="text-red-500 group-hover:text-white transition-colors duration-300">
+                          <div className="text-red-500 transition-colors duration-300 group-hover:text-white">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
@@ -510,7 +533,7 @@ export default function About() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-twitter w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
+                              className="w-4 h-4 lucide lucide-twitter md:w-5 md:h-5 lg:w-6 lg:h-6"
                             >
                               <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                             </svg>
@@ -519,7 +542,7 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-black/20 group-hover:opacity-100"></div>
                 </div>
               ))}
             </div>
@@ -528,9 +551,9 @@ export default function About() {
       </div>
 
       {/* Why Choose Us Section */}
-      <section className="relative overflow-hidden py-12 md:py-16 lg:py-20">
+      <section className="relative py-12 overflow-hidden md:py-16 lg:py-20">
         <div className="container relative mx-auto !z-20 px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-5 gap-4 md:gap-6">
+          <div className="grid items-center grid-cols-1 gap-4 mb-5 lg:grid-cols-2 md:gap-6">
             <div className="space-y-3 md:space-y-4">
               <div className="flex items-center gap-2">
                 <Image
@@ -540,24 +563,24 @@ export default function About() {
                   height={14}
                   className="w-3 h-3 md:w-4 md:h-4 filter-red"
                 />
-                <span className="text-white uppercase tracking-wider text-xs md:text-sm font-semibold">
+                <span className="text-xs font-semibold tracking-wider text-white uppercase md:text-sm">
                   WHY CHOOSE
                 </span>
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl !leading-normal text-white font-light">
                 Expertise for{" "}
-                <span className="text-red-500 font-semibold">your digital</span>
+                <span className="font-semibold text-red-500">your digital</span>
                 <br />
                 growth journey
               </h2>
             </div>
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-lg">
+            <p className="max-w-lg text-sm leading-relaxed text-gray-400 md:text-base">
               Our dedicated team is committed to understanding your unique
               needs, ensuring that we provide innovative strategies that drive
               results. With a focus on quality and integrity.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center mt-8">
+          <div className="grid items-center gap-6 mt-8 lg:grid-cols-2 md:gap-8 lg:gap-10">
             <div className="space-y-6 md:space-y-8">
               {[
                 {
@@ -575,7 +598,7 @@ export default function About() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative p-4 md:p-6 rounded-xl md:rounded-2xl bg-transparent border border-gray-800 overflow-hidden cursor-pointer group"
+                  className="relative p-4 overflow-hidden bg-transparent border border-gray-800 cursor-pointer md:p-6 rounded-xl md:rounded-2xl group"
                 >
                   <div
                     className="absolute inset-0 transition-transform duration-700 ease-in-out bg-[length:130%_100%] bg-no-repeat"
@@ -585,28 +608,28 @@ export default function About() {
                     }}
                   ></div>
                   <div className="relative z-10">
-                    <h3 className="text-white text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">
+                    <h3 className="mb-2 text-base font-semibold text-white md:text-lg lg:text-xl md:mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-xs leading-relaxed text-gray-400 md:text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="lg:sticky lg:top-20 space-y-4 md:space-y-6 mt-6 lg:mt-0">
-              <div className="image-container group relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden">
+            <div className="mt-6 space-y-4 lg:sticky lg:top-20 md:space-y-6 lg:mt-0">
+              <div className="relative w-full h-full overflow-hidden image-container group rounded-xl md:rounded-2xl">
                 <Image
                   src="/media/whyus.fe999c9a.png"
                   alt="Business meeting"
                   width={280}
                   height={280}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 md:bottom-20 -right-20 md:-right-32 z-0">
+        <div className="absolute z-0 bottom-10 md:bottom-20 -right-20 md:-right-32">
           <Image
             src="/media/hex.eced7c60.png"
             alt="Hex"

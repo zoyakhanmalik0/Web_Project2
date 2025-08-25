@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DonutBackground from "../components/DonutBackground";
 
 const services = [
   { name: "Website Development", path: "/services/website-development" },
@@ -18,17 +19,19 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4">
-      <h1 className="text-4xl font-bold mb-8 text-red-500">Our Services</h1>
-      <ul className="space-y-4 max-w-xl">
-        {services.map((service) => (
-          <li key={service.path}>
-            <Link href={service.path} className="text-lg text-white hover:text-red-500 underline">
-              {service.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <DonutBackground density="medium">
+      <div className="min-h-screen bg-black text-white py-20 px-4">
+        <h1 className="text-4xl font-bold mb-8 text-red-500">Our Services</h1>
+        <ul className="space-y-4 max-w-xl">
+          {services.map((service) => (
+            <li key={service.path}>
+              <Link href={service.path} className="text-lg text-white hover:text-red-500 underline">
+                {service.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </DonutBackground>
   );
 } 

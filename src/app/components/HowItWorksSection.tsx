@@ -3,6 +3,33 @@ import React from 'react';
 const HowItWorksSection = () => {
   return (
     <section className="relative min-h-screen py-20 overflow-hidden">
+      {/* Blurred Ring for How It Works Section (left) */}
+      <div className="absolute top-[10%] left-[-320px] z-0" style={{width:'600px',height:'600px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(32px) brightness(0.3)',
+          boxShadow: '0 0 20px 5px #ef4444, 0 0 40px 10px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      {/* Blurred Ring for How It Works Section (right only) */}
+      <div className="absolute top-[10%] right-[-320px] z-0" style={{width:'600px',height:'600px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(32px) brightness(0.3)',
+          boxShadow: '0 0 20px 5px #ef4444, 0 0 40px 10px #ef4444',
+          boxSizing: 'border-box',
+          position: 'relative',
+          top: '-60px', // move ring upward
+          left: '-60px', // move ring slightly left
+        }} />
+      </div>
       <div className="container relative mx-auto !z-20">
         <div className="grid lg:grid-cols-2 gap-8 mb-20">
           <div data-aos="fade-right">

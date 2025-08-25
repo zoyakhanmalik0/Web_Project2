@@ -61,26 +61,26 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:block w-full mx-auto px-6 font-semibold">
-            <ul className="flex justify-center flex-row items-center gap-12">
+          <div className="hidden lg:block w-full mx-auto px-6 font-medium">
+            <ul className="flex justify-center flex-row items-center gap-8">
               <li className="relative group">
-                <Link className="flex gap-2 hover:text-default transition-colors" href="/">HOME</Link>
+                <Link className="flex gap-2 hover:text-default transition-colors text-sm" href="/">HOME</Link>
               </li>
               <li className="relative group">
-                <Link className="flex gap-2 hover:text-default transition-colors" href="/projects">PROJECTS</Link>
+                <Link className="flex gap-2 hover:text-default transition-colors text-sm" href="/projects">PROJECTS</Link>
               </li>
               <li className="relative group">
-                <Link className="flex gap-2 hover:text-default transition-colors" href="/pricing-plan">PRICING PLAN</Link>
+                <Link className="flex gap-2 hover:text-default transition-colors text-sm" href="/pricing-plan">PRICING</Link>
               </li>
               <li className="relative group">
-                <Link className="flex gap-2 hover:text-default transition-colors" href="/blogs">BLOGS</Link>
+                <Link className="flex gap-2 hover:text-default transition-colors text-sm" href="/blogs">BLOGS</Link>
               </li>
 
               {/* SERVICES Dropdown */}
-              <li className="relative group flex items-center gap-2 cursor-pointer text-white font-semibold">
-                SERVICES
+              <li className="relative group flex items-center gap-1 cursor-pointer text-white font-medium">
+                <span className="text-sm">SERVICES</span>
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="m6 9 6 6 6-6"></path>
                   </svg>
                 </span>
@@ -102,7 +102,7 @@ export default function Navigation() {
                       "POINT OF SALE (POS)",
                     ].map((service) => (
                       <Link key={service} href={`/services/${service.toLowerCase().replace(/ & | /g, "-")}`}>
-                        <li className="hover:bg-[#f87171] p-2.5 mx-2 rounded-md transition-colors">{service}</li>
+                        <li className="hover:bg-[#f87171] p-2.5 mx-2 rounded-md transition-colors text-xs">{service}</li>
                       </Link>
                     ))}
                   </ul>
@@ -110,13 +110,13 @@ export default function Navigation() {
               </li>
 
               <li className="relative group">
-                <Link className="flex gap-2 hover:text-default transition-colors" href="/about">ABOUT US</Link>
+                <Link className="flex gap-2 hover:text-default transition-colors text-sm" href="/about">ABOUT US</Link>
               </li>
 
               {/* Contact Button */}
-              <div className="w-fit group overflow-hidden flex justify-center items-center gap-4 text-[16px] font-semibold text-blackfade2 px-6 py-3 bg-default ease-in rounded-full relative">
+              <div className="w-fit group overflow-hidden flex justify-center items-center gap-2 text-sm font-medium text-blackfade2 px-4 py-2 bg-default ease-in rounded-full relative">
                 <Link href="/contact">
-                  <div className="group-hover:text-white relative z-10 flex items-center justify-center gap-4">Contact Us</div>
+                  <div className="group-hover:text-white relative z-10 flex items-center justify-center gap-2">Contact</div>
                 </Link>
               </div>
             </ul>
@@ -147,24 +147,24 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-blackfade2 bg-opacity-95 backdrop-blur-md border-t border-gray-700 overflow-y-auto max-h-screen">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-darkblack bg-opacity-95 backdrop-blur-md border-t border-gray-700 overflow-y-auto max-h-screen">
             <div className="px-4 py-6 space-y-4">
-              <Link href="/" className="block text-white hover:text-default transition-colors py-2" onClick={() => setShowMobileMenu(false)}>HOME</Link>
-              <Link href="/projects" className="block text-white hover:text-default transition-colors py-2" onClick={() => setShowMobileMenu(false)}>PROJECTS</Link>
-              <Link href="/pricing-plan" className="block text-white hover:text-default transition-colors py-2" onClick={() => setShowMobileMenu(false)}>PRICING PLAN</Link>
-              <Link href="/blogs" className="block text-white hover:text-default transition-colors py-2" onClick={() => setShowMobileMenu(false)}>BLOGS</Link>
-              <Link href="/about" className="block text-white hover:text-default transition-colors py-2" onClick={() => setShowMobileMenu(false)}>ABOUT US</Link>
+              <Link href="/" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>HOME</Link>
+              <Link href="/projects" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>PROJECTS</Link>
+              <Link href="/pricing-plan" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>PRICING</Link>
+              <Link href="/blogs" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>BLOGS</Link>
+              <Link href="/about" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>ABOUT US</Link>
 
               {/* Mobile SERVICES Dropdown */}
               <div className="space-y-2">
                 <button
-                  className={`w-full text-left font-semibold py-2 px-3 rounded-lg transition-colors flex items-center justify-between ${showMobileServices ? 'text-[#BFF747]' : 'text-white'}`}
+                  className={`w-full text-left font-medium py-2 px-3 rounded-lg transition-colors flex items-center justify-between ${showMobileServices ? 'text-[#BFF747]' : 'text-white'}`}
                   style={{background: 'transparent'}}
                   onClick={() => setShowMobileServices((s) => !s)}
                   aria-expanded={showMobileServices}
                   aria-controls="mobile-services-list"
                 >
-                  SERVICES
+                  <span className="text-sm">SERVICES</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`ml-2 transition-transform ${showMobileServices ? 'rotate-180' : ''}`}>
                     <path d="m6 9 6 6 6-6"></path>
                   </svg>
@@ -189,7 +189,7 @@ export default function Navigation() {
                       <Link
                         key={service}
                         href={`/services/${service.toLowerCase().replace(/ & | /g, "-")}`}
-                        className="block transition-colors py-1 rounded-md"
+                        className="block transition-colors py-1 rounded-md text-xs"
                         style={{background:'#EF4444', color:'#fff'}}
                         onMouseOver={e => e.currentTarget.style.background='#f87171'}
                         onMouseOut={e => e.currentTarget.style.background='#EF4444'}
