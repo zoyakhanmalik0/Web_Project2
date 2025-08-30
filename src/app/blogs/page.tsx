@@ -59,7 +59,35 @@ const blogs = [
 
 export default function Blogs() {
   return (
+<<<<<<< HEAD
     <div className="w-full bg-black bg-cover bg-center">
+=======
+    <div className="!w-full bg-cover bg-center bg-black relative overflow-hidden" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+      {/* Blurred Rings for Blogs Page */}
+      <div className="absolute top-0 left-[-220px] z-[-10]" style={{width:'520px',height:'520px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(32px) brightness(0.35)',
+          boxShadow: '0 0 32px 8px #ef4444, 0 0 64px 16px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      <div className="absolute bottom-[-120px] right-[-220px] z-[-10]" style={{width:'540px',height:'540px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '44px solid #ef4444',
+          filter: 'blur(32px) brightness(0.35)',
+          boxShadow: '0 0 32px 8px #ef4444, 0 0 64px 16px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      {/* Cursor Following Dot */}
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
       <CursorDot />
 
       {/* Hero Section */}
@@ -69,7 +97,7 @@ export default function Blogs() {
           <nav aria-label="breadcrumb">
             <ul className="container flex items-center space-x-2 text-18 font-semibold text-white py-1.5 px-2">
               <li><Link className="hover:underline" href="/">Home</Link></li>
-              <li className="flex items-center"><span className="mx-2">*</span><span className="text-default">Blogs</span></li>
+              <li className="flex items-center"><span className="mx-2">*</span><span className="text-red-500">Blogs</span></li>
             </ul>
           </nav>
         </div>

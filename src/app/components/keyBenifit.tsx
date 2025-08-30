@@ -284,10 +284,41 @@ const BenefitsSection: React.FC = () => {
 export default function App() {
   return (
     <main
+<<<<<<< HEAD
       className="bg-black text-gray-300 antialiased min-h-screen flex items-center py-12 sm:py-16 lg:py-20 relative overflow-hidden"
+=======
+      className="relative bg-black text-gray-300 antialiased min-h-screen flex items-center py-12 sm:py-16 lg:py-20"
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      <BenefitsSection />
+      {/* Blurred Rings for Key Benefits Section */}
+      <div className="absolute top-1/2 left-[-180px] z-0" style={{transform:'translateY(-50%)',width:'420px',height:'420px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '32px solid #ef4444',
+          filter: 'blur(24px) brightness(0.3)',
+          boxShadow: '0 0 12px 3px #ef4444, 0 0 24px 6px #ef4444',
+          boxSizing: 'border-box',
+          position: 'relative',
+          top: '-80px', // move ring upward
+        }} />
+      </div>
+      <div className="absolute top-1/2 right-[-180px] z-0" style={{transform:'translateY(-50%)',width:'420px',height:'420px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '32px solid #ef4444',
+          filter: 'blur(24px) brightness(0.3)',
+          boxShadow: '0 0 12px 3px #ef4444, 0 0 24px 6px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      <div className="relative z-10">
+        <BenefitsSection />
+      </div>
     </main>
   );
 }

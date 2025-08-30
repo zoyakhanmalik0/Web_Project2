@@ -5,7 +5,30 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-16 lg:py-20 text-base relative z-20">
+    <footer className="bg-black text-white py-16 lg:py-20 text-base relative z-20 overflow-hidden">
+      {/* Blurred Rings for Footer */}
+  <div className="absolute top-0 left-[-220px] z-[-10]" style={{width:'520px',height:'520px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(28px) brightness(0.3)',
+          boxShadow: '0 0 16px 4px #ef4444, 0 0 32px 8px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+  <div className="absolute bottom-[-120px] right-[-220px] z-[-10]" style={{width:'540px',height:'540px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '44px solid #ef4444',
+          filter: 'blur(30px) brightness(0.3)',
+          boxShadow: '0 0 18px 5px #ef4444, 0 0 36px 10px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
       <div className="container mx-auto px-6 lg:px-16">
         {/* Top Border Line - Full width */}
         <div className="border-t border-gray-700 w-full mb-10"></div>

@@ -1,3 +1,8 @@
+
+.font-sans, body, html, :root {
+  font-family: var(--font-jakarta), 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', sans-serif !important;
+  font-style: normal;
+}
 @import "tailwindcss";
 
 :root {
@@ -43,7 +48,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -282,11 +287,7 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
   font-size: 18px; /* Increased base font size for modern look */
-  background-image: url('/circle-bg.png');
-  background-repeat: repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: 300px 300px;
+  /* background-image removed */
 }
 
 * {
@@ -919,4 +920,27 @@ body {
   pointer-events: none;
   animation: spin-grow 20s linear infinite;
   border-radius: inherit;
+}
+@media (min-width: 640px) {
+  .rotating-sphere-bg::before {
+    width: 10%;
+    height: 100%;
+    right: -100px;
+    animation: spin-grow 30s linear infinite;
+  }
+}
+.rotating-sphere-bg > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes spin-grow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Footer from "../../components/Footer";
+<<<<<<< HEAD
 import MovingService from "../../components/MovingServices";
+=======
+import DonutBackground from "../../components/DonutBackground";
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
 
 export default function WebsiteDevelopment() {
   const services = [
@@ -74,7 +78,8 @@ export default function WebsiteDevelopment() {
   ];
 
   return (
-    <main className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+    <DonutBackground density="low">
+      <main className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
       <div className="w-full h-full flex items-center justify-center py-48 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/media/Inner_bg.23beb686.jpg)' }}>
         <div className="flex flex-col justify-center items-center xl:max-w-6xl gap-8 font-semibold text-white">
           <h1 className="text-4xl text-center xl:text-7xl">Website <span className="text-default">Development</span></h1>
@@ -249,5 +254,6 @@ export default function WebsiteDevelopment() {
       
       <Footer />
     </main>
+    </DonutBackground>
   );
 }

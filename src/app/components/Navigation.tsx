@@ -76,7 +76,11 @@ export default function Navigation() {
                 <Link className="flex gap-2 hover:text-default transition-colors text-sm" href="/blogs">BLOGS</Link>
               </li>
 
+<<<<<<< HEAD
               {/* SERVICES Dropdown - Changed to black */}
+=======
+              {/* SERVICES Dropdown */}
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
               <li className="relative group flex items-center gap-1 cursor-pointer text-white font-medium">
                 <span className="text-sm">SERVICES</span>
                 <span>
@@ -102,7 +106,11 @@ export default function Navigation() {
                       "POINT OF SALE (POS)",
                     ].map((service) => (
                       <Link key={service} href={`/services/${service.toLowerCase().replace(/ & | /g, "-")}`}>
+<<<<<<< HEAD
                         <li className="hover:bg-gray-800 p-2.5 mx-2 rounded-md transition-colors text-xs">{service}</li>
+=======
+                        <li className="hover:bg-[#f87171] p-2.5 mx-2 rounded-md transition-colors text-xs">{service}</li>
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
                       </Link>
                     ))}
                   </ul>
@@ -147,7 +155,11 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {showMobileMenu && (
+<<<<<<< HEAD
           <div className="lg:hidden absolute top-full left-0 w-full bg-black border-t border-gray-700 overflow-y-auto max-h-screen">
+=======
+          <div className="lg:hidden absolute top-full left-0 w-full bg-darkblack bg-opacity-95 backdrop-blur-md border-t border-gray-700 overflow-y-auto max-h-screen">
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
             <div className="px-4 py-6 space-y-4">
               <Link href="/" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>HOME</Link>
               <Link href="/projects" className="block text-white hover:text-default transition-colors py-2 text-sm" onClick={() => setShowMobileMenu(false)}>PROJECTS</Link>
@@ -190,9 +202,15 @@ export default function Navigation() {
                         key={service}
                         href={`/services/${service.toLowerCase().replace(/ & | /g, "-")}`}
                         className="block transition-colors py-1 rounded-md text-xs"
+<<<<<<< HEAD
                         style={{background:'#000', color:'#fff', border: '1px solid #e41212ff'}}
                         onMouseOver={e => e.currentTarget.style.background='#1a1a1a'}
                         onMouseOut={e => e.currentTarget.style.background='#000'}
+=======
+                        style={{background:'#EF4444', color:'#fff'}}
+                        onMouseOver={e => e.currentTarget.style.background='#f87171'}
+                        onMouseOut={e => e.currentTarget.style.background='#EF4444'}
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
                         onClick={() => setShowMobileMenu(false)}
                       >
                         {service}

@@ -4,6 +4,7 @@ import React from "react";
 
 const ScrollingServicesBar = () => {
   return (
+<<<<<<< HEAD
     <>
       {/* Google Fonts Import */}
       <link 
@@ -38,6 +39,34 @@ const ScrollingServicesBar = () => {
           <span className="mx-4">*</span>
           <span>Search Engine Optimization (SEO)</span>
           <span className="mx-4">*</span>
+=======
+    <section className="w-full overflow-hidden min-h-[60px] bg-default flex items-center justify-center !mt-0 !mb-0">
+      <div
+        className="whitespace-nowrap flex items-center gap-6 text-black font-bold text-xl md:text-2xl"
+        style={{
+          animation: "marquee 60s linear infinite",
+        }}
+      >
+        {/* First Set of Content */}
+        <span>Point of Sale (POS)</span>
+        <span className="mx-4">*</span>
+        <span>Cyber Security</span>
+        <span className="mx-4">*</span>
+        <span>SEO Content Writing</span>
+        <span className="mx-4">*</span>
+        <span>IOS/Android App Development</span>
+        <span className="mx-4">*</span>
+        <span>Website Development</span>
+        <span className="mx-4">*</span>
+        <span>Digital Marketing</span>
+        <span className="mx-4">*</span>
+        <span>Graphic Designing</span>
+        <span className="mx-4">*</span>
+        <span>Content Writing</span>
+        <span className="mx-4">*</span>
+        <span>Search Engine Optimization (SEO)</span>
+        <span className="mx-4">*</span>
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
 
           {/* Duplicate for seamless loop */}
           <span>Point of Sale (POS)</span>

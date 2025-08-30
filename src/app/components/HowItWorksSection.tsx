@@ -35,6 +35,7 @@ const HowItWorksSection = () => {
 
 
     <section className="relative min-h-screen py-20 overflow-hidden">
+<<<<<<< HEAD
       <div
     className="absolute top-[30px] right-[-260px] z-0 pointer-events-none"
     style={{ width: "500px", height: "500px" }}
@@ -61,6 +62,49 @@ const HowItWorksSection = () => {
               className="w-6 h-6 sm:w-8 sm:h-8 filter-red"
             />
             <h4>HOW IT WORK</h4>
+=======
+      {/* Blurred Ring for How It Works Section (left) */}
+      <div className="absolute top-[10%] left-[-320px] z-0" style={{width:'600px',height:'600px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(32px) brightness(0.3)',
+          boxShadow: '0 0 20px 5px #ef4444, 0 0 40px 10px #ef4444',
+          boxSizing: 'border-box',
+        }} />
+      </div>
+      {/* Blurred Ring for How It Works Section (right only) */}
+      <div className="absolute top-[10%] right-[-320px] z-0" style={{width:'600px',height:'600px'}}>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          border: '40px solid #ef4444',
+          filter: 'blur(32px) brightness(0.3)',
+          boxShadow: '0 0 20px 5px #ef4444, 0 0 40px 10px #ef4444',
+          boxSizing: 'border-box',
+          position: 'relative',
+          top: '-60px', // move ring upward
+          left: '-60px', // move ring slightly left
+        }} />
+      </div>
+      <div className="container relative mx-auto !z-20">
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+          <div data-aos="fade-right">
+            {/* 🔴 Red Badge */}
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-1 rounded-full bg-[#2a0000]">
+              <span className="text-red-500 text-xs font-semibold tracking-widest">
+                Astrivix Asteric Image FEATURES
+              </span>
+            </div>
+
+            {/* Heading */}
+            <h2 data-aos="fade-up" className="text-4xl lg:text-6xl text-white font-light">
+              Our proven <span className="text-default">process</span> for achieving success
+            </h2>
+>>>>>>> 29315eba2c5bc29fd4346b14f556d43799944b1e
           </div>
         <h2 data-aos="fade-up" className="text-4xl lg:text-6xl text-white font-light" style={{ opacity: 1, transform: 'none' }}>
           Our proven <span className="text-default">process</span> for achieving success
