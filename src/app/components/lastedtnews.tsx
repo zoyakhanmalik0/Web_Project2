@@ -47,18 +47,32 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title }) => (
         }}
       />
     </div>
+
     <div className="p-6 flex-grow flex flex-col">
       <h3 className="text-xl font-semibold text-white mb-4 flex-grow">
         {title}
       </h3>
       <a
         href="#"
-        className="text-white-300 font-semibold flex items-center gap-2 transition-colors duration-300 hover:text-red-500 "
-      style={{color:"red"}}>
-        
+        className="text-white-300 font-semibold flex items-center gap-2 transition-colors duration-300 hover:text-red-500"
+        style={{ color: "red" }}
+      >
         Read More
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right ml-2 w-4 h-4"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-arrow-up-right ml-2 w-4 h-4"
+        >
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
       </a>
     </div>
   </div>
@@ -88,17 +102,55 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-black text-gray-200 min-h-screen font-sans">
-      <div className="container mx-auto px-6 py-16 md:py-24">
+    <div className="bg-black text-gray-200 min-h-screen font-sans relative overflow-hidden">
+      {/* 🔴 Blurred Ring - Top Right */}
+            {/* 🔴 Ring Top Right */}
+ <div
+  className="absolute top-[40px] right-[-150px] z-0 pointer-events-none"
+  style={{ width: "600px", height: "600px" }}
+>
+  <div
+    style={{
+      width: "70%",
+      height: "70%",
+      borderRadius: "50%",
+      border: "40px solid rgba(239,68,68,0.45)",
+      filter: "blur(32px) brightness(0.6)",
+      boxShadow: "0 0 3px 0.5px #ef4444, 0 0 6px 1px #ef4444",
+    }}
+  />
+</div>
+
+
+
+      {/* 🔴 Ring Bottom Left */}
+ <div
+  className="absolute bottom-[-150px] left-[-220px] z-0 pointer-events-none"
+  style={{ width: "600px", height: "600px" }}
+>
+  <div
+    style={{
+      width: "70%",
+      height: "70%",
+      borderRadius: "50%",
+      border: "40px solid rgba(239,68,68,0.45)",
+      filter: "blur(32px) brightness(0.6)",
+      boxShadow: "0 0 3px 0.5px #ef4444, 0 0 6px 1px #ef4444",
+    }}
+  />
+</div>
+
+
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
         {/* Header Section */}
         <header className="mb-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column: Title */}
             <div className="text-left">
-              {/* 🔥 LATEST NEWS bigger, no red background */}
               <div className="inline-flex items-center gap-2 text-red-500 text-lg md:text-xl mb-4 font-bold">
-                 <StarIcon className="w-5 h-5" />
-                  LATEST NEWS
+                <StarIcon className="w-5 h-5" />
+                LATEST NEWS
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
@@ -122,11 +174,7 @@ export default function Page() {
         <main>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <BlogCard
-                key={post.id}
-                title={post.title}
-                imageUrl={post.imageUrl}
-              />
+              <BlogCard key={post.id} title={post.title} imageUrl={post.imageUrl} />
             ))}
           </div>
         </main>

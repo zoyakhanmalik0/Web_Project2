@@ -5,7 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-
 // Star Icon Component
 type StarIconProps = {
   className?: string;
@@ -89,7 +88,7 @@ export default function Testimonials() {
 
   // Rating Counter Animation
   useEffect(() => {
-    const targetRating = 5;
+    const targetRating = 4.9;
     const duration = 2000;
     const steps = 50;
     const increment = targetRating / steps;
@@ -107,7 +106,7 @@ export default function Testimonials() {
     return () => clearInterval(timer);
   }, []);
 
-  // Features Data
+  // Features Data with larger icons
   const features: Feature[] = [
     {
       title: "Low Cost",
@@ -115,8 +114,8 @@ export default function Testimonials() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
+          width="48" // Increased from 32
+          height="48" // Increased from 32
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -135,8 +134,8 @@ export default function Testimonials() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="40" // Increased from 24
+          height="40" // Increased from 24
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -156,8 +155,8 @@ export default function Testimonials() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="40" // Increased from 24
+          height="40" // Increased from 24
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -175,8 +174,8 @@ export default function Testimonials() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="40" // Increased from 24
+          height="40" // Increased from 24
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -192,13 +191,28 @@ export default function Testimonials() {
 
   return (
     <section 
+
       className="relative w-full overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-black text-white"
-      style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
     >
+      <div
+  className="absolute top-[50px] right-[-270px] z-0 pointer-events-none"
+  style={{ width: "600px", height: "600px" }}
+>
+  <div
+    style={{
+      width: "70%",
+      height: "70%",
+      borderRadius: "50%",
+      border: "40px solid rgba(239,68,68,0.45)",
+      filter: "blur(32px) brightness(0.6)",
+      boxShadow: "0 0 3px 0.5px #ef4444, 0 0 6px 1px #ef4444",
+    }}
+  />
+</div>
       {/* Overlay Inner Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
+        // style={{ backgroundImage: "url(/media/Inner_bg.23beb686.jpg)" }}
       />
 
       {/* Decorative Globe background element */}
@@ -209,18 +223,26 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-2 gap-8 mb-24">
           {/* Left Side - Heading */}
           <div>
-           <div className="flex items-center gap-2 mb-6" style={{ opacity: 1, transform: 'none' }}>
-  <span className="text-default text-3xl">*</span>
-  <span className="text-red-500 text-lg md:text-xl tracking-widest font-semibold">
-    TESTIMONIALS
-  </span>
-</div>
-
-<h2 className="text-5xl md:text-6xl font-bold leading-snug">
-  Read what they <br /> have to say about <br />
-  <span className="text-red-500">working with us</span>
-</h2>
-
+            <div className="flex items-center gap-2 mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4 text-red-500"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 .587l3.668 7.431L24 9.75l-6 5.847L19.335 24 12 19.897 4.665 24 6 15.597 0 9.75l8.332-1.732z" />
+              </svg>
+              <span className="text-red-500 text-lg md:text-xl tracking-widest font-bold">
+                TESTIMONIALS
+              </span>
+            </div>
+            <div className="text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Read what they <br />
+                have to say about <br />
+                <span className="text-red-500">working with us</span> <br />
+              </h1>
+            </div>
           </div>
 
           {/* Right Side - Description & CTA */}
@@ -229,21 +251,16 @@ export default function Testimonials() {
               Discover how our clients have achieved success through our innovative
               solutions and dedicated support.
             </p>
-              <Link className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="/about">
-                    <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
-                      All Testimonials
-                    </button>
-                    <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-lg sm:text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </span>
-                  </Link>
-
-             </div>
-             
-                </div>
-                
+            <Link className="mt-4 flex !justify-center lg:!justify-start gap-4 group" href="/about">
+              <button className="inline-flex items-center justify-center px-8 py-2 rounded-full bg-gray-600 text-white font-bold text-lg whitespace-nowrap">
+                All Testimonials
+              </button>
+              <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-red-500 transform rotate-[-45deg] transition-all duration-300 ease-in-out group-hover:rotate-0 group-hover:bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right text-lg sm:text-22 !text-black rounded-full"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </Link>
           </div>
-        
+        </div>
 
         {/* Middle Section: Ratings & Testimonial */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
@@ -251,22 +268,22 @@ export default function Testimonials() {
           <div className="flex flex-col gap-4 text-center lg:text-left items-center lg:items-start">
             <div className="flex items-baseline gap-2">
               <motion.div
-                className="text-8xl font-bold text-red-400"
+                className="text-8xl font-bold text-red-500"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 6 }}
               >
                 {rating.toFixed(1)}
               </motion.div>
               <span className="text-gray-400">/5.0</span>
             </div>
-            <div className="flex gap-1 text-red-400">
+            <div className="flex gap-1 text-red-500">
               {[...Array(5)].map((_, i) => (
                 <StarIcon key={i} className="w-8 h-8" filled={i < Math.floor(rating)} />
               ))}
             </div>
             <p className="text-gray-400">(40+ Reviews)</p>
-            <h2 className="text-4xl font-semibold mt-4 max-w-md">
+            <h2 className="text-4xl font-medium mt-4 max-w-md">
               Customer experiences that speak for themselves
             </h2>
             
@@ -278,7 +295,7 @@ export default function Testimonials() {
               />
               <img
                 className="inline-block h-10 w-10 rounded-full ring-2 ring-black"
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwa90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80"
                 alt="User B"
               />
               <img
@@ -294,7 +311,7 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Right: Testimonial Card */}
+          {/* Right: Testimonial Card - Made Transparent */}
           <div className="relative min-h-[350px]">
             <AnimatePresence mode="wait">
               <motion.div
@@ -303,7 +320,7 @@ export default function Testimonials() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-6 p-8 rounded-2xl bg-transparent"
               >
                 <div className="flex items-center gap-4">
                   <div className="relative w-40 h-16">
@@ -315,7 +332,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 {/* Stars placed below the logo */}
-                <div className="flex gap-1 text-red-400 -mt-4">
+                <div className="flex gap-1 text-red-500 -mt-4">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon 
                       key={i} 
@@ -348,7 +365,7 @@ export default function Testimonials() {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={prevTestimonial}
-                      className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-500 flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -365,10 +382,10 @@ export default function Testimonials() {
                         <path d="M19 12H5" />
                       </svg>
                     </button>
-                    <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-red-500"></div>
                     <button
                       onClick={nextTestimonial}
-                      className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-500 flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -393,22 +410,20 @@ export default function Testimonials() {
         </div>
 
         {/* Bottom Section: Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 relative text-center">
           {/* Vertical divider between Permission Less and Secure Data */}
           <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-px bg-white opacity-30 -translate-x-1/2"></div>
-          
+
           {/* Vertical divider between 24 X 7 Support and Secure Data */}
           <div className="hidden lg:block absolute top-0 bottom-0 left-3/4 w-px bg-white opacity-30"></div>
-          
+
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col relative ${
-                index === 0 ? "pr-8" : ""
-              }`}
-              initial={{ opacity: 0, y: 30 }}
+              className="flex flex-col items-center justify-center relative"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
               {/* Vertical divider only after Low Cost (desktop only) */}
@@ -416,33 +431,29 @@ export default function Testimonials() {
                 <div className="hidden lg:block absolute top-0 right-0 h-full w-px bg-white opacity-30"></div>
               )}
 
-              {/* Icon */}
-              <div
-                className={`mb-4 flex items-center justify-center text-red-400 ${
-                  index === 0 ? "w-16 h-16" : "w-12 h-12"
-                }`}
-              >
+              {/* Icon - Updated to use larger size */}
+              <div className="mb-4 flex items-center justify-center text-red-500 w-16 h-16"> {/* Increased size */}
                 {feature.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+              <h3 className="text-base font-semibold mb-2">{feature.title}</h3>
 
               {/* Items */}
-              <ul className="space-y-2">
+              <ul className="space-y-0.5">
                 {feature.items.map((item, i) => (
-                  <li key={i} className="flex items-center">
+                  <li key={i} className="flex items-center justify-center text-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="12"
+                      height="12"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth={3}
+                      strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="lucide lucide-minus mr-3 text-red-400 flex-shrink-0"
+                      className="lucide lucide-minus mr-1 text-red-500 flex-shrink-0"
                     >
                       <path d="M5 12h14" />
                     </svg>
@@ -453,6 +464,7 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
+      </div>
 
       {/* Decorative Sphere Image */}
       <div className="absolute bottom-20 -left-32 z-0">
@@ -464,6 +476,6 @@ export default function Testimonials() {
           className="w-80 h-80 animate-spin-grow"
         />
       </div>
-    </section>//
+    </section>
   );
 }

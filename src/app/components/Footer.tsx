@@ -21,6 +21,7 @@ export default function Footer() {
               height={80}
               className="mx-auto lg:mx-0"
             />
+            <br></br>
             <p className="font-medium">
               14 West Street Wakefield WF2 8UA England
             </p>
@@ -33,62 +34,68 @@ export default function Footer() {
           </div>
 
           {/* Popular Services */}
-          <div>
-            <h4 className="text-lg font-bold mb-5">Popular Services</h4>
-            <ul className="space-y-3">
-              {[
-                "Website Development",
-                "Android & iOS Development",
-                "Digital Marketing",
-                "Graphic Designing",
-                "Social Media Marketing",
-                "Content Writing",
-                "Search Engine Optimization",
-                "Software Development",
-                "Cyber Security",
-                "E-Commerce",
-                "Illustrations",
-                "Video Animation",
-                "Point of Sale (POS)",
-              ].map((service, idx) => (
-                <li
-                  key={idx}
-                  className="hover:text-red-500 transition-colors duration-300 cursor-pointer"
-                >
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
+<div>
+  <h1 className="text-2xl font-extrabold mb-7 tracking-wide">
+    Popular Services
+  </h1>
+  <ul className="space-y-3">
+    {[
+      "Website Development",
+      "Android & iOS Development",
+      "Digital Marketing",
+      "Graphic Designing",
+      "Social Media Marketing",
+      "Content Writing",
+      "Search Engine Optimization",
+      "Software Development",
+      "Cyber Security",
+      "E-Commerce",
+      "Illustrations",
+      "Video Animation",
+      "Point of Sale (POS)",
+    ].map((service, idx) => (
+      <li
+        key={idx}
+        className="hover:text-red-500 transition-colors duration-300 cursor-pointer"
+      >
+        {service}
+      </li>
+    ))}
+  </ul>
+</div>
 
-          {/* Useful Links */}
-          <div>
-            <h4 className="text-lg font-bold mb-5">Useful Links</h4>
-            <ul className="space-y-3">
-              {[
-                "Home",
-                "Project",
-                "Services",
-                "About Us",
-                "Contact Us",
-                "Privacy Policy",
-                "Terms of Services",
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:text-red-500 transition-colors duration-300"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+{/* Useful Links */}
+<div>
+  <h2 className="text-2xl font-extrabold mb-7 tracking-wide">
+    Useful Links
+  </h2>
+  <ul className="space-y-3">
+    {[
+      "Home",
+      "Project",
+      "Services",
+      "About Us",
+      "Contact Us",
+      "Privacy Policy",
+      "Terms of Services",
+    ].map((link, idx) => (
+      <li key={idx}>
+        <Link
+          href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
+          className="hover:text-red-500 transition-colors duration-300"
+        >
+          {link}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-bold mb-5">Subscribe Our Newsletter</h4>
+             <h2 className="text-2xl font-extrabold mb-7 tracking-wide">
+    Subscribe Our Newsletter
+  </h2>
             <form className="flex flex-col space-y-4">
               <input
                 type="email"

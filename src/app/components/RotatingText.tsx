@@ -1,49 +1,51 @@
-"use client"; // ✅ Required if using useState/useEffect in Next.js 13 app directory
-
+"use client";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface RotatingTextProps {
   texts: string[];
   fontSize?: string;
 }
 
-export default function RotatingText({ texts, fontSize }: RotatingTextProps) {
+export default function RotatingText({ texts, fontSize = "1.75rem" }: RotatingTextProps) {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState<"in" | "out">("in");
 
   useEffect(() => {
-    let fadeOut: NodeJS.Timeout;
-    let next: NodeJS.Timeout;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % texts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [texts.length]);
 
-    if (direction === "in") {
-      fadeOut = setTimeout(() => setDirection("out"), 3000);
-    } else {
-      next = setTimeout(() => {
-        setIndex((prev) => (prev + 1) % texts.length);
-        setDirection("in");
-      }, 500);
-    }
-
-    return () => {
-      clearTimeout(fadeOut);
-      clearTimeout(next);
-    };
-  }, [direction, texts.length]);
+  const currentText = texts[index].split("");
 
   return (
-    <span
-      key={index}
-      className={`text-red-500 font-bold w-full h-full p-2 sm:p-3 break-words whitespace-normal transition-all duration-1000 ease-in-out inline-block ${
-        direction === "in" ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-      }`}
-      style={{
-        display: "inline-block",
-        fontSize: fontSize || "1.75rem",
-        lineHeight: "1.1",
-        transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
-      }}
-    >
-      {texts[index]}
-    </span>
+    <div className="relative flex items-center overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          className="flex"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          {currentText.map((char, i) => (
+            <motion.span
+              key={i}
+              className="text-red-500 font-bold"
+              style={{ fontSize, display: "inline-block" }}
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                duration: 0.4,
+                delay: i * 0.05, // stagger effect
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }

@@ -96,7 +96,8 @@ export default function Projects() {
       : projects.filter((p) => p.label === activeCategory);
 
   return (
-    <div className="!w-full bg-cover bg-center bg-black text-white pb-10" style={{ backgroundImage: 'url(/media/bg.0f5970d1.png)' }}>
+    <div className="!w-full bg-cover bg-center bg-black text-white pb-10" 
+    >
       {/* Cursor Following Dot */}
       <CursorDot />
       
@@ -127,12 +128,18 @@ export default function Projects() {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 ${
-                    activeCategory === cat
-                      ? 'bg-red-600 text-white'
-                      : 'bg-[#222] text-white hover:bg-red-600'
-                  }`}
-                  style={{ minWidth: '120px' }}
+                  style={{
+                    minWidth: 120,
+                    padding: "12px 32px",
+                    borderRadius: "9999px",
+                    fontSize: "18px",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    border: "none",
+                    transition: "all 0.3s ease",
+                    backgroundColor: activeCategory === cat ? "red" : "#222",
+                    color: "white",
+                  }}
                 >
                   {cat}
                 </button>
@@ -145,7 +152,7 @@ export default function Projects() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProjects.map((project, idx) => (
                 <div key={idx} className="group cursor-pointer relative">
-                  <div className="relative rounded-3xl overflow-hidden bg-white aspect-[4/3]">
+                  <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
                     <Image
                       src={project.src}
                       alt={`Project ${idx + 1}`}
@@ -153,17 +160,17 @@ export default function Projects() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-6 right-6">
-                      <span className="px-4 py-2 bg-white/40 backdrop-blur-3xl rounded-full text-white text-sm">
+                      <span className="px-4 py-2 bg-black/40 backdrop-blur-3xl rounded-full text-white text-sm">
                         {project.label}
                       </span>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
                       {/* Circle with arrow */}
                       <div className="relative w-20 h-20">
-                        {/* Outer circle that becomes red on hover */}
+                        {/* Outer circle */}
                         <div className="absolute inset-0 border-2 border-white rounded-full transition-all duration-300 group-hover:bg-red-600 group-hover:border-red-600 group-hover:scale-110"></div>
                         
-                        {/* Arrow that moves right and turns black on hover */}
+                        {/* Arrow */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

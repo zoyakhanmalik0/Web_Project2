@@ -80,8 +80,8 @@ const FAQSection = () => {
   return (
     <div
       className="!w-full bg-cover bg-center bg-black text-white pb-16 pt-20"
-      style={{ backgroundImage: "url(/media/bg.0f5970d1.png)" }}
     >
+      
       <main className="bg-[#121212] rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-6xl mx-auto overflow-hidden">
         {/* Left Panel: Image */}
         <div className="w-full md:w-[35%] relative">

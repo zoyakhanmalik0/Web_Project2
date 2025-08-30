@@ -311,22 +311,39 @@ body {
 }
 
 /* Scrollbar styling - Updated to red theme */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-dark-111);
+  background: #0a0a0a; /* track color (black/dark) */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-default);
-  border-radius: 4px;
+  background-color: #ef4444; /* red-500 */
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-secondary);
+  background-color: #dc2626; /* red-600 */
 }
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ef4444 #0a0a0a;
+}
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
 
 /* Mobile Responsive Utilities */
 @media (max-width: 640px) {

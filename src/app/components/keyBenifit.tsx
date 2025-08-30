@@ -155,11 +155,9 @@ const BenefitCard: React.FC<BenefitCardProps> = ({
     <div className="p-6 sm:p-8 flex flex-col h-full">
       {/* Number */}
       <span className="text-2xl font-bold text-gray-400 mb-6">{id}</span>
-      
-      {/* Icon - placed below the number */}
-      <div className="text-red-500 mb-6 flex justify-left">
-        {icon}
-      </div>
+
+      {/* Icon */}
+      <div className="text-red-500 mb-6 flex justify-left">{icon}</div>
 
       {/* Content */}
       <div className="flex-1">
@@ -173,64 +171,110 @@ const BenefitCard: React.FC<BenefitCardProps> = ({
 // --- Main Section ---
 const BenefitsSection: React.FC = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="mb-12">
-        <span className="inline-flex items-center gap-x-3 text-lg font-bold tracking-widest uppercase text-red-500">
-          <svg
-            className="w-6 h-6 text-red-500"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9.813 15.904L9 15l.813-.904L10.53 
-              15l-.717.904zm-4.813-4.813L5 
-              11l.813-.904L6.53 11l-.717.904zm8.537 
-              2.318L15 13l.813-.904L16.53 13l-.717.904zm-3.813-2.318L11 
-              13l.813-.904L12.53 13l-.717.904z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 21a9 9 0 100-18 9 9 0 
-              000 18z"
-            />
-          </svg>
-          Key Benefits
-        </span>
-      </div>
+    <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 🔴 Ring Top Right */}
+ <div
+  className="absolute top-[-110px] right-[-480px] z-0 pointer-events-none"
+  style={{ width: "600px", height: "600px" }}
+>
+  <div
+    style={{
+      width: "70%",
+      height: "70%",
+      borderRadius: "50%",
+      border: "40px solid rgba(239,68,68,0.45)",
+      filter: "blur(32px) brightness(0.6)",
+      boxShadow: "0 0 3px 0.5px #ef4444, 0 0 6px 1px #ef4444",
+    }}
+  />
+</div>
 
-      {/* Title + Description */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16">
-        <div className="text-white">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Discover the <span className="text-red-500">benefits</span> of
-            choosing us today
-          </h1>
-        </div>
-        <div>
-          <p className="text-lg text-gray-400 leading-relaxed">
-            Join our creative community to collaborate, innovate, and thrive
-            together. We welcome passionate individuals eager to make.
-          </p>
-        </div>
-      </div>
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        {benefitsData.map((benefit) => (
-          <div
-            key={benefit.id}
-            className="bg-gray-900/50 border border-gray-800 rounded-xl hover:border-red-500/30 transition-colors duration-300"
-          >
-            <BenefitCard {...benefit} />
+
+      {/* 🔴 Ring Bottom Left */}
+ <div
+  className="absolute bottom-[-220px] left-[-300px] z-0 pointer-events-none"
+  style={{ width: "600px", height: "600px" }}
+>
+  <div
+    style={{
+      width: "70%",
+      height: "70%",
+      borderRadius: "50%",
+      border: "40px solid rgba(239,68,68,0.45)",
+      filter: "blur(32px) brightness(0.6)",
+      boxShadow: "0 0 3px 0.5px #ef4444, 0 0 6px 1px #ef4444",
+    }}
+  />
+</div>
+
+
+
+      {/* Content Wrapper */}
+      <div className="relative z-10">
+        {/* Header */}
+        <div className="mb-12">
+          <span className="inline-flex items-center gap-x-3 text-lg font-bold tracking-widest uppercase text-red-500">
+            <svg
+              className="w-6 h-6 text-red-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9.813 15.904L9 15l.813-.904L10.53 
+                15l-.717.904zm-4.813-4.813L5 
+                11l.813-.904L6.53 11l-.717.904zm8.537 
+                2.318L15 13l.813-.904L16.53 13l-.717.904zm-3.813-2.318L11 
+                13l.813-.904L12.53 13l-.717.904z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 21a9 9 0 100-18 9 9 0 
+                000 18z"
+              />
+            </svg>
+            Key Benefits
+          </span>
+        </div>
+
+        {/* Title + Description */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16">
+          <div className="text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+  Discover the <br />
+  <span className="text-red-500">benefits</span> <br />
+  of choosing us <br />
+  today
+</h1>
+
+
           </div>
-        ))}
+          <div className="mt-10">
+  <p className="text-lg text-gray-400 leading-relaxed">
+    Join our creative community to collaborate, innovate, and thrive
+    together. We welcome passionate individuals eager to make.
+  </p>
+</div>
+
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {benefitsData.map((benefit) => (
+            <div
+              key={benefit.id}
+              className="bg-gray-900/50 border border-gray-800 rounded-xl hover:border-red-500/30 transition-colors duration-300"
+            >
+              <BenefitCard {...benefit} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -240,7 +284,7 @@ const BenefitsSection: React.FC = () => {
 export default function App() {
   return (
     <main
-      className="bg-black text-gray-300 antialiased min-h-screen flex items-center py-12 sm:py-16 lg:py-20"
+      className="bg-black text-gray-300 antialiased min-h-screen flex items-center py-12 sm:py-16 lg:py-20 relative overflow-hidden"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       <BenefitsSection />
